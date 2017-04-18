@@ -1,0 +1,20 @@
+c:\users\nhan\documents\visual studio 2015\Projects\Phần mềm Quản lý Quán Trà Sữa\Phần mềm Quản lý Quán Trà Sữa\bin\Debug\Phần mềm Quản lý Quán Trà Sữa.exe.config
+C:\Users\Nhan\Documents\Visual Studio 2015\Projects\Phần mềm Quản lý Quán Trà Sữa\Phần mềm Quản lý Quán Trà Sữa\bin\Debug\Phần mềm Quản lý Quán Trà Sữa.exe
+C:\Users\Nhan\Documents\Visual Studio 2015\Projects\Phần mềm Quản lý Quán Trà Sữa\Phần mềm Quản lý Quán Trà Sữa\bin\Debug\Phần mềm Quản lý Quán Trà Sữa.pdb
+C:\Users\Nhan\Documents\Visual Studio 2015\Projects\Phần mềm Quản lý Quán Trà Sữa\Phần mềm Quản lý Quán Trà Sữa\obj\Debug\Phần_mềm_Quản_lý_Quán_Trà_Sữa.Properties.Resources.resources
+C:\Users\Nhan\Documents\Visual Studio 2015\Projects\Phần mềm Quản lý Quán Trà Sữa\Phần mềm Quản lý Quán Trà Sữa\obj\Debug\Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện.MainForm.resources
+C:\Users\Nhan\Documents\Visual Studio 2015\Projects\Phần mềm Quản lý Quán Trà Sữa\Phần mềm Quản lý Quán Trà Sữa\obj\Debug\Phần mềm Quản lý Quán Trà Sữa.csproj.GenerateResource.Cache
+C:\Users\Nhan\Documents\Visual Studio 2015\Projects\Phần mềm Quản lý Quán Trà Sữa\Phần mềm Quản lý Quán Trà Sữa\obj\Debug\Phần mềm Quản lý Quán Trà Sữa.exe
+C:\Users\Nhan\Documents\Visual Studio 2015\Projects\Phần mềm Quản lý Quán Trà Sữa\Phần mềm Quản lý Quán Trà Sữa\obj\Debug\Phần mềm Quản lý Quán Trà Sữa.pdb
+C:\Users\Nhan\documents\visual studio 2015\Projects\Phần mềm Quản lý Quán Trà Sữa\Phần mềm Quản lý Quán Trà Sữa\obj\Debug\Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện.nButton.resources
+C:\Users\Nhan\documents\visual studio 2015\Projects\Phần mềm Quản lý Quán Trà Sữa\Phần mềm Quản lý Quán Trà Sữa\obj\Debug\Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện.TestForm.resources
+C:\Users\Nhan\Documents\Visual Studio 2015\Projects\Phần mềm Quản lý Quán Trà Sữa\Phần mềm Quản lý Quán Trà Sữa\obj\Debug\Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện.AdminForm.resources
+C:\Users\Nhan\Documents\Visual Studio 2015\Projects\Phần mềm Quản lý Quán Trà Sữa\Phần mềm Quản lý Quán Trà Sữa\obj\Debug\Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện.BillForm.resources
+C:\Users\Nhan\Documents\Visual Studio 2015\Projects\Phần mềm Quản lý Quán Trà Sữa\Phần mềm Quản lý Quán Trà Sữa\obj\Debug\Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện.DashboardForm.resources
+C:\Users\Nhan\Documents\Visual Studio 2015\Projects\Phần mềm Quản lý Quán Trà Sữa\Phần mềm Quản lý Quán Trà Sữa\obj\Debug\Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện.DrinkForm.resources
+C:\Users\Nhan\Documents\Visual Studio 2015\Projects\Phần mềm Quản lý Quán Trà Sữa\Phần mềm Quản lý Quán Trà Sữa\obj\Debug\Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện.ScheduleForm.resources
+C:\Users\Nhan\Documents\Visual Studio 2015\Projects\Phần mềm Quản lý Quán Trà Sữa\Phần mềm Quản lý Quán Trà Sữa\obj\Debug\Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện.TableForm.resources
+C:\Users\Nhan\Documents\Visual Studio 2015\Projects\Phần mềm Quản lý Quán Trà Sữa\Phần mềm Quản lý Quán Trà Sữa\obj\Debug\Phần_mềm_Quản_lý_Quán_Trà_Sữa.LoginForm.resources
+C:\Users\Nhan\Documents\Visual Studio 2015\Projects\Phần mềm Quản lý Quán Trà Sữa\Phần mềm Quản lý Quán Trà Sữa\obj\Debug\Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện.CustomControl.CircleDashboard.resources
+C:\Users\Nhan\Documents\Visual Studio 2015\Projects\Phần mềm Quản lý Quán Trà Sữa\Phần mềm Quản lý Quán Trà Sữa\obj\Debug\Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện.ConfirmPassword.resources
+C:\Users\Nhan\Documents\Visual Studio 2015\Projects\Phần mềm Quản lý Quán Trà Sữa\Phần mềm Quản lý Quán Trà Sữa\obj\Debug\Phần mềm Quản lý Quán Trà Sữa.csprojResolveAssemblyReference.cache
