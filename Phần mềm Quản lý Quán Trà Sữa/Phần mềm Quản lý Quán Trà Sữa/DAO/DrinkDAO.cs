@@ -32,15 +32,10 @@ namespace Quản_Lý_Quán_Trà_Sữa.DAO
         private DrinkDAO() { }
         #endregion
 
-        public List<Drink> GetListDrinkByIdCategory(int idCategoriesD)
+        public DataTable GetListDrinkByIdCategory(int idCategoriesD)
         {
-            List<Drink> listDrinks = new List<Drink>();
-            DataTable data = DataProvider.Instance.ExecuteQuery("EXEC USP_GetListDrinkByIdCategory @idCategoriesD ", new object[] {idCategoriesD });
-            foreach(DataRow row in data.Rows)
-            {
-                listDrinks.Add(new Drink(row));
-            }
-            return listDrinks;
+            return DataProvider.Instance.ExecuteQuery("EXEC USP_GetListDrinkByIdCategory @idCategoriesD ", new object[] {idCategoriesD });
+            
         }
         public int[] GetTypeDrinkByName(string name)
         {

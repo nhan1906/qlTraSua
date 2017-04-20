@@ -25,7 +25,7 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện
             int ca1 = 0, ca2 = 0, ca3 = 0;
             int day = DateTime.Now.Day;
             calendar.CurrentDay = day;
-            calendar.CurrentCell = calendar[day % 7 - 1, day / 7];
+            calendar.CurrentCell = calendar[day % 7 , day / 7];
             DataTable dtCalendar = DataProvider.Instance.ExecuteQuery("Select ngay , cateL from NgayLuong Where idNhanVien = " + idNhanVien);
             int[] daysCl = new int [] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
             foreach(DataRow row in dtCalendar.Rows)

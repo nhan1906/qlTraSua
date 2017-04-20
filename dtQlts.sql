@@ -661,12 +661,21 @@ BEGIN
 	)
 END
 GO
+
+
+
+CREATE PROC USP_GetListDrinkByIdCategory
+@idCategoriesD INT
+AS
+BEGIN
+	SELECT nameDrink FROM Drink WHERE idCategoriesD = @idCategoriesD
+	GROUP BY nameDrink HAVING COUNT(*) > 1 
+END
+GO
 --Select
 
+select * from Drink
 
-
---Table Date cho Calendar
-DROP Table NgayLuong
 SELECT * FROM NgayLuong
 SELECT * FROM NhanVien
 
