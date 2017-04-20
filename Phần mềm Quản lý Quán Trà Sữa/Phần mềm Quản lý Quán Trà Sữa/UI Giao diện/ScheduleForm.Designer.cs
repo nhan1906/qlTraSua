@@ -40,6 +40,7 @@
             this.panel9 = new System.Windows.Forms.Panel();
             this.pnLeftBar = new System.Windows.Forms.Panel();
             this.pnButtonBar = new System.Windows.Forms.Panel();
+            this.btnChamCa = new System.Windows.Forms.Button();
             this.pnTopBar = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -62,10 +63,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtNv = new Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện.CustomControl.nTextbox();
-            this.nTextbox2 = new Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện.CustomControl.nTextbox();
-            this.nTextbox1 = new Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện.CustomControl.nTextbox();
-            this.txtNameDrink = new Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện.CustomControl.nTextbox();
+            this.txtMoneyMonth = new Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện.CustomControl.nTextbox();
+            this.txtMoneyDay = new Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện.CustomControl.nTextbox();
+            this.txtMoneyCa = new Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện.CustomControl.nTextbox();
             this.calendar = new Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện.CustomControl.nCalendar();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -74,6 +74,13 @@
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -88,7 +95,9 @@
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnChamCa = new System.Windows.Forms.Button();
+            this.txtNv = new Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện.CustomControl.nTextbox();
+            this.btnAddNV = new System.Windows.Forms.Button();
+            this.btnDeleteNV = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvNV)).BeginInit();
             this.pnLeft.SuspendLayout();
             this.pngv.SuspendLayout();
@@ -163,12 +172,31 @@
             // 
             // pnButtonBar
             // 
+            this.pnButtonBar.Controls.Add(this.btnDeleteNV);
+            this.pnButtonBar.Controls.Add(this.btnAddNV);
             this.pnButtonBar.Controls.Add(this.btnChamCa);
             this.pnButtonBar.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnButtonBar.Location = new System.Drawing.Point(0, 373);
             this.pnButtonBar.Name = "pnButtonBar";
             this.pnButtonBar.Size = new System.Drawing.Size(399, 82);
             this.pnButtonBar.TabIndex = 3;
+            // 
+            // btnChamCa
+            // 
+            this.btnChamCa.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnChamCa.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnChamCa.FlatAppearance.BorderSize = 0;
+            this.btnChamCa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChamCa.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChamCa.ForeColor = System.Drawing.Color.White;
+            this.btnChamCa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnChamCa.Location = new System.Drawing.Point(25, 6);
+            this.btnChamCa.Name = "btnChamCa";
+            this.btnChamCa.Size = new System.Drawing.Size(349, 31);
+            this.btnChamCa.TabIndex = 33;
+            this.btnChamCa.Text = "Chấm ca";
+            this.btnChamCa.UseVisualStyleBackColor = false;
+            this.btnChamCa.Click += new System.EventHandler(this.btnChamCa_Click);
             // 
             // pnTopBar
             // 
@@ -304,6 +332,7 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.calendar);
+            this.panel1.Controls.Add(this.txtNv);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
@@ -341,13 +370,12 @@
             // 
             // pnCash
             // 
-            this.pnCash.Controls.Add(this.txtNv);
             this.pnCash.Controls.Add(this.btnAcceptDrink);
-            this.pnCash.Controls.Add(this.nTextbox2);
+            this.pnCash.Controls.Add(this.txtMoneyMonth);
             this.pnCash.Controls.Add(this.label4);
-            this.pnCash.Controls.Add(this.nTextbox1);
+            this.pnCash.Controls.Add(this.txtMoneyDay);
             this.pnCash.Controls.Add(this.label3);
-            this.pnCash.Controls.Add(this.txtNameDrink);
+            this.pnCash.Controls.Add(this.txtMoneyCa);
             this.pnCash.Controls.Add(this.label2);
             this.pnCash.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnCash.Location = new System.Drawing.Point(399, 0);
@@ -387,67 +415,62 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label3.Location = new System.Drawing.Point(57, 70);
+            this.label3.Location = new System.Drawing.Point(57, 32);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(92, 19);
+            this.label3.Size = new System.Drawing.Size(84, 19);
             this.label3.TabIndex = 28;
-            this.label3.Text = "Tiền thưởng";
+            this.label3.Text = "Lương 1 ca";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label2.Location = new System.Drawing.Point(57, 33);
+            this.label2.Location = new System.Drawing.Point(57, 70);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(89, 19);
             this.label2.TabIndex = 26;
             this.label2.Text = "Lương ngày";
             // 
-            // txtNv
+            // txtMoneyMonth
             // 
-            this.txtNv.ClrBorder = System.Drawing.Color.SeaGreen;
-            this.txtNv.Location = new System.Drawing.Point(35, 176);
-            this.txtNv.Name = "txtNv";
-            this.txtNv.Size = new System.Drawing.Size(100, 20);
-            this.txtNv.TabIndex = 33;
-            this.txtNv.TextChanged += new System.EventHandler(this.txtNv_TextChanged);
+            this.txtMoneyMonth.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(240)))), ((int)(((byte)(201)))));
+            this.txtMoneyMonth.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMoneyMonth.ClrBorder = System.Drawing.Color.SeaGreen;
+            this.txtMoneyMonth.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Bold);
+            this.txtMoneyMonth.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(72)))), ((int)(((byte)(78)))));
+            this.txtMoneyMonth.Location = new System.Drawing.Point(185, 109);
+            this.txtMoneyMonth.Name = "txtMoneyMonth";
+            this.txtMoneyMonth.Size = new System.Drawing.Size(197, 23);
+            this.txtMoneyMonth.TabIndex = 31;
+            this.txtMoneyMonth.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // nTextbox2
+            // txtMoneyDay
             // 
-            this.nTextbox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(240)))), ((int)(((byte)(201)))));
-            this.nTextbox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.nTextbox2.ClrBorder = System.Drawing.Color.SeaGreen;
-            this.nTextbox2.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Bold);
-            this.nTextbox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(72)))), ((int)(((byte)(78)))));
-            this.nTextbox2.Location = new System.Drawing.Point(185, 109);
-            this.nTextbox2.Name = "nTextbox2";
-            this.nTextbox2.Size = new System.Drawing.Size(197, 23);
-            this.nTextbox2.TabIndex = 31;
+            this.txtMoneyDay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(240)))), ((int)(((byte)(201)))));
+            this.txtMoneyDay.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMoneyDay.ClrBorder = System.Drawing.Color.SeaGreen;
+            this.txtMoneyDay.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Bold);
+            this.txtMoneyDay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(72)))), ((int)(((byte)(78)))));
+            this.txtMoneyDay.Location = new System.Drawing.Point(185, 70);
+            this.txtMoneyDay.Name = "txtMoneyDay";
+            this.txtMoneyDay.Size = new System.Drawing.Size(197, 23);
+            this.txtMoneyDay.TabIndex = 29;
+            this.txtMoneyDay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // nTextbox1
+            // txtMoneyCa
             // 
-            this.nTextbox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(240)))), ((int)(((byte)(201)))));
-            this.nTextbox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.nTextbox1.ClrBorder = System.Drawing.Color.SeaGreen;
-            this.nTextbox1.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Bold);
-            this.nTextbox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(72)))), ((int)(((byte)(78)))));
-            this.nTextbox1.Location = new System.Drawing.Point(185, 70);
-            this.nTextbox1.Name = "nTextbox1";
-            this.nTextbox1.Size = new System.Drawing.Size(197, 23);
-            this.nTextbox1.TabIndex = 29;
-            // 
-            // txtNameDrink
-            // 
-            this.txtNameDrink.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(240)))), ((int)(((byte)(201)))));
-            this.txtNameDrink.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNameDrink.ClrBorder = System.Drawing.Color.SeaGreen;
-            this.txtNameDrink.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Bold);
-            this.txtNameDrink.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(72)))), ((int)(((byte)(78)))));
-            this.txtNameDrink.Location = new System.Drawing.Point(185, 33);
-            this.txtNameDrink.Name = "txtNameDrink";
-            this.txtNameDrink.Size = new System.Drawing.Size(197, 23);
-            this.txtNameDrink.TabIndex = 27;
+            this.txtMoneyCa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(240)))), ((int)(((byte)(201)))));
+            this.txtMoneyCa.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMoneyCa.ClrBorder = System.Drawing.Color.SeaGreen;
+            this.txtMoneyCa.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Bold);
+            this.txtMoneyCa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(72)))), ((int)(((byte)(78)))));
+            this.txtMoneyCa.Location = new System.Drawing.Point(185, 33);
+            this.txtMoneyCa.Name = "txtMoneyCa";
+            this.txtMoneyCa.Size = new System.Drawing.Size(197, 23);
+            this.txtMoneyCa.TabIndex = 27;
+            this.txtMoneyCa.Text = "60000";
+            this.txtMoneyCa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // calendar
             // 
@@ -507,6 +530,13 @@
             this.calendar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.calendar.ColumnHeadersVisible = false;
             this.calendar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn22,
+            this.dataGridViewTextBoxColumn23,
+            this.dataGridViewTextBoxColumn24,
+            this.dataGridViewTextBoxColumn25,
+            this.dataGridViewTextBoxColumn26,
+            this.dataGridViewTextBoxColumn27,
+            this.dataGridViewTextBoxColumn28,
             this.dataGridViewTextBoxColumn15,
             this.dataGridViewTextBoxColumn16,
             this.dataGridViewTextBoxColumn17,
@@ -537,7 +567,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.calendar.DefaultCellStyle = dataGridViewCellStyle3;
-            this.calendar.Location = new System.Drawing.Point(4, 3);
+            this.calendar.Location = new System.Drawing.Point(1, 1);
             this.calendar.Name = "calendar";
             this.calendar.NWidth = 0;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -598,6 +628,48 @@
             this.dataGridViewTextBoxColumn7.HeaderText = "T7";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.Width = 40;
+            // 
+            // dataGridViewTextBoxColumn22
+            // 
+            this.dataGridViewTextBoxColumn22.HeaderText = "CN";
+            this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
+            this.dataGridViewTextBoxColumn22.Width = 40;
+            // 
+            // dataGridViewTextBoxColumn23
+            // 
+            this.dataGridViewTextBoxColumn23.HeaderText = "T2";
+            this.dataGridViewTextBoxColumn23.Name = "dataGridViewTextBoxColumn23";
+            this.dataGridViewTextBoxColumn23.Width = 40;
+            // 
+            // dataGridViewTextBoxColumn24
+            // 
+            this.dataGridViewTextBoxColumn24.HeaderText = "T3";
+            this.dataGridViewTextBoxColumn24.Name = "dataGridViewTextBoxColumn24";
+            this.dataGridViewTextBoxColumn24.Width = 40;
+            // 
+            // dataGridViewTextBoxColumn25
+            // 
+            this.dataGridViewTextBoxColumn25.HeaderText = "T4";
+            this.dataGridViewTextBoxColumn25.Name = "dataGridViewTextBoxColumn25";
+            this.dataGridViewTextBoxColumn25.Width = 40;
+            // 
+            // dataGridViewTextBoxColumn26
+            // 
+            this.dataGridViewTextBoxColumn26.HeaderText = "T5";
+            this.dataGridViewTextBoxColumn26.Name = "dataGridViewTextBoxColumn26";
+            this.dataGridViewTextBoxColumn26.Width = 40;
+            // 
+            // dataGridViewTextBoxColumn27
+            // 
+            this.dataGridViewTextBoxColumn27.HeaderText = "T6";
+            this.dataGridViewTextBoxColumn27.Name = "dataGridViewTextBoxColumn27";
+            this.dataGridViewTextBoxColumn27.Width = 40;
+            // 
+            // dataGridViewTextBoxColumn28
+            // 
+            this.dataGridViewTextBoxColumn28.HeaderText = "T7";
+            this.dataGridViewTextBoxColumn28.Name = "dataGridViewTextBoxColumn28";
+            this.dataGridViewTextBoxColumn28.Width = 40;
             // 
             // dataGridViewTextBoxColumn15
             // 
@@ -683,22 +755,46 @@
             this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
             this.dataGridViewTextBoxColumn14.Width = 40;
             // 
-            // btnChamCa
+            // txtNv
             // 
-            this.btnChamCa.BackColor = System.Drawing.Color.SeaGreen;
-            this.btnChamCa.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnChamCa.FlatAppearance.BorderSize = 0;
-            this.btnChamCa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChamCa.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChamCa.ForeColor = System.Drawing.Color.White;
-            this.btnChamCa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnChamCa.Location = new System.Drawing.Point(25, 6);
-            this.btnChamCa.Name = "btnChamCa";
-            this.btnChamCa.Size = new System.Drawing.Size(349, 31);
-            this.btnChamCa.TabIndex = 33;
-            this.btnChamCa.Text = "Chấm ca";
-            this.btnChamCa.UseVisualStyleBackColor = false;
-            this.btnChamCa.Click += new System.EventHandler(this.btnChamCa_Click);
+            this.txtNv.ClrBorder = System.Drawing.Color.SeaGreen;
+            this.txtNv.Location = new System.Drawing.Point(50, 93);
+            this.txtNv.Name = "txtNv";
+            this.txtNv.Size = new System.Drawing.Size(100, 20);
+            this.txtNv.TabIndex = 33;
+            this.txtNv.TextChanged += new System.EventHandler(this.txtNv_TextChanged);
+            // 
+            // btnAddNV
+            // 
+            this.btnAddNV.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnAddNV.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnAddNV.FlatAppearance.BorderSize = 0;
+            this.btnAddNV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddNV.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddNV.ForeColor = System.Drawing.Color.White;
+            this.btnAddNV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddNV.Location = new System.Drawing.Point(25, 43);
+            this.btnAddNV.Name = "btnAddNV";
+            this.btnAddNV.Size = new System.Drawing.Size(163, 31);
+            this.btnAddNV.TabIndex = 34;
+            this.btnAddNV.Text = "Thêm nhân viên";
+            this.btnAddNV.UseVisualStyleBackColor = false;
+            // 
+            // btnDeleteNV
+            // 
+            this.btnDeleteNV.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnDeleteNV.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnDeleteNV.FlatAppearance.BorderSize = 0;
+            this.btnDeleteNV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteNV.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteNV.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteNV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDeleteNV.Location = new System.Drawing.Point(211, 43);
+            this.btnDeleteNV.Name = "btnDeleteNV";
+            this.btnDeleteNV.Size = new System.Drawing.Size(163, 31);
+            this.btnDeleteNV.TabIndex = 35;
+            this.btnDeleteNV.Text = "Xóa nhân viên";
+            this.btnDeleteNV.UseVisualStyleBackColor = false;
             // 
             // ScheduleForm
             // 
@@ -758,11 +854,11 @@
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel pnCash;
-        private CustomControl.nTextbox txtNameDrink;
+        private CustomControl.nTextbox txtMoneyCa;
         private System.Windows.Forms.Label label2;
-        private CustomControl.nTextbox nTextbox2;
+        private CustomControl.nTextbox txtMoneyMonth;
         private System.Windows.Forms.Label label4;
-        private CustomControl.nTextbox nTextbox1;
+        private CustomControl.nTextbox txtMoneyDay;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnAcceptDrink;
         private System.Windows.Forms.Panel pngv;
@@ -796,5 +892,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn20;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn21;
         private System.Windows.Forms.Button btnChamCa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn22;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn23;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn24;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn25;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn26;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn27;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn28;
+        private System.Windows.Forms.Button btnDeleteNV;
+        private System.Windows.Forms.Button btnAddNV;
     }
 }

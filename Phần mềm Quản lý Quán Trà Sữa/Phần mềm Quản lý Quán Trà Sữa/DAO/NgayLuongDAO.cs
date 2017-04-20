@@ -41,5 +41,52 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.DAO
             }
             return false;
         }
+
+        public int GetIdNgayLuongByNhanVien(int idNhanVien , DateTime day)
+        {
+            string days = day.ToString("yyyy-MM-dd");
+            string query = "Select * from NgayLuong where idNhanVien = " + idNhanVien + " AND ngay = '" + days + "'";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow row in data.Rows)
+            {
+                return (int)row["idNgayLuong"];
+            }
+            return 0;
+        }
+        public  int UpdateLuongNgay(int idNhanVien, int cateL, float luongNgay)
+        {
+            int idNgayLuong = NgayLuongDAO.Instance.GetIdNgayLuongByNhanVien(idNhanVien, DateTime.Now);
+            return DataProvider.Instance.ExecuteNonQuery("USP_UpdateLuongNgay @idNgayLuong , @idNhanVien , @cateL , @luongNgay" , new object[] {idNgayLuong , idNhanVien , cateL , luongNgay});
+        }
+
+        public int InsertLuongNgay(int idNhanVien, int cateL, float luongNgay)
+        {
+            return DataProvider.Instance.ExecuteNonQuery("USP_InsertNgayLuong @idNhanVien , @cateL , @luongNgay", new object[] { idNhanVien, cateL, luongNgay });
+        }
+
+        public float LuongByNhanVien(int idNhanVien)
+        {
+            float luongThang = 0;
+            string query = "SELECT * FROM NgayLuong WHERE idNhanVien = " + idNhanVien + " AND MONTH(ngay) = " + DateTime.Now.Month;
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow row in data.Rows)
+            {
+                luongThang += float.Parse(row["luongNgay"].ToString());
+            }
+            return luongThang;
+        }
+
+        public string GetNgayLuongByNhanVien(int idNhanVien)
+        {
+            DateTime day = DateTime.Now;
+            string days = day.ToString("yyyy-MM-dd");
+            string query = "Select * from NgayLuong where idNhanVien = " + idNhanVien + " AND ngay = '" + days + "'";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow row in data.Rows)
+            {
+                return row["luongNgay"].ToString();
+            }
+            return "0";
+        }
     }
 }

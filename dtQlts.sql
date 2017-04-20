@@ -83,12 +83,13 @@ CREATE TABLE NgayLuong
 	idNhanVien INT NOT NULL,
 	ngay DATE NOT NULL DEFAULT GETDATE(),
 	luongNgay FLOAT DEFAULT 0,
-	luongCon FLOAT DEFAULT 0,
-	tongLuong FLOAT DEFAULT 0,
 	cateL INT DEFAULT 0
 	FOREIGN KEY (idNhanVien) REFERENCES NhanVien(idNhanVien)
 )
 GO
+
+SELECT * FROM NgayLuong
+
 --INSERT Table
 
 -- Drink
@@ -628,6 +629,36 @@ BEGIN
 	UPDATE Drink
 	SET nameDrink = @nameDrink , price = @price , idCategoriesD = @idCategoriesD , idSizeDrink = @idSizeDrink , picture = @picture
 	WHERE idDrink = @idDrink
+END
+GO
+
+CREATE PROC USP_UpdateLuongNgay
+@idNgayLuong INT,
+@idNhanVien INT,
+@cateL INT,
+@luongNgay FLOAT
+AS
+BEGIN
+	UPDATE NgayLuong
+	SET idNhanVien = @idNhanVien , cateL = @cateL , luongNgay = @luongNgay
+	WHERE idNhanVien = @idNhanVien
+END
+GO
+
+CREATE PROC USP_InsertNgayLuong
+@idNhanVien INT,
+@cateL INT,
+@luongNgay FLOAT
+AS
+BEGIN
+	INSERT NgayLuong
+	(
+		idNhanVien , cateL , luongNgay
+	)
+	VALUES
+	(
+		@idNhanVien , @cateL , @luongNgay
+	)
 END
 GO
 --Select

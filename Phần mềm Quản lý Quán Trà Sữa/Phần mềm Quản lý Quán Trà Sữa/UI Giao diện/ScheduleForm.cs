@@ -132,6 +132,8 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện
         private void txtNv_TextChanged(object sender, EventArgs e)
         {
             InitView(NhanVienDAO.Instance.GetIdByName(txtNv.Text));
+            TinhLuongThangNhanVien(NhanVienDAO.Instance.GetIdByName(txtNv.Text));
+            txtMoneyDay.Text = NgayLuongDAO.Instance.GetNgayLuongByNhanVien(NhanVienDAO.Instance.GetIdByName(txtNv.Text));
         }
 
         private void btnChamCa_Click(object sender, EventArgs e)
@@ -139,6 +141,8 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện
             foreach(DataGridViewRow row in dtgvNV.Rows)
             {
                 int cateL = 0;
+                if (row.Cells["tenNhanVien"].Value == null)
+                    return;
                 string tenNhanVien = row.Cells["tenNhanVien"].Value.ToString();
                 int idNhanVien = NhanVienDAO.Instance.GetIdByName(tenNhanVien);
                 bool isCa1 = Convert.ToBoolean((row.Cells["Ca1"] as DataGridViewCheckBoxCell).Value);
@@ -162,12 +166,35 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện
                 if(isExits)
                 {
                     //Update
+                    int result = NgayLuongDAO.Instance.UpdateLuongNgay(idNhanVien , cateL , float.Parse(txtMoneyCa.Text) * cateL);
+                    if (result == 1)
+                    {
+                        MessageBox.Show("Thành công");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Thất bại");
+                    }
                 }
                 else
                 {
                     //insert
+                    int result = NgayLuongDAO.Instance.InsertLuongNgay(idNhanVien, cateL, float.Parse(txtMoneyCa.Text) * cateL);
+                    if (result == 1)
+                    {
+                        MessageBox.Show("Thành công");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Thất bại");
+                    }
                 }
             }
+        }
+
+        private void TinhLuongThangNhanVien(int idNhanVien)
+        {
+            txtMoneyMonth.Text = NgayLuongDAO.Instance.LuongByNhanVien(idNhanVien).ToString();
         }
     }
 }
