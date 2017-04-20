@@ -1,4 +1,5 @@
 ﻿using Phần_mềm_Quản_lý_Quán_Trà_Sữa.DAO;
+using Quản_Lý_Quán_Trà_Sữa.DAO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,6 +19,35 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện
         {
             InitializeComponent();
             Initdtgv();
+        }
+        private void InitView(int idNhanVien)
+        {
+            int ca1 = 0, ca2 = 0, ca3 = 0;
+            int day = DateTime.Now.Day;
+            calendar.CurrentDay = day;
+            calendar.CurrentCell = calendar[day % 7 - 1, day / 7];
+            DataTable dtCalendar = DataProvider.Instance.ExecuteQuery("Select ngay , cateL from NgayLuong Where idNhanVien = " + idNhanVien);
+            int[] daysCl = new int [] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+            foreach(DataRow row in dtCalendar.Rows)
+            {
+                int date = 0;
+                DateTime dttime = (DateTime)row["ngay"];
+                if (dttime.Month == DateTime.Now.Month && dttime.Year == DateTime.Now.Year)
+                    date = dttime.Day;
+                int cateL = (int)row["cateL"];
+                daysCl[date] = cateL;
+                if (cateL == 1)
+                    ca1++;
+                if (cateL == 2)
+                    ca2++;
+                if (cateL == 3)
+                    ca3++;
+            }
+            calendar.CateBackground = daysCl;
+            lb1Ca.Text = ca1.ToString();
+            lb2Ca.Text = ca2.ToString();
+            lb3Ca.Text = ca3.ToString();
+            calendar.Refresh();
         }
         private void ScheduleForm_Load(object sender, System.EventArgs e)
         {
@@ -89,6 +119,7 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện
         {
             this.dtgvNV.Columns[0].HeaderText = "Tên nhân viên";
             this.dtgvNV.Columns[1].HeaderText = "Loại nhân viên";
+            txtNv.DataBindings.Add(new Binding("Text", dtgvNV.DataSource, "tenNhanVien", true, DataSourceUpdateMode.Never));
 
 
             //Binding text
@@ -98,9 +129,45 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện
             bdNV.DataSource = NhanVienDAO.Instance.GetListNhanVien();
         }
 
-        private void dtgvNV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void txtNv_TextChanged(object sender, EventArgs e)
         {
+            InitView(NhanVienDAO.Instance.GetIdByName(txtNv.Text));
+        }
 
+        private void btnChamCa_Click(object sender, EventArgs e)
+        {
+            foreach(DataGridViewRow row in dtgvNV.Rows)
+            {
+                int cateL = 0;
+                string tenNhanVien = row.Cells["tenNhanVien"].Value.ToString();
+                int idNhanVien = NhanVienDAO.Instance.GetIdByName(tenNhanVien);
+                bool isCa1 = Convert.ToBoolean((row.Cells["Ca1"] as DataGridViewCheckBoxCell).Value);
+                bool isCa2 = Convert.ToBoolean((row.Cells["Ca2"] as DataGridViewCheckBoxCell).Value);
+                bool isCa3 = Convert.ToBoolean((row.Cells["Ca3"] as DataGridViewCheckBoxCell).Value);
+
+                if(isCa1 && isCa2 && isCa3)
+                {
+                    cateL = 3;
+                }
+                else if((isCa1 && isCa2) || (isCa2 && isCa3 ) || (isCa3 && isCa1))
+                {
+                    cateL = 2;
+                }
+                else if(isCa1 || isCa2 || isCa3)
+                {
+                    cateL = 1;
+                }
+
+                bool isExits = NgayLuongDAO.Instance.IsExistNgayLuongByNameAndDay(idNhanVien, DateTime.Now);
+                if(isExits)
+                {
+                    //Update
+                }
+                else
+                {
+                    //insert
+                }
+            }
         }
     }
 }

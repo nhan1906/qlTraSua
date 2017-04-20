@@ -84,7 +84,8 @@ CREATE TABLE NgayLuong
 	ngay DATE NOT NULL DEFAULT GETDATE(),
 	luongNgay FLOAT DEFAULT 0,
 	luongCon FLOAT DEFAULT 0,
-	tongLuong FLOAT DEFAULT 0
+	tongLuong FLOAT DEFAULT 0,
+	cateL INT DEFAULT 0
 	FOREIGN KEY (idNhanVien) REFERENCES NhanVien(idNhanVien)
 )
 GO
@@ -435,7 +436,33 @@ VALUES
 (
 	4
 )
+
+INSERT NgayLuong
+(
+	idNhanVien , ngay , cateL
+)
+VALUES
+(
+	1 , '2017/04/19', 1
+)
+INSERT NgayLuong
+(
+	idNhanVien , ngay , cateL
+)
+VALUES
+(
+	1 , '2017/04/18', 2
+)
+INSERT NgayLuong
+(
+	idNhanVien , ngay , cateL
+)
+VALUES
+(
+	1 , '2017/04/17', 3
+)
 GO
+
 --Create proc
 CREATE PROC USP_CheckLogin
 @useName NVARCHAR(100),
@@ -608,5 +635,7 @@ GO
 
 
 --Table Date cho Calendar
+DROP Table NgayLuong
 SELECT * FROM NgayLuong
 SELECT * FROM NhanVien
+

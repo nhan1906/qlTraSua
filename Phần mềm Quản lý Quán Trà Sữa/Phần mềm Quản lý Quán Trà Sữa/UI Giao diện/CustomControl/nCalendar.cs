@@ -12,11 +12,12 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện.CustomControl
 {
     public partial class nCalendar : DataGridView
     {
-        private int[] cateBackground = new int[36];
+        private int[] cateBackground = new int[32];
         private Color clrBackground = Color.LightBlue;
         private Color clr1 = Color.LightBlue;
         private Color clr2 = Color.LightSalmon;
         private Color clr3 = Color.LightYellow;
+        private int currentDay = 8;
         private int nWidth;
         public nCalendar()
         {
@@ -91,7 +92,7 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện.CustomControl
 
         private void NCalendar_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
-            
+               
             if (e.ColumnIndex > -1 & e.RowIndex > -1)
             {
                 //Pen for left and top borders
@@ -99,6 +100,7 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện.CustomControl
                 //Pen for bottom and right borders
                 using (var gridlinePen = new Pen(this.GridColor, 1))
                 //Pen for selected cell borders
+               
                 using (var selectedPen = new Pen(Color.Red, 1))
                 {
                     var topLeftPoint = new Point(e.CellBounds.Left, e.CellBounds.Top);
@@ -115,6 +117,7 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện.CustomControl
                         //Handled painting for this cell, Stop default rendering.
                         e.Handled = true;
                     }
+                    
                     //Draw non-selected cells here
                     else
                     {
@@ -148,14 +151,32 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện.CustomControl
                         //Left border of non-first column cells should be in gridLine color, and they should be drawn here after bottom border
                         if (e.ColumnIndex > 0)
                             e.Graphics.DrawLine(gridlinePen, topLeftPoint, bottomleftPoint);
+                        if (e.RowIndex == 2  && e.ColumnIndex == 3)
+                        {
 
+                        }
                         //We handled painting for this cell, Stop default rendering.
                         e.Handled = true;
                     }
 
                     if (e.RowIndex == 4 && (e.ColumnIndex == 3 || e.ColumnIndex == 4 || e.ColumnIndex == 5 || e.ColumnIndex == 6))
                         return;
+                    int row = currentDay / 7;
+                    int column = currentDay % 7;
+                    if (e.RowIndex == 2 && e.ColumnIndex == 5)
+                    {
+
+                    }
+
                     int iIndex = e.RowIndex * 7 + e.ColumnIndex + 1;
+                    if (iIndex == currentDay)
+                    {
+                        DataGridViewCellStyle style = new DataGridViewCellStyle();
+                        style.BackColor = Color.LightBlue;
+                        this[e.ColumnIndex, e.RowIndex].Style = style;
+                    }
+                    if (iIndex >= 31)
+                        return;
                     //Draw selected cells border here
                     if (CateBackground[iIndex] == 0)
                         return;
@@ -165,10 +186,13 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện.CustomControl
                         clrBackground = clr2;
                     if (CateBackground[iIndex] == 3)
                         clrBackground = clr3;
-                    e.Graphics.FillRectangle(new SolidBrush(clrBackground), new Rectangle(e.CellBounds.Left, e.CellBounds.Bottom - 5, e.CellBounds.Width - 1, 5));
-
+                    e.Graphics.FillRectangle(new SolidBrush(clrBackground), new Rectangle(e.CellBounds.Left + 2, e.CellBounds.Bottom - 5, e.CellBounds.Width - 3, 5));
+                    
                 }
+                
             }
+
+
             //DataGridViewCell cell = sender as DataGridViewCell;
             //Point bottomRightPoint = new Point(e.CellBounds.Right - 1, e.CellBounds.Bottom - 1);
             //Point bottomleftPoint = new Point(e.CellBounds.Left, e.CellBounds.Bottom - 1);
@@ -238,6 +262,19 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện.CustomControl
             set
             {
                 cateBackground = value;
+            }
+        }
+
+        public int CurrentDay
+        {
+            get
+            {
+                return currentDay;
+            }
+
+            set
+            {
+                currentDay = value;
             }
         }
     }

@@ -33,5 +33,14 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.DAO
         {
             return DataProvider.Instance.ExecuteQuery("Select tenNhanVien , cateNhanVien from NhanVien  , cateNhanVien WHERE NhanVien.idCateNV = cateNhanVien.idCateNV");
         }
+        public int GetIdByName(string tenNhanVien)
+        {
+            DataTable data = DataProvider.Instance.ExecuteQuery("Select idNhanVien from NhanVien Where tenNhanVien = N'" + tenNhanVien + "'");
+            foreach(DataRow row in data.Rows)
+            {
+                return (int)row["idNhanvien"];
+            }
+            return -1;
+        }
     }
 }
