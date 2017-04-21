@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.pnInfoTable = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lbMoney = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -52,6 +52,7 @@
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
+            this.processTable = new Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện.CustomControl.CircleDashboard();
             this.panel13 = new System.Windows.Forms.Panel();
             this.panel16 = new System.Windows.Forms.Panel();
             this.panel15 = new System.Windows.Forms.Panel();
@@ -67,7 +68,6 @@
             this.pnLeft = new System.Windows.Forms.Panel();
             this.pnBottom = new System.Windows.Forms.Panel();
             this.pnTop = new System.Windows.Forms.Panel();
-            this.processTable = new Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện.CustomControl.CircleDashboard();
             this.pnInfoTable.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -82,7 +82,7 @@
             // pnInfoTable
             // 
             this.pnInfoTable.BackColor = System.Drawing.Color.White;
-            this.pnInfoTable.Controls.Add(this.label7);
+            this.pnInfoTable.Controls.Add(this.lbMoney);
             this.pnInfoTable.Controls.Add(this.label9);
             this.pnInfoTable.Controls.Add(this.panel7);
             this.pnInfoTable.Controls.Add(this.panel6);
@@ -98,16 +98,16 @@
             this.pnInfoTable.Size = new System.Drawing.Size(270, 150);
             this.pnInfoTable.TabIndex = 19;
             // 
-            // label7
+            // lbMoney
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(181)))), ((int)(((byte)(231)))));
-            this.label7.Location = new System.Drawing.Point(169, 108);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(66, 17);
-            this.label7.TabIndex = 17;
-            this.label7.Text = "200,000 đ";
+            this.lbMoney.AutoSize = true;
+            this.lbMoney.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lbMoney.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(181)))), ((int)(((byte)(231)))));
+            this.lbMoney.Location = new System.Drawing.Point(169, 108);
+            this.lbMoney.Name = "lbMoney";
+            this.lbMoney.Size = new System.Drawing.Size(66, 17);
+            this.lbMoney.TabIndex = 17;
+            this.lbMoney.Text = "200,000 đ";
             // 
             // label9
             // 
@@ -340,6 +340,19 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "Thống kê bàn trống";
             // 
+            // processTable
+            // 
+            this.processTable.ColorBackground = System.Drawing.Color.White;
+            this.processTable.ColorMain = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(220)))), ((int)(((byte)(224)))));
+            this.processTable.ColorProcess = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(227)))), ((int)(((byte)(178)))));
+            this.processTable.LengthLine = 1;
+            this.processTable.LineColor = System.Drawing.Color.Black;
+            this.processTable.Location = new System.Drawing.Point(68, 27);
+            this.processTable.Name = "processTable";
+            this.processTable.PercentItem = 0F;
+            this.processTable.Size = new System.Drawing.Size(120, 120);
+            this.processTable.TabIndex = 12;
+            // 
             // panel13
             // 
             this.panel13.Controls.Add(this.panel16);
@@ -488,19 +501,6 @@
             this.pnTop.Size = new System.Drawing.Size(833, 10);
             this.pnTop.TabIndex = 0;
             // 
-            // processTable
-            // 
-            this.processTable.ColorBackground = System.Drawing.Color.White;
-            this.processTable.ColorMain = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(220)))), ((int)(((byte)(224)))));
-            this.processTable.ColorProcess = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(227)))), ((int)(((byte)(178)))));
-            this.processTable.LengthLine = 1;
-            this.processTable.LineColor = System.Drawing.Color.Black;
-            this.processTable.Location = new System.Drawing.Point(68, 27);
-            this.processTable.Name = "processTable";
-            this.processTable.PercentItem = 0F;
-            this.processTable.Size = new System.Drawing.Size(120, 120);
-            this.processTable.TabIndex = 12;
-            // 
             // TableForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -535,7 +535,7 @@
         #endregion
 
         private System.Windows.Forms.Panel pnInfoTable;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lbMoney;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel6;

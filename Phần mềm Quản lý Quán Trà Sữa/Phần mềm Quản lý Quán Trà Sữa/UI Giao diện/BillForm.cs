@@ -57,7 +57,7 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện
 
         private void ShowBill(int idTable)
         {
-            stt = 0;
+            stt = 1;
             lsvBillInfo.Items.Clear();
             List<BillInfo> listBillInfo = BillInfoDAO.Instance.GetListBillInfoByIdBill(BillDAO.Instance.GetUncheckedBillIdByTableId(idTable));
             

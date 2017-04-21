@@ -67,5 +67,18 @@ namespace Quản_Lý_Quán_Trà_Sữa.DAO
             int idNextTable = GetTotalTable();
             DataProvider.Instance.ExecuteNonQuery("USP_AddTable @nameTable ", new object[] { idNextTable.ToString() });
         }
+
+        public int[] HowManyPeople(int idTable)
+        {
+            int[] nmPeople = new int[] { 0, 0 };
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT idBill , nmPeople FROM Bill WHERE idTableD = " + idTable + " AND statusBill = 0");
+            foreach(DataRow row in data.Rows)
+            {
+                nmPeople[0] = (int)row["nmPeople"];
+                nmPeople[1] = (int)row["idBill"];
+                break;
+            }
+            return nmPeople;
+        }
     }
 }

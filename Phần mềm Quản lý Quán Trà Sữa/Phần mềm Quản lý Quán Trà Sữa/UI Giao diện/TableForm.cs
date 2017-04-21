@@ -150,7 +150,16 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện
             if(table.Status == 0)
             {
                 lbPeople.Text = "Chưa có người";
+                lbMoney.Text = "0 VNĐ";
             }
+            else if(table.Status == 1)
+            {
+                int[] bill = TableDDAO.Instance.HowManyPeople(table.IdTableD);
+                lbPeople.Text = bill[0].ToString();
+                lbMoney.Text = BillDAO.Instance.GetTotalPriceByIdBill(bill[1]).ToString() + " VNĐ";
+            }
+            //Hien thi so nguoi , thanh toan
+            
         }
         #endregion
 
@@ -166,6 +175,7 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện
         private void CreateBill(object sender, EventArgs e)
         {
             int idTableD = (int)pnInfoTable.Tag;
+            TableDDAO.Instance.SetStatusTableById(idTableD);
             confirmTable confirm = new confirmTable(idTableD, f);
             confirm.ShowDialog();
         }
