@@ -71,8 +71,9 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện
         {
             bdDrink.DataSource = DrinkDAO.Instance.GetListDrinkByIdCategory(cmbCategories.SelectedIndex + 1);
             dtgvDrink.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            this.dtgvDrink.Columns[0].HeaderText = "Thức uống";
+            this.dtgvDrink.Columns[0].HeaderText = (cmbCategories.SelectedItem as CategoriesD).NameCategories;
             dtgvDrink.Refresh();
         }
+        
     }
 }

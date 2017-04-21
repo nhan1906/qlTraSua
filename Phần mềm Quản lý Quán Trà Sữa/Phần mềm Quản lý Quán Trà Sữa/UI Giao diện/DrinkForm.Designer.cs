@@ -77,8 +77,8 @@
             // 
             this.pnDisplayListDrink.Controls.Add(this.label1);
             this.pnDisplayListDrink.Controls.Add(this.pnName);
-            this.pnDisplayListDrink.Controls.Add(this.dtgvDrink);
             this.pnDisplayListDrink.Controls.Add(this.dtCategory);
+            this.pnDisplayListDrink.Controls.Add(this.dtgvDrink);
             this.pnDisplayListDrink.Dock = System.Windows.Forms.DockStyle.Right;
             this.pnDisplayListDrink.Location = new System.Drawing.Point(419, 0);
             this.pnDisplayListDrink.Name = "pnDisplayListDrink";
@@ -109,20 +109,25 @@
             // 
             // dtgvDrink
             // 
+            this.dtgvDrink.AllowUserToAddRows = false;
+            this.dtgvDrink.AllowUserToDeleteRows = false;
             this.dtgvDrink.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvDrink.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtgvDrink.Location = new System.Drawing.Point(0, 0);
+            this.dtgvDrink.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dtgvDrink.Location = new System.Drawing.Point(0, 65);
             this.dtgvDrink.Name = "dtgvDrink";
-            this.dtgvDrink.Size = new System.Drawing.Size(414, 64);
+            this.dtgvDrink.ReadOnly = true;
+            this.dtgvDrink.Size = new System.Drawing.Size(414, 390);
             this.dtgvDrink.TabIndex = 5;
             // 
             // dtCategory
             // 
+            this.dtCategory.AllowUserToAddRows = false;
+            this.dtCategory.AllowUserToDeleteRows = false;
             this.dtCategory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtCategory.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dtCategory.Location = new System.Drawing.Point(0, 64);
+            this.dtCategory.Location = new System.Drawing.Point(0, 65);
             this.dtCategory.Name = "dtCategory";
-            this.dtCategory.Size = new System.Drawing.Size(414, 391);
+            this.dtCategory.ReadOnly = true;
+            this.dtCategory.Size = new System.Drawing.Size(414, 390);
             this.dtCategory.TabIndex = 6;
             // 
             // pnControlTab

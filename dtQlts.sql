@@ -662,8 +662,6 @@ BEGIN
 END
 GO
 
-
-
 CREATE PROC USP_GetListDrinkByIdCategory
 @idCategoriesD INT
 AS

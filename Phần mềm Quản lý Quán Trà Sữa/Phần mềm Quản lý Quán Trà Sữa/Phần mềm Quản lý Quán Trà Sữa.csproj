@@ -48,6 +48,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAO\AccountDDAO.cs" />
+    <Compile Include="DAO\BillDAO.cs" />
+    <Compile Include="DAO\BillInfoDAO.cs" />
     <Compile Include="DAO\CategoriesDDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="DAO\DrinkDAO.cs" />
@@ -58,6 +60,7 @@
     <Compile Include="DAO\TypeAccountDAO.cs" />
     <Compile Include="DTO\AccountD.cs" />
     <Compile Include="DTO\Bill.cs" />
+    <Compile Include="DTO\BillInfo.cs" />
     <Compile Include="DTO\CategoriesD.cs" />
     <Compile Include="DTO\Drink.cs" />
     <Compile Include="DTO\NgayLuong.cs" />

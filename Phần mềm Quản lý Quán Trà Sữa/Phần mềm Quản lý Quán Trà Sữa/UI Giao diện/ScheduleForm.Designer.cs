@@ -40,6 +40,8 @@
             this.panel9 = new System.Windows.Forms.Panel();
             this.pnLeftBar = new System.Windows.Forms.Panel();
             this.pnButtonBar = new System.Windows.Forms.Panel();
+            this.btnDeleteNV = new System.Windows.Forms.Button();
+            this.btnAddNV = new System.Windows.Forms.Button();
             this.btnChamCa = new System.Windows.Forms.Button();
             this.pnTopBar = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -55,25 +57,14 @@
             this.label5 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.pnCash = new System.Windows.Forms.Panel();
-            this.btnAcceptDrink = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtMoneyMonth = new Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện.CustomControl.nTextbox();
-            this.txtMoneyDay = new Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện.CustomControl.nTextbox();
-            this.txtMoneyCa = new Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện.CustomControl.nTextbox();
             this.calendar = new Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện.CustomControl.nCalendar();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn32 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn33 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn34 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -95,9 +86,25 @@
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtNv = new Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện.CustomControl.nTextbox();
-            this.btnAddNV = new System.Windows.Forms.Button();
-            this.btnDeleteNV = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.pnCash = new System.Windows.Forms.Panel();
+            this.btnAcceptDrink = new System.Windows.Forms.Button();
+            this.txtMoneyMonth = new Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện.CustomControl.nTextbox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtMoneyDay = new Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện.CustomControl.nTextbox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtMoneyCa = new Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện.CustomControl.nTextbox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvNV)).BeginInit();
             this.pnLeft.SuspendLayout();
             this.pngv.SuspendLayout();
@@ -108,16 +115,19 @@
             this.pnCa2.SuspendLayout();
             this.pnCa1.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.pnCash.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.calendar)).BeginInit();
+            this.pnCash.SuspendLayout();
             this.SuspendLayout();
             // 
             // dtgvNV
             // 
+            this.dtgvNV.AllowUserToAddRows = false;
+            this.dtgvNV.AllowUserToDeleteRows = false;
             this.dtgvNV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvNV.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgvNV.Location = new System.Drawing.Point(0, 0);
             this.dtgvNV.Name = "dtgvNV";
+            this.dtgvNV.ReadOnly = true;
             this.dtgvNV.Size = new System.Drawing.Size(349, 322);
             this.dtgvNV.TabIndex = 0;
             // 
@@ -180,6 +190,38 @@
             this.pnButtonBar.Name = "pnButtonBar";
             this.pnButtonBar.Size = new System.Drawing.Size(399, 82);
             this.pnButtonBar.TabIndex = 3;
+            // 
+            // btnDeleteNV
+            // 
+            this.btnDeleteNV.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnDeleteNV.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnDeleteNV.FlatAppearance.BorderSize = 0;
+            this.btnDeleteNV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteNV.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteNV.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteNV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDeleteNV.Location = new System.Drawing.Point(211, 43);
+            this.btnDeleteNV.Name = "btnDeleteNV";
+            this.btnDeleteNV.Size = new System.Drawing.Size(163, 31);
+            this.btnDeleteNV.TabIndex = 35;
+            this.btnDeleteNV.Text = "Xóa nhân viên";
+            this.btnDeleteNV.UseVisualStyleBackColor = false;
+            // 
+            // btnAddNV
+            // 
+            this.btnAddNV.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnAddNV.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnAddNV.FlatAppearance.BorderSize = 0;
+            this.btnAddNV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddNV.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddNV.ForeColor = System.Drawing.Color.White;
+            this.btnAddNV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddNV.Location = new System.Drawing.Point(25, 43);
+            this.btnAddNV.Name = "btnAddNV";
+            this.btnAddNV.Size = new System.Drawing.Size(163, 31);
+            this.btnAddNV.TabIndex = 34;
+            this.btnAddNV.Text = "Thêm nhân viên";
+            this.btnAddNV.UseVisualStyleBackColor = false;
             // 
             // btnChamCa
             // 
@@ -341,137 +383,6 @@
             this.panel1.Size = new System.Drawing.Size(283, 202);
             this.panel1.TabIndex = 10;
             // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(1, 201);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(282, 1);
-            this.panel4.TabIndex = 2;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(1, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(282, 1);
-            this.panel3.TabIndex = 1;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1, 202);
-            this.panel2.TabIndex = 0;
-            // 
-            // pnCash
-            // 
-            this.pnCash.Controls.Add(this.btnAcceptDrink);
-            this.pnCash.Controls.Add(this.txtMoneyMonth);
-            this.pnCash.Controls.Add(this.label4);
-            this.pnCash.Controls.Add(this.txtMoneyDay);
-            this.pnCash.Controls.Add(this.label3);
-            this.pnCash.Controls.Add(this.txtMoneyCa);
-            this.pnCash.Controls.Add(this.label2);
-            this.pnCash.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnCash.Location = new System.Drawing.Point(399, 0);
-            this.pnCash.Name = "pnCash";
-            this.pnCash.Size = new System.Drawing.Size(434, 217);
-            this.pnCash.TabIndex = 12;
-            // 
-            // btnAcceptDrink
-            // 
-            this.btnAcceptDrink.BackColor = System.Drawing.Color.SeaGreen;
-            this.btnAcceptDrink.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnAcceptDrink.FlatAppearance.BorderSize = 0;
-            this.btnAcceptDrink.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAcceptDrink.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAcceptDrink.ForeColor = System.Drawing.Color.White;
-            this.btnAcceptDrink.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAcceptDrink.Location = new System.Drawing.Point(185, 154);
-            this.btnAcceptDrink.Name = "btnAcceptDrink";
-            this.btnAcceptDrink.Size = new System.Drawing.Size(197, 31);
-            this.btnAcceptDrink.TabIndex = 32;
-            this.btnAcceptDrink.Text = "Thanh toán";
-            this.btnAcceptDrink.UseVisualStyleBackColor = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label4.Location = new System.Drawing.Point(57, 109);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(96, 19);
-            this.label4.TabIndex = 30;
-            this.label4.Text = "Lương tháng";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label3.Location = new System.Drawing.Point(57, 32);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(84, 19);
-            this.label3.TabIndex = 28;
-            this.label3.Text = "Lương 1 ca";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label2.Location = new System.Drawing.Point(57, 70);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 19);
-            this.label2.TabIndex = 26;
-            this.label2.Text = "Lương ngày";
-            // 
-            // txtMoneyMonth
-            // 
-            this.txtMoneyMonth.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(240)))), ((int)(((byte)(201)))));
-            this.txtMoneyMonth.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtMoneyMonth.ClrBorder = System.Drawing.Color.SeaGreen;
-            this.txtMoneyMonth.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Bold);
-            this.txtMoneyMonth.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(72)))), ((int)(((byte)(78)))));
-            this.txtMoneyMonth.Location = new System.Drawing.Point(185, 109);
-            this.txtMoneyMonth.Name = "txtMoneyMonth";
-            this.txtMoneyMonth.Size = new System.Drawing.Size(197, 23);
-            this.txtMoneyMonth.TabIndex = 31;
-            this.txtMoneyMonth.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtMoneyDay
-            // 
-            this.txtMoneyDay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(240)))), ((int)(((byte)(201)))));
-            this.txtMoneyDay.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtMoneyDay.ClrBorder = System.Drawing.Color.SeaGreen;
-            this.txtMoneyDay.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Bold);
-            this.txtMoneyDay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(72)))), ((int)(((byte)(78)))));
-            this.txtMoneyDay.Location = new System.Drawing.Point(185, 70);
-            this.txtMoneyDay.Name = "txtMoneyDay";
-            this.txtMoneyDay.Size = new System.Drawing.Size(197, 23);
-            this.txtMoneyDay.TabIndex = 29;
-            this.txtMoneyDay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtMoneyCa
-            // 
-            this.txtMoneyCa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(240)))), ((int)(((byte)(201)))));
-            this.txtMoneyCa.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtMoneyCa.ClrBorder = System.Drawing.Color.SeaGreen;
-            this.txtMoneyCa.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Bold);
-            this.txtMoneyCa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(72)))), ((int)(((byte)(78)))));
-            this.txtMoneyCa.Location = new System.Drawing.Point(185, 33);
-            this.txtMoneyCa.Name = "txtMoneyCa";
-            this.txtMoneyCa.Size = new System.Drawing.Size(197, 23);
-            this.txtMoneyCa.TabIndex = 27;
-            this.txtMoneyCa.Text = "60000";
-            this.txtMoneyCa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // calendar
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
@@ -530,6 +441,13 @@
             this.calendar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.calendar.ColumnHeadersVisible = false;
             this.calendar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn29,
+            this.dataGridViewTextBoxColumn30,
+            this.dataGridViewTextBoxColumn31,
+            this.dataGridViewTextBoxColumn32,
+            this.dataGridViewTextBoxColumn33,
+            this.dataGridViewTextBoxColumn34,
+            this.dataGridViewTextBoxColumn35,
             this.dataGridViewTextBoxColumn22,
             this.dataGridViewTextBoxColumn23,
             this.dataGridViewTextBoxColumn24,
@@ -587,47 +505,47 @@
             this.calendar.Size = new System.Drawing.Size(280, 200);
             this.calendar.TabIndex = 3;
             // 
-            // dataGridViewTextBoxColumn1
+            // dataGridViewTextBoxColumn29
             // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "CN";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 40;
+            this.dataGridViewTextBoxColumn29.HeaderText = "CN";
+            this.dataGridViewTextBoxColumn29.Name = "dataGridViewTextBoxColumn29";
+            this.dataGridViewTextBoxColumn29.Width = 40;
             // 
-            // dataGridViewTextBoxColumn2
+            // dataGridViewTextBoxColumn30
             // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "T2";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 40;
+            this.dataGridViewTextBoxColumn30.HeaderText = "T2";
+            this.dataGridViewTextBoxColumn30.Name = "dataGridViewTextBoxColumn30";
+            this.dataGridViewTextBoxColumn30.Width = 40;
             // 
-            // dataGridViewTextBoxColumn3
+            // dataGridViewTextBoxColumn31
             // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "T3";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 40;
+            this.dataGridViewTextBoxColumn31.HeaderText = "T3";
+            this.dataGridViewTextBoxColumn31.Name = "dataGridViewTextBoxColumn31";
+            this.dataGridViewTextBoxColumn31.Width = 40;
             // 
-            // dataGridViewTextBoxColumn4
+            // dataGridViewTextBoxColumn32
             // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "T4";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Width = 40;
+            this.dataGridViewTextBoxColumn32.HeaderText = "T4";
+            this.dataGridViewTextBoxColumn32.Name = "dataGridViewTextBoxColumn32";
+            this.dataGridViewTextBoxColumn32.Width = 40;
             // 
-            // dataGridViewTextBoxColumn5
+            // dataGridViewTextBoxColumn33
             // 
-            this.dataGridViewTextBoxColumn5.HeaderText = "T5";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.Width = 40;
+            this.dataGridViewTextBoxColumn33.HeaderText = "T5";
+            this.dataGridViewTextBoxColumn33.Name = "dataGridViewTextBoxColumn33";
+            this.dataGridViewTextBoxColumn33.Width = 40;
             // 
-            // dataGridViewTextBoxColumn6
+            // dataGridViewTextBoxColumn34
             // 
-            this.dataGridViewTextBoxColumn6.HeaderText = "T6";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.Width = 40;
+            this.dataGridViewTextBoxColumn34.HeaderText = "T6";
+            this.dataGridViewTextBoxColumn34.Name = "dataGridViewTextBoxColumn34";
+            this.dataGridViewTextBoxColumn34.Width = 40;
             // 
-            // dataGridViewTextBoxColumn7
+            // dataGridViewTextBoxColumn35
             // 
-            this.dataGridViewTextBoxColumn7.HeaderText = "T7";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.Width = 40;
+            this.dataGridViewTextBoxColumn35.HeaderText = "T7";
+            this.dataGridViewTextBoxColumn35.Name = "dataGridViewTextBoxColumn35";
+            this.dataGridViewTextBoxColumn35.Width = 40;
             // 
             // dataGridViewTextBoxColumn22
             // 
@@ -755,6 +673,48 @@
             this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
             this.dataGridViewTextBoxColumn14.Width = 40;
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "CN";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 40;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "T2";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 40;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "T3";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Width = 40;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "T4";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Width = 40;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.HeaderText = "T5";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.Width = 40;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.HeaderText = "T6";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.Width = 40;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.HeaderText = "T7";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.Width = 40;
+            // 
             // txtNv
             // 
             this.txtNv.ClrBorder = System.Drawing.Color.SeaGreen;
@@ -764,37 +724,136 @@
             this.txtNv.TabIndex = 33;
             this.txtNv.TextChanged += new System.EventHandler(this.txtNv_TextChanged);
             // 
-            // btnAddNV
+            // panel4
             // 
-            this.btnAddNV.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnAddNV.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnAddNV.FlatAppearance.BorderSize = 0;
-            this.btnAddNV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddNV.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddNV.ForeColor = System.Drawing.Color.White;
-            this.btnAddNV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddNV.Location = new System.Drawing.Point(25, 43);
-            this.btnAddNV.Name = "btnAddNV";
-            this.btnAddNV.Size = new System.Drawing.Size(163, 31);
-            this.btnAddNV.TabIndex = 34;
-            this.btnAddNV.Text = "Thêm nhân viên";
-            this.btnAddNV.UseVisualStyleBackColor = false;
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel4.Location = new System.Drawing.Point(1, 201);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(282, 1);
+            this.panel4.TabIndex = 2;
             // 
-            // btnDeleteNV
+            // panel3
             // 
-            this.btnDeleteNV.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnDeleteNV.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnDeleteNV.FlatAppearance.BorderSize = 0;
-            this.btnDeleteNV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeleteNV.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteNV.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteNV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDeleteNV.Location = new System.Drawing.Point(211, 43);
-            this.btnDeleteNV.Name = "btnDeleteNV";
-            this.btnDeleteNV.Size = new System.Drawing.Size(163, 31);
-            this.btnDeleteNV.TabIndex = 35;
-            this.btnDeleteNV.Text = "Xóa nhân viên";
-            this.btnDeleteNV.UseVisualStyleBackColor = false;
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(1, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(282, 1);
+            this.panel3.TabIndex = 1;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1, 202);
+            this.panel2.TabIndex = 0;
+            // 
+            // pnCash
+            // 
+            this.pnCash.Controls.Add(this.btnAcceptDrink);
+            this.pnCash.Controls.Add(this.txtMoneyMonth);
+            this.pnCash.Controls.Add(this.label4);
+            this.pnCash.Controls.Add(this.txtMoneyDay);
+            this.pnCash.Controls.Add(this.label3);
+            this.pnCash.Controls.Add(this.txtMoneyCa);
+            this.pnCash.Controls.Add(this.label2);
+            this.pnCash.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnCash.Location = new System.Drawing.Point(399, 0);
+            this.pnCash.Name = "pnCash";
+            this.pnCash.Size = new System.Drawing.Size(434, 217);
+            this.pnCash.TabIndex = 12;
+            // 
+            // btnAcceptDrink
+            // 
+            this.btnAcceptDrink.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnAcceptDrink.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnAcceptDrink.FlatAppearance.BorderSize = 0;
+            this.btnAcceptDrink.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAcceptDrink.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAcceptDrink.ForeColor = System.Drawing.Color.White;
+            this.btnAcceptDrink.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAcceptDrink.Location = new System.Drawing.Point(185, 154);
+            this.btnAcceptDrink.Name = "btnAcceptDrink";
+            this.btnAcceptDrink.Size = new System.Drawing.Size(197, 31);
+            this.btnAcceptDrink.TabIndex = 32;
+            this.btnAcceptDrink.Text = "Thanh toán";
+            this.btnAcceptDrink.UseVisualStyleBackColor = false;
+            // 
+            // txtMoneyMonth
+            // 
+            this.txtMoneyMonth.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(240)))), ((int)(((byte)(201)))));
+            this.txtMoneyMonth.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMoneyMonth.ClrBorder = System.Drawing.Color.SeaGreen;
+            this.txtMoneyMonth.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Bold);
+            this.txtMoneyMonth.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(72)))), ((int)(((byte)(78)))));
+            this.txtMoneyMonth.Location = new System.Drawing.Point(185, 109);
+            this.txtMoneyMonth.Name = "txtMoneyMonth";
+            this.txtMoneyMonth.Size = new System.Drawing.Size(197, 23);
+            this.txtMoneyMonth.TabIndex = 31;
+            this.txtMoneyMonth.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label4.Location = new System.Drawing.Point(57, 109);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(96, 19);
+            this.label4.TabIndex = 30;
+            this.label4.Text = "Lương tháng";
+            // 
+            // txtMoneyDay
+            // 
+            this.txtMoneyDay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(240)))), ((int)(((byte)(201)))));
+            this.txtMoneyDay.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMoneyDay.ClrBorder = System.Drawing.Color.SeaGreen;
+            this.txtMoneyDay.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Bold);
+            this.txtMoneyDay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(72)))), ((int)(((byte)(78)))));
+            this.txtMoneyDay.Location = new System.Drawing.Point(185, 70);
+            this.txtMoneyDay.Name = "txtMoneyDay";
+            this.txtMoneyDay.Size = new System.Drawing.Size(197, 23);
+            this.txtMoneyDay.TabIndex = 29;
+            this.txtMoneyDay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label3.Location = new System.Drawing.Point(57, 32);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(84, 19);
+            this.label3.TabIndex = 28;
+            this.label3.Text = "Lương 1 ca";
+            // 
+            // txtMoneyCa
+            // 
+            this.txtMoneyCa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(240)))), ((int)(((byte)(201)))));
+            this.txtMoneyCa.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMoneyCa.ClrBorder = System.Drawing.Color.SeaGreen;
+            this.txtMoneyCa.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Bold);
+            this.txtMoneyCa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(72)))), ((int)(((byte)(78)))));
+            this.txtMoneyCa.Location = new System.Drawing.Point(185, 33);
+            this.txtMoneyCa.Name = "txtMoneyCa";
+            this.txtMoneyCa.Size = new System.Drawing.Size(197, 23);
+            this.txtMoneyCa.TabIndex = 27;
+            this.txtMoneyCa.Text = "60000";
+            this.txtMoneyCa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label2.Location = new System.Drawing.Point(57, 70);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(89, 19);
+            this.label2.TabIndex = 26;
+            this.label2.Text = "Lương ngày";
             // 
             // ScheduleForm
             // 
@@ -825,9 +884,9 @@
             this.pnCa1.ResumeLayout(false);
             this.pnCa1.PerformLayout();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.calendar)).EndInit();
             this.pnCash.ResumeLayout(false);
             this.pnCash.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.calendar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -901,5 +960,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn28;
         private System.Windows.Forms.Button btnDeleteNV;
         private System.Windows.Forms.Button btnAddNV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn29;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn30;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn31;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn32;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn33;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn34;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn35;
     }
 }

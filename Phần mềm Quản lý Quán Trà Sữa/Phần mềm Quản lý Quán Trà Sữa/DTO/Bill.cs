@@ -9,27 +9,15 @@ namespace Quản_Lý_Quán_Trà_Sữa.DTO
 {
     public class Bill
     {
+        
         private int idBill;
         private int idTableD;
-        private DateTime? checkIn;
-        private DateTime? checkOut;
+        private DateTime? getIn;
+        private DateTime? getOut;
+        private float sale;
+        private float totalPrice;
         private int statusBill;
-        public Bill(int idBill, int idTableD, DateTime? checkIn, DateTime? checkOut = null)
-        {
-            this.IdBill = idBill;
-            this.IdTableD = idTableD;
-            this.CheckIn = checkIn;
-            this.CheckOut = checkOut;
-        }
-        public Bill(DataRow row)
-        {
-            this.IdBill = (int) row["idBill"];
-            this.IdTableD = (int) row["idTableD"];
-            this.CheckIn = (DateTime) row["checkIn"];
-            var temp = row["checkOut"];
-            if(temp.ToString() != "")
-                this.CheckOut = (DateTime)row["checkOut"];
-        }
+        #region Properties
         public int IdBill
         {
             get
@@ -56,29 +44,55 @@ namespace Quản_Lý_Quán_Trà_Sữa.DTO
             }
         }
 
-        public DateTime? CheckIn
+        public DateTime? GetIn
         {
             get
             {
-                return checkIn;
+                return getIn;
             }
 
             set
             {
-                checkIn = value;
+                getIn = value;
             }
         }
 
-        public DateTime? CheckOut
+        public DateTime? GetOut
         {
             get
             {
-                return checkOut;
+                return getOut;
             }
 
             set
             {
-                checkOut = value;
+                getOut = value;
+            }
+        }
+
+        public float Sale
+        {
+            get
+            {
+                return sale;
+            }
+
+            set
+            {
+                sale = value;
+            }
+        }
+
+        public float TotalPrice
+        {
+            get
+            {
+                return totalPrice;
+            }
+
+            set
+            {
+                totalPrice = value;
             }
         }
 
@@ -94,5 +108,29 @@ namespace Quản_Lý_Quán_Trà_Sữa.DTO
                 statusBill = value;
             }
         }
+        #endregion
+        public Bill(int idBill, int idTableD, float sale , float totalPrice, int statusBill , DateTime? getIn, DateTime? getOut = null)
+        {
+            this.IdBill = idBill;
+            this.IdTableD = idTableD;
+            this.GetIn = getIn;
+            this.GetOut = getOut;
+            this.Sale = sale;
+            this.TotalPrice = totalPrice;
+            this.StatusBill = statusBill;
+        }
+        public Bill(DataRow row)
+        {
+            this.IdBill = (int) row["idBill"];
+            this.IdTableD = (int) row["idTableD"];
+            this.GetIn = (DateTime) row["getIn"];
+            var temp = row["getOut"];
+            if(temp.ToString() != "")
+                this.getOut = (DateTime)row["getOut"];
+            this.Sale = float.Parse(row["sale"].ToString());
+            this.TotalPrice = float.Parse(row["totalPrice"].ToString());
+            this.StatusBill = (int) row["statusBill"];
+        }
+        
     }
 }
