@@ -59,9 +59,16 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện
             //
             //Tabel list
             //
+            int check = 1;
             foreach (TableD table in lTableD)
             {
                 // Hien text
+                if (check == 1)
+                {
+                    check = 2;
+                    continue;
+                }
+
                 Button btnTable = new Button();
                 btnTable.Width = 115;
                 btnTable.Height = 85;
@@ -118,7 +125,13 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện
 
         private void btnTakeaway_Click(object sender, EventArgs e)
         {
-
+            BillDAO.Instance.CreateNewBillForTable(0 , 0);
+            f.fBill = new BillForm(0);
+            f.fBill.StartPosition = FormStartPosition.Manual;
+            f.fBill.Name = "DrinkF";
+            f.fBill.MdiParent = f;
+            f.fBill.Show();
+            this.Close();
         }
 
         private void btnTable_Click(object sender, EventArgs e)
@@ -149,6 +162,7 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện
             lbNameTb.Text = "No. " + table.NameTable;
             if(table.Status == 0)
             {
+                lbTime.Text = "Không xác định";
                 lbPeople.Text = "Chưa có người";
                 lbMoney.Text = "0 VNĐ";
             }
@@ -157,6 +171,19 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện
                 int[] bill = TableDDAO.Instance.HowManyPeople(table.IdTableD);
                 lbPeople.Text = bill[0].ToString();
                 lbMoney.Text = BillDAO.Instance.GetTotalPriceByIdBill(bill[1]).ToString() + " VNĐ";
+                DateTime? time = BillDAO.Instance.GetTimeByidBill(bill[1]);
+                if (time == null)
+                    return;
+                else
+                {
+                    if (time.Value.Hour < 12)
+                        lbTime.Text = time.Value.Hour.ToString() + ":" + time.Value.Minute.ToString() + " AM";
+                    else
+                    {
+                        lbTime.Text = (time.Value.Hour - 12).ToString() + ":" + time.Value.Minute.ToString() + " PM";
+                    }
+                }
+                    
             }
             //Hien thi so nguoi , thanh toan
             
@@ -175,7 +202,6 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện
         private void CreateBill(object sender, EventArgs e)
         {
             int idTableD = (int)pnInfoTable.Tag;
-            TableDDAO.Instance.SetStatusTableById(idTableD);
             confirmTable confirm = new confirmTable(idTableD, f);
             confirm.ShowDialog();
         }

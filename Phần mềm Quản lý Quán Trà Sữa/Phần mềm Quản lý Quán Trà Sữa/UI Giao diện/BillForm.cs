@@ -51,7 +51,12 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện
             cmbCategories.DataSource = list;
             cmbCategories.DisplayMember = "nameCategories";
             ShowBill(idTable);
-            lbTable.Text = "Bàn " + idTable;
+            if(idTable != 0)
+                lbTable.Text = "Bàn " + idTable;
+            else
+            {
+                lbTable.Text = "Take away";
+            }
             totalPrice();
         }
 

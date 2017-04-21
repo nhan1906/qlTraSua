@@ -53,15 +53,6 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện
         #region Load Form Child
         private void LoadFormChild()
         {
-            if (!CheckExistForm("TableF"))
-            {
-                tableF = new TableForm(this);
-                tableF.Name = "TableF";
-                tableF.MdiParent = this;
-                tableF.Show();
-            }
-            else
-                ActivateChildForm("TableF");
 
             if (!CheckExistForm("DrinkF"))
             {
@@ -113,6 +104,15 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện
             else
                 ActivateChildForm("BillF");
 
+            if (!CheckExistForm("TableF"))
+            {
+                tableF = new TableForm(this);
+                tableF.Name = "TableF";
+                tableF.MdiParent = this;
+                tableF.Show();
+            }
+            else
+                ActivateChildForm("TableF");
 
         }
         private bool CheckExistForm(string name)

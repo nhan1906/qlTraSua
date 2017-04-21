@@ -55,5 +55,17 @@ namespace Quản_Lý_Quán_Trà_Sữa.DAO
             }
             return total;
         }
+
+        public DateTime? GetTimeByidBill(int idBill)
+        {
+            DateTime? time = null;
+            string query = "SELECT getIn FROM Bill WHERE Bill.idBill = " + idBill;
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow row in data.Rows)
+            {
+                time = (DateTime) row["getIn"];
+            }
+            return time;
+        }
     }
 }

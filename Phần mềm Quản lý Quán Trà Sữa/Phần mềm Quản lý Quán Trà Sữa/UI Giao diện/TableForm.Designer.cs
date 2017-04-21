@@ -39,7 +39,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lbNameTb = new System.Windows.Forms.Label();
             this.lbPeople = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lbTime = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel11 = new System.Windows.Forms.Panel();
@@ -89,7 +89,7 @@
             this.pnInfoTable.Controls.Add(this.panel3);
             this.pnInfoTable.Controls.Add(this.panel4);
             this.pnInfoTable.Controls.Add(this.lbPeople);
-            this.pnInfoTable.Controls.Add(this.label6);
+            this.pnInfoTable.Controls.Add(this.lbTime);
             this.pnInfoTable.Controls.Add(this.label4);
             this.pnInfoTable.Controls.Add(this.label2);
             this.pnInfoTable.Dock = System.Windows.Forms.DockStyle.Left;
@@ -201,16 +201,16 @@
             this.lbPeople.TabIndex = 5;
             this.lbPeople.Text = "0";
             // 
-            // label6
+            // lbTime
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(181)))), ((int)(((byte)(231)))));
-            this.label6.Location = new System.Drawing.Point(169, 46);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(72, 17);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "08 : 00 pm";
+            this.lbTime.AutoSize = true;
+            this.lbTime.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lbTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(181)))), ((int)(((byte)(231)))));
+            this.lbTime.Location = new System.Drawing.Point(169, 46);
+            this.lbTime.Name = "lbTime";
+            this.lbTime.Size = new System.Drawing.Size(72, 17);
+            this.lbTime.TabIndex = 5;
+            this.lbTime.Text = "08 : 00 pm";
             // 
             // label4
             // 
@@ -545,7 +545,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbNameTb;
         private System.Windows.Forms.Label lbPeople;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lbTime;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel11;
