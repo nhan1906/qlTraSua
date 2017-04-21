@@ -22,12 +22,28 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện
         private ScheduleForm scheduleF;
         private DashboardForm dashboardF;
         private AdminForm adminF;
+
+        public BillForm fBill
+        {
+            get
+            {
+                return billF;
+            }
+
+            set
+            {
+                billF = value;
+            }
+        }
+
         //
         //Khởi tạo Form
         //
         public MainForm(string userName)
         {
             InitializeComponent();
+            btnTable.IsClick = true;
+            btnTable.ClrBackground = Color.FromArgb(27, 25, 48);
             lbUserName.Text = "Chào , " + AccountDDAO.Instance.GetDisplayNameByUserName(userName);
             LoadFormChild();
         }
@@ -39,7 +55,7 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện
         {
             if (!CheckExistForm("TableF"))
             {
-                tableF = new TableForm();
+                tableF = new TableForm(this);
                 tableF.Name = "TableF";
                 tableF.MdiParent = this;
                 tableF.Show();
@@ -89,10 +105,10 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện
 
             if (!CheckExistForm("BillF"))
             {
-                billF = new BillForm(1);
-                billF.Name = "BillF";
-                billF.MdiParent = this;
-                billF.Show();
+                fBill = new BillForm(1);
+                fBill.Name = "BillF";
+                fBill.MdiParent = this;
+                fBill.Show();
             }
             else
                 ActivateChildForm("BillF");
@@ -155,7 +171,7 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện
             btnDrink.ClrBackground = Color.FromArgb(42, 49, 68);
             btnSchedule.ClrBackground = Color.FromArgb(42, 49, 68);
             btnAdmin.ClrBackground = Color.FromArgb(42, 49, 68);
-            billF.Activate();
+            fBill.Activate();
             lbCategories.Text = "HÓA ĐƠN BÀN";
 
         }

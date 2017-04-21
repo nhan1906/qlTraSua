@@ -86,6 +86,12 @@
     <Compile Include="UI Giao diện\ConfirmPassword.Designer.cs">
       <DependentUpon>ConfirmPassword.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI Giao diện\confirmTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Giao diện\confirmTable.Designer.cs">
+      <DependentUpon>confirmTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI Giao diện\CustomControl\CircleDashboard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -115,6 +121,12 @@
     </Compile>
     <Compile Include="UI Giao diện\DashboardForm.Designer.cs">
       <DependentUpon>DashboardForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI Giao diện\DiscountForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Giao diện\DiscountForm.Designer.cs">
+      <DependentUpon>DiscountForm.cs</DependentUpon>
     </Compile>
     <Compile Include="UI Giao diện\DrinkForm.cs">
       <SubType>Form</SubType>
@@ -179,6 +191,9 @@
     <EmbeddedResource Include="UI Giao diện\ConfirmPassword.resx">
       <DependentUpon>ConfirmPassword.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI Giao diện\confirmTable.resx">
+      <DependentUpon>confirmTable.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI Giao diện\CustomControl\CircleDashboard.resx">
       <DependentUpon>CircleDashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -187,6 +202,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI Giao diện\DashboardForm.resx">
       <DependentUpon>DashboardForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Giao diện\DiscountForm.resx">
+      <DependentUpon>DiscountForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI Giao diện\DrinkForm.resx">
       <DependentUpon>DrinkForm.cs</DependentUpon>

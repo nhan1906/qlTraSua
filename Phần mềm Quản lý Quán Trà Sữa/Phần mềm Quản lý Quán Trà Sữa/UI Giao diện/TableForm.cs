@@ -14,13 +14,28 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện
 {
     public partial class TableForm : Form
     {
-        public TableForm()
+        MainForm f = null;
+        public TableForm(MainForm f)
         {
             InitializeComponent();
+            pnInfoTable.Tag = 1;
+            this.f = f;
+        }
+
+        private void TableForm_Load(object sender, EventArgs e)
+        {
+
             LoadTableDList();
         }
 
+
         #region
+
+        private void TableForm_Activated(object sender, EventArgs e)
+        {
+            LoadTableDList();
+        }
+
         private void LoadTableDList()
         {
             flpnTable.Controls.Clear();
@@ -96,7 +111,7 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            ConfirmPassword f = new ConfirmPassword();
+            ConfirmPassword f = new ConfirmPassword(2 , this);
             f.ShowDialog();
             LoadTableDList();            
         }
@@ -125,12 +140,12 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện
             {
                 ContextMenu cm = new ContextMenu();
                 cm.MenuItems.Add("Xem hóa đơn", new EventHandler(SeeBill));
-                cm.MenuItems.Add("Xóa Hóa Đơn", new EventHandler(DeleteBill));
                 cm.Show(button, button.PointToClient(Cursor.Position));
             }
         }
         private void DisplayTableInfo(TableD table)
         {
+            pnInfoTable.Tag = table.IdTableD;
             lbNameTb.Text = "No. " + table.NameTable;
             if(table.Status == 0)
             {
@@ -142,17 +157,19 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện
         #region Events
         private void SeeBill(object sender, EventArgs e)
         {
-
+            f.fBill = new BillForm((int)pnInfoTable.Tag);
+            f.fBill.StartPosition = FormStartPosition.Manual;
+            f.fBill.Name = "DrinkF";
+            f.fBill.MdiParent = f;
+            f.fBill.Show();
         }
         private void CreateBill(object sender, EventArgs e)
         {
-            TableDDAO.Instance.SetStatusTableById(1);
-        }
-
-        private void DeleteBill(object sender, EventArgs e)
-        {
-
+            int idTableD = (int)pnInfoTable.Tag;
+            confirmTable confirm = new confirmTable(idTableD, f);
+            confirm.ShowDialog();
         }
         #endregion
+
     }
 }

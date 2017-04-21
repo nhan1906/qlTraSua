@@ -39,25 +39,17 @@ namespace Quản_Lý_Quán_Trà_Sữa.DAO
             }
             return listBillInfo;
         }
-        public void UpdateBillInfoByIdBill(int idBill, int idDrink, int count, float bonusprice, string nameFull , float totalPrice)
-        {
-            DataProvider.Instance.ExecuteNonQuery("USP_InsertBillInfoByIdBill @idBill , @idDrink , @countD , @bonusPrice , @nameFull , @totalPrice" ,new object[] {idBill, idDrink , count , bonusprice , nameFull , totalPrice});
-        }
 
-        public void EditBillInfoByIdBillInfo(int idBillInfo, int idDrink, int countD, float bonusprice, string nameFull, float totalPrice)
-        {
-                DataProvider.Instance.ExecuteNonQuery("UpdateBillInfoById @idBillInfo , @idDrink , @countD , @bonusPrice , @nameFull , @totalPrice", new object[] { idBillInfo, idDrink , countD, bonusprice, nameFull, totalPrice });
-            
-        }
+
         public void DeleteBillInfoByIdBillInfo(int idBillInfo)
         {
 
-            DataProvider.Instance.ExecuteNonQuery("DeleteBillInfoById @idBillInfo", new object[] { idBillInfo });
+            DataProvider.Instance.ExecuteNonQuery("USP_DeleteBillInfoById @idBillInfo", new object[] { idBillInfo });
         }
-        public int GetIdBillInfoByFullName(string fullName)
+        public int GetIdBillInfoByFullName(int idDrink , int idBill)
         {
-            int idBillInfo = 0;
-            string query = "SELECT * FROM BillInfo WHERE nameFull = N'" + fullName + "'";
+            int idBillInfo = -1;
+            string query = "SELECT * FROM BillInfo WHERE idBill = " + idBill + " AND idDrink = " + idDrink;
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             foreach (DataRow row in data.Rows)
             {
@@ -65,6 +57,16 @@ namespace Quản_Lý_Quán_Trà_Sữa.DAO
                 break;
             }
             return idBillInfo;
+        }
+
+        public void AddBillInfoByIdBill(int idBill, int idDrink, int countD, float price)
+        {
+            DataProvider.Instance.ExecuteNonQuery("USP_AddBillInfoByIdBill @idBill , @idDrink , @countD , @price", new object[] { idBill, idDrink, countD, price });
+        }
+
+        public void UpdateBillInfoByIdBill(int countD, float price, int idBillInfo)
+        {
+            DataProvider.Instance.ExecuteNonQuery("UpdateBillInfoById  @countD , @price , @idBillInfo", new object[] { countD, price , idBillInfo });
         }
     }
 }

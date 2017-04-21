@@ -31,36 +31,36 @@ namespace Quản_Lý_Quán_Trà_Sữa.DAO
         }
         private DrinkDAO() { }
         #endregion
-
+        
         public DataTable GetListDrinkByIdCategory(int idCategoriesD)
         {
             return DataProvider.Instance.ExecuteQuery("EXEC USP_GetListDrinkByIdCategory @idCategoriesD ", new object[] {idCategoriesD });
             
         }
-        public int[] GetTypeDrinkByName(string name)
+        public int[] GetSizeDrinkByName(string name)
         {
-            int[] typeDrink = new int[3];
-            string query = "SELECT idTypeDrink FROM Drink WHERE nameDrink = N'" + name + "'";
+            int[] sizeDrink = new int[3];
+            string query = "SELECT idSizeDrink FROM Drink WHERE nameDrink = N'" + name + "'";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             foreach (DataRow row in data.Rows)
             {
-                int type = (int)row["idTypeDrink"];
-                switch (type)
+                int size = (int)row["idSizeDrink"];
+                switch (size)
                 {
                     case 1:
-                        typeDrink[0] = 1;
+                        sizeDrink[0] = 1;
                         break;
                     case 2:
-                        typeDrink[1] = 1;
+                        sizeDrink[1] = 1;
                         break;
                     case 3:
-                        typeDrink[2] = 1;
+                        sizeDrink[2] = 1;
                         break;
                     default:
                         break;
                 }
             }
-            return typeDrink;
+            return sizeDrink;
         }
 
         public DataTable GetListDrinkByIdCategoryToDtgv(int idCategoriesD)
@@ -119,6 +119,29 @@ namespace Quản_Lý_Quán_Trà_Sữa.DAO
         public int EditDrinkWithImage(string nameDrink, float price, int idCategoriesD, int idSizeDrink, byte[] pt, int idDrink)
         {
             return DataProvider.Instance.ExecuteNonQuery("USP_EditDrinkWithImage @nameDrink , @price , @idCategoriesD , @idSizeDrink , @picture , @idDrink", new object[] { nameDrink, price, idCategoriesD, idSizeDrink, pt , idDrink});
+        }
+        public string GetFullNameByIdDrink(int idDrink)
+        {
+            string name = "";
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM Drink WHERE idDrink = " + idDrink);
+            foreach(DataRow row in data.Rows)
+            {
+                int idSizeDrink = (int)row["idSizeDrink"];
+                string nameDrink = row["nameDrink"].ToString();
+                if(idSizeDrink == 1)
+                {
+                    return nameDrink + " - L";
+                }
+                else if(idSizeDrink == 2)
+                {
+                    return nameDrink + " - TB";
+                }
+                else if (idSizeDrink == 3)
+                {
+                    return nameDrink + " - N";
+                }
+            }
+            return name;
         }
     }
 }

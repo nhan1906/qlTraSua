@@ -35,6 +35,7 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lbNameTb = new System.Windows.Forms.Label();
             this.lbPeople = new System.Windows.Forms.Label();
@@ -66,17 +67,16 @@
             this.pnLeft = new System.Windows.Forms.Panel();
             this.pnBottom = new System.Windows.Forms.Panel();
             this.pnTop = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.processTable = new Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện.CustomControl.CircleDashboard();
             this.pnInfoTable.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel11.SuspendLayout();
             this.panel12.SuspendLayout();
             this.panel13.SuspendLayout();
             this.panel5.SuspendLayout();
             this.pnBottomBar.SuspendLayout();
             this.pnViewMain.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnInfoTable
@@ -158,6 +158,15 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(270, 40);
             this.panel4.TabIndex = 8;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
+            this.pictureBox1.Location = new System.Drawing.Point(26, 7);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
             // 
             // label1
             // 
@@ -479,15 +488,6 @@
             this.pnTop.Size = new System.Drawing.Size(833, 10);
             this.pnTop.TabIndex = 0;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.White;
-            this.pictureBox1.Location = new System.Drawing.Point(26, 7);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox1.TabIndex = 8;
-            this.pictureBox1.TabStop = false;
-            // 
             // processTable
             // 
             this.processTable.ColorBackground = System.Drawing.Color.White;
@@ -512,10 +512,13 @@
             this.Name = "TableForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "TableForm";
+            this.Activated += new System.EventHandler(this.TableForm_Activated);
+            this.Load += new System.EventHandler(this.TableForm_Load);
             this.pnInfoTable.ResumeLayout(false);
             this.pnInfoTable.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
             this.panel12.ResumeLayout(false);
@@ -525,7 +528,6 @@
             this.panel5.PerformLayout();
             this.pnBottomBar.ResumeLayout(false);
             this.pnViewMain.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

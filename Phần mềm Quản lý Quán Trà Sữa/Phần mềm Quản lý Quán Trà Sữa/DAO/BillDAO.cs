@@ -39,10 +39,21 @@ namespace Quản_Lý_Quán_Trà_Sữa.DAO
             }
             return -1;
         }
-        public int CreateNewBillForTable(int idTableD)
+        public int CreateNewBillForTable(int idTableD , int nmPeople)
         {
-            return DataProvider.Instance.ExecuteNonQuery("USP_InsertNewBillTable @idTableD", new object[] { idTableD });
+            return DataProvider.Instance.ExecuteNonQuery("USP_InsertNewBillTable @idTableD , @nmPeople", new object[] { idTableD , nmPeople });
+        }
 
+        public float GetTotalPriceByIdBill(int idBill)
+        {
+            float total = 0;
+            string query = "SELECT price FROM Bill INNER JOIN BillInfo ON Bill.idBill = BillInfo.idBill WHERE Bill.idBill = " + idBill + " AND statusBill = 0";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            foreach(DataRow row in data.Rows)
+            {
+                total += float.Parse(row["price"].ToString());
+            }
+            return total;
         }
     }
 }

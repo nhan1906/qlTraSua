@@ -88,7 +88,31 @@ CREATE TABLE NgayLuong
 )
 GO
 
-SELECT * FROM NgayLuong
+CREATE TABLE Bill
+(
+	idBill INT IDENTITY PRIMARY KEY,
+	idTableD INT NOT NULL, -- 0 là take away
+	nmPeople INT NOT NULL,
+	getIn DATE NOT NULL DEFAULT GETDATE(),
+	getOut DATE , 
+	statusBill INT NOT NULL DEFAULT 0,
+	sale FLOAT NOT NULL DEFAULT 0,
+	totalPrice FLOAT NOT NULL DEFAULT 0 -- 0 trống 1 , có người
+	FOREIGN KEY (idTableD) REFERENCES TableD (idTableD)
+)
+GO
+
+CREATE TABLE BillInfo
+(
+	idBillInfo INT IDENTITY PRIMARY KEY, 
+	idBill INT NOT NULL,
+	idDrink INT NOT NULL,
+	countD INT NOT NULL DEFAULT 1,
+	price FLOAT NOT NULL DEFAULT 0
+	FOREIGN KEY (idBill) REFERENCES Bill (idBill) ,
+	FOREIGN KEY (idDrink) REFERENCES Drink (idDrink)
+)
+GO
 
 --INSERT Table
 
@@ -667,13 +691,86 @@ CREATE PROC USP_GetListDrinkByIdCategory
 AS
 BEGIN
 	SELECT nameDrink FROM Drink WHERE idCategoriesD = @idCategoriesD
-	GROUP BY nameDrink HAVING COUNT(*) > 1 
+	GROUP BY nameDrink
+END
+GO
+
+
+
+CREATE PROC USP_InsertNewBillTable
+@idTableD INT,
+@nmPeople INT
+AS
+BEGIN
+	INSERT Bill
+	(
+		idTableD , nmPeople
+	)
+	VALUES
+	(
+		@idTableD , @nmPeople
+	)
+END
+GO
+
+CREATE PROC USP_UpdateStatusTable
+@idTableD INT
+AS
+BEGIN
+	UPDATE TableD
+	SET status = 1
+	WHERE idTableD = @idTableD
+END
+GO
+
+CREATE PROC USP_AddBillInfoByIdBill
+@idBill INT , 
+@idDrink INT ,
+@countD INT,
+@price FLOAT
+AS
+BEGIN
+	INSERT BillInfo
+	(
+		idBill , idDrink , countD , price
+	)
+	VALUES
+	(
+		@idBill , @idDrink , @countD , @price
+	)
 END
 GO
 --Select
 
+
 select * from Drink
 
-SELECT * FROM NgayLuong
-SELECT * FROM NhanVien
+SELECT * FROM Bill
+SELECT * FROM BillInfo
+
+INSERT Bill
+(
+	idTableD , nmPeople
+)
+VALUES
+(
+	1 , 3
+)
+
+INSERT BillInfo
+(
+	idBill , idDrink , countD , price
+)
+VALUES
+(
+	1 , 1 , 1 , 15000
+)
+INSERT BillInfo
+(
+	idBill , idDrink , countD , price
+)
+VALUES
+(
+	1 , 5 , 1 , 15000
+)
 
