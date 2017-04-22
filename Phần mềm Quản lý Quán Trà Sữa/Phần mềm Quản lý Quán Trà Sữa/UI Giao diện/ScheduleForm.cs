@@ -196,5 +196,27 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện
         {
             txtMoneyMonth.Text = NgayLuongDAO.Instance.LuongByNhanVien(idNhanVien).ToString();
         }
+
+        private void btnDeleteNV_Click(object sender, EventArgs e)
+        {
+            int idNhanVien = NhanVienDAO.Instance.GetIdByName(txtNv.Text);
+            int i = DataProvider.Instance.ExecuteNonQuery("DELETE FROM NhanVien WHERE idNhanVien = " + idNhanVien);
+            if (i == 1)
+            {
+                MessageBox.Show("Thành công");
+            }
+            else
+            {
+                MessageBox.Show("Thất bại");
+            }
+            this.dtgvNV.Refresh();
+        }
+
+        private void btnAddNV_Click(object sender, EventArgs e)
+        {
+            AddNhanVienForm fAdd = new AddNhanVienForm();
+            fAdd.ShowDialog();
+            bdNV.DataSource = NhanVienDAO.Instance.GetListNhanVien(); ;
+        }
     }
 }

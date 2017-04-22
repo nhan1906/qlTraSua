@@ -41,3 +41,4 @@ C:\Users\Nhan\Desktop\Github\qlTraSua\Phần mềm Quản lý Quán Trà Sữa\P
 C:\Users\Nhan\Desktop\Github\qlTraSua\Phần mềm Quản lý Quán Trà Sữa\Phần mềm Quản lý Quán Trà Sữa\obj\Debug\Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện.confirmTable.resources
 C:\Users\Nhan\Desktop\Github\qlTraSua\Phần mềm Quản lý Quán Trà Sữa\Phần mềm Quản lý Quán Trà Sữa\obj\Debug\Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện.DiscountForm.resources
 C:\Users\Nhan\Desktop\Github\qlTraSua\Phần mềm Quản lý Quán Trà Sữa\Phần mềm Quản lý Quán Trà Sữa\obj\Debug\Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện.EditAccountForm.resources
+C:\Users\Nhan\Desktop\Github\qlTraSua\Phần mềm Quản lý Quán Trà Sữa\Phần mềm Quản lý Quán Trà Sữa\obj\Debug\Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện.AddNhanVienForm.resources

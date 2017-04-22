@@ -68,6 +68,12 @@
     <Compile Include="DTO\SizeDrink.cs" />
     <Compile Include="DTO\TableD.cs" />
     <Compile Include="DTO\TypeAccount.cs" />
+    <Compile Include="UI Giao diện\AddNhanVienForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Giao diện\AddNhanVienForm.Designer.cs">
+      <DependentUpon>AddNhanVienForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI Giao diện\AdminForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -188,6 +194,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UI Giao diện\AddNhanVienForm.resx">
+      <DependentUpon>AddNhanVienForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI Giao diện\AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </EmbeddedResource>

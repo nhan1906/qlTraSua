@@ -135,5 +135,18 @@ namespace Quản_Lý_Quán_Trà_Sữa.DAO
             }
             return name;
         }
+        public bool IsAdmin(string userName)
+        {
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * AccountD WHERE userName = " + userName);
+            foreach (DataRow row in data.Rows)
+            {
+                if((int)row["idTypeAccount"] == 1)
+                {
+                    return true;
+                }
+                return false;
+            }
+            return false;
+        }
     }
 }

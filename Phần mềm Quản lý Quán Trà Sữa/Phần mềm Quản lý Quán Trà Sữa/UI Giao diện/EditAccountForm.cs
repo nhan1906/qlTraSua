@@ -24,11 +24,7 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện
         {
             this.Close();
         }
-
-        private void EditAccountForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            this.Close();
-        }
+        
 
         private void EditAccountForm_Load(object sender, EventArgs e)
         {

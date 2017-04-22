@@ -44,6 +44,13 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện
         {
             InitializeComponent();
             this.userName = userName;
+            if (!AccountDDAO.Instance.IsAdmin(userName))
+            {
+                btnAdmin.Enabled = false;
+                btnSchedule.Enabled = false;
+                btnDashboard.Enabled = false;
+                btnDrink.Enabled = false;
+            }
             pnClose.Visible = false;
             btnTable.IsClick = true;
             btnTable.ClrBackground = Color.FromArgb(27, 25, 48);
@@ -253,7 +260,10 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện
 
         private void ptUser_Click(object sender, EventArgs e)
         {
-            pnClose.Visible = true;
+            if (pnClose.Visible == false)
+                pnClose.Visible = true;
+            else
+                pnClose.Visible = false;
         }
         
         private void MainForm_Load(object sender, EventArgs e)
@@ -268,9 +278,10 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện
 
         private void btnEditUser_Click(object sender, EventArgs e)
         {
+            pnClose.Visible = false;
             EditAccountForm fEdit = new EditAccountForm(userName);
             fEdit.ShowDialog();
-            
+            lbUserName.Text = "Chào , " + AccountDDAO.Instance.GetDisplayNameByUserName(userName);
         }
     }
 }
