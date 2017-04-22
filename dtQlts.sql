@@ -25,7 +25,7 @@ GO
 
 CREATE TABLE TableD
 (
-	idTableD INT IDENTITY PRIMARY KEY NOT NULL,
+	idTableD INT IDENTITY(0, 1) PRIMARY KEY NOT NULL,
 	nameTable NVARCHAR(100) NOT NULL , 
 	numberPeople INT NOT NULL DEFAULT 0,
 	status INT NOT NULL  DEFAULT 0 -- 0 là còn 1 là trống
@@ -93,8 +93,8 @@ CREATE TABLE Bill
 	idBill INT IDENTITY PRIMARY KEY,
 	idTableD INT NOT NULL, -- 0 là take away
 	nmPeople INT NOT NULL,
-	getIn DATE NOT NULL DEFAULT GETDATE(),
-	getOut DATE , 
+	getIn DATETIME NOT NULL DEFAULT GETDATE(),
+	getOut DATETIME , 
 	statusBill INT NOT NULL DEFAULT 0,
 	sale FLOAT NOT NULL DEFAULT 0,
 	totalPrice FLOAT NOT NULL DEFAULT 0 -- 0 trống 1 , có người
@@ -170,6 +170,15 @@ INSERT AccountD
 VALUES
 (	N'admin', N'Nhan' , N'222169221178921913582207772364834422165' , 1)
 GO
+
+INSERT TableD
+(
+	nameTable
+)
+VALUES
+(
+	N'Take away'
+)
 
 INSERT TableD
 (
@@ -740,37 +749,44 @@ BEGIN
 	)
 END
 GO
+
+CREATE PROC USP_DeleteBillInfoById
+@idBillInfo INT
+AS
+BEGIN
+	DELETE FROM BillInfo
+	WHERE idBillInfo = @idBillInfo
+END
+GO
+
+CREATE PROC UpdateBillInfoById
+@countD INT,
+@price FLOAT , 
+@idBillInfo INT
+AS
+BEGIN
+	UPDATE BillInfo
+	SET countD += @countD , price += @price
+	WHERE idBillInfo = @idBillInfo
+END
+GO
+
+CREATE PROC USP_UpdateAccountByUserNameNoType
+@userName NVARCHAR(100),
+@displayName NVARCHAR(100),
+@password NVARCHAR(1000)
+AS
+BEGIN
+	UPDATE AccountD
+	SET displayName = @displayName , password = @password
+	WHERE userName = @userName
+END
+GO
 --Select
 
 
-select * from Drink
+select * from AccountD
 
 SELECT * FROM Bill
 SELECT * FROM BillInfo
-
-INSERT Bill
-(
-	idTableD , nmPeople
-)
-VALUES
-(
-	1 , 3
-)
-
-INSERT BillInfo
-(
-	idBill , idDrink , countD , price
-)
-VALUES
-(
-	1 , 1 , 1 , 15000
-)
-INSERT BillInfo
-(
-	idBill , idDrink , countD , price
-)
-VALUES
-(
-	1 , 5 , 1 , 15000
-)
 

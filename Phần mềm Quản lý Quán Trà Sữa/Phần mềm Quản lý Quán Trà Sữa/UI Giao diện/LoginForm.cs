@@ -36,5 +36,15 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa
         {
             return AccountDDAO.Instance.CheckLogin(userName, password);
         }
+
+        private void LoginForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

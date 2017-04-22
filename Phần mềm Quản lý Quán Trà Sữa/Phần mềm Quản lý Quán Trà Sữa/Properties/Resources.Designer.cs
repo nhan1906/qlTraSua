@@ -73,6 +73,16 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_close_white {
+            get {
+                object obj = ResourceManager.GetObject("icon_close_white", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_dashboard {
             get {
                 object obj = ResourceManager.GetObject("icon_dashboard", resourceCulture);
@@ -103,6 +113,16 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_exit {
+            get {
+                object obj = ResourceManager.GetObject("icon_exit", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_schedule {
             get {
                 object obj = ResourceManager.GetObject("icon_schedule", resourceCulture);
@@ -113,9 +133,29 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_setting {
+            get {
+                object obj = ResourceManager.GetObject("icon_setting", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_table {
             get {
                 object obj = ResourceManager.GetObject("icon_table", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_user_15 {
+            get {
+                object obj = ResourceManager.GetObject("icon_user_15", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

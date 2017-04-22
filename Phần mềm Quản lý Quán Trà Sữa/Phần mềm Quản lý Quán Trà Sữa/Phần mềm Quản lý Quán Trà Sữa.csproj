@@ -134,6 +134,12 @@
     <Compile Include="UI Giao diện\DrinkForm.Designer.cs">
       <DependentUpon>DrinkForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI Giao diện\EditAccountForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Giao diện\EditAccountForm.Designer.cs">
+      <DependentUpon>EditAccountForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI Giao diện\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -209,6 +215,9 @@
     <EmbeddedResource Include="UI Giao diện\DrinkForm.resx">
       <DependentUpon>DrinkForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI Giao diện\EditAccountForm.resx">
+      <DependentUpon>EditAccountForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI Giao diện\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -255,7 +264,18 @@
   <ItemGroup>
     <None Include="Resources\icon_employee.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\icon_setting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_user_15.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_close_white.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -64,7 +64,7 @@
             this.btnConfirm.NTextX = 92;
             this.btnConfirm.NTextY = 12;
             this.btnConfirm.Size = new System.Drawing.Size(232, 40);
-            this.btnConfirm.TabIndex = 4;
+            this.btnConfirm.TabIndex = 2;
             this.btnConfirm.Text = "nButton1";
             this.btnConfirm.UseVisualStyleBackColor = true;
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
@@ -75,10 +75,11 @@
             this.txtNumber.Location = new System.Drawing.Point(65, 58);
             this.txtNumber.Name = "txtNumber";
             this.txtNumber.Size = new System.Drawing.Size(232, 28);
-            this.txtNumber.TabIndex = 3;
+            this.txtNumber.TabIndex = 1;
             // 
             // confirmTable
             // 
+            this.AcceptButton = this.btnConfirm;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(221)))), ((int)(((byte)(231)))));

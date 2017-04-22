@@ -35,10 +35,10 @@
             this.RightBorderPanel = new System.Windows.Forms.Panel();
             this.TitleBarPanel = new System.Windows.Forms.Panel();
             this.UserNamePanel = new System.Windows.Forms.Panel();
+            this.lbUserName = new System.Windows.Forms.Label();
             this.LBorderUserName = new System.Windows.Forms.Panel();
             this.DivideUserName = new System.Windows.Forms.Panel();
             this.pnUser = new System.Windows.Forms.Panel();
-            this.ptUser = new System.Windows.Forms.PictureBox();
             this.DivideNameMenu = new System.Windows.Forms.Panel();
             this.NameShopPanel = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -54,20 +54,29 @@
             this.DirectlyNamePanel = new System.Windows.Forms.Panel();
             this.lbCategories = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.lbUserName = new System.Windows.Forms.Label();
+            this.pnClose = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.btnClose = new Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện.nButton();
+            this.btnEditUser = new Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện.nButton();
             this.btnSchedule = new Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện.nButton();
             this.btnAdmin = new Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện.nButton();
             this.btnDrink = new Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện.nButton();
             this.btnDashboard = new Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện.nButton();
             this.btnBill = new Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện.nButton();
             this.btnTable = new Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện.nButton();
+            this.ptUser = new System.Windows.Forms.PictureBox();
             this.TitleBarPanel.SuspendLayout();
             this.UserNamePanel.SuspendLayout();
             this.pnUser.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ptUser)).BeginInit();
             this.NameShopPanel.SuspendLayout();
             this.MenuBarPanel.SuspendLayout();
             this.DirectlyNamePanel.SuspendLayout();
+            this.pnClose.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptUser)).BeginInit();
             this.SuspendLayout();
             // 
             // TopBorderMain
@@ -131,6 +140,17 @@
             this.UserNamePanel.Size = new System.Drawing.Size(137, 33);
             this.UserNamePanel.TabIndex = 9;
             // 
+            // lbUserName
+            // 
+            this.lbUserName.AutoSize = true;
+            this.lbUserName.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbUserName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(96)))), ((int)(((byte)(123)))));
+            this.lbUserName.Location = new System.Drawing.Point(16, 8);
+            this.lbUserName.Name = "lbUserName";
+            this.lbUserName.Size = new System.Drawing.Size(50, 17);
+            this.lbUserName.TabIndex = 10;
+            this.lbUserName.Text = "Chào , ";
+            // 
             // LBorderUserName
             // 
             this.LBorderUserName.BackColor = System.Drawing.Color.Black;
@@ -157,16 +177,6 @@
             this.pnUser.Name = "pnUser";
             this.pnUser.Size = new System.Drawing.Size(34, 33);
             this.pnUser.TabIndex = 9;
-            // 
-            // ptUser
-            // 
-            this.ptUser.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ptUser.BackgroundImage")));
-            this.ptUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ptUser.Location = new System.Drawing.Point(2, 2);
-            this.ptUser.Name = "ptUser";
-            this.ptUser.Size = new System.Drawing.Size(30, 30);
-            this.ptUser.TabIndex = 0;
-            this.ptUser.TabStop = false;
             // 
             // DivideNameMenu
             // 
@@ -330,16 +340,94 @@
             this.label3.TabIndex = 9;
             this.label3.Text = "DANH MỤC  >";
             // 
-            // lbUserName
+            // pnClose
             // 
-            this.lbUserName.AutoSize = true;
-            this.lbUserName.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbUserName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(96)))), ((int)(((byte)(123)))));
-            this.lbUserName.Location = new System.Drawing.Point(16, 8);
-            this.lbUserName.Name = "lbUserName";
-            this.lbUserName.Size = new System.Drawing.Size(50, 17);
-            this.lbUserName.TabIndex = 10;
-            this.lbUserName.Text = "Chào , ";
+            this.pnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnClose.Controls.Add(this.panel3);
+            this.pnClose.Controls.Add(this.panel2);
+            this.pnClose.Controls.Add(this.panel1);
+            this.pnClose.Location = new System.Drawing.Point(875, 35);
+            this.pnClose.Name = "pnClose";
+            this.pnClose.Size = new System.Drawing.Size(124, 86);
+            this.pnClose.TabIndex = 8;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnEditUser);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(124, 42);
+            this.panel1.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Gray;
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 42);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(124, 1);
+            this.panel2.TabIndex = 1;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.btnClose);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(0, 43);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(124, 43);
+            this.panel3.TabIndex = 2;
+            // 
+            // btnClose
+            // 
+            this.btnClose.ClrBackground = System.Drawing.Color.SeaGreen;
+            this.btnClose.ClrClick = System.Drawing.Color.Black;
+            this.btnClose.ClrMouseHover = System.Drawing.Color.Black;
+            this.btnClose.ClrShow = System.Drawing.Color.Blue;
+            this.btnClose.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.btnClose.ForeColor = System.Drawing.Color.White;
+            this.btnClose.IsClick = false;
+            this.btnClose.Location = new System.Drawing.Point(0, 0);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.NImage = global::Phần_mềm_Quản_lý_Quán_Trà_Sữa.Properties.Resources.icon_exit;
+            this.btnClose.NImageX = 100;
+            this.btnClose.NImageY = 12;
+            this.btnClose.NText = "Thoát";
+            this.btnClose.NTextX = 32;
+            this.btnClose.NTextY = 12;
+            this.btnClose.Size = new System.Drawing.Size(124, 43);
+            this.btnClose.TabIndex = 0;
+            this.btnClose.Text = "nButton2";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // btnEditUser
+            // 
+            this.btnEditUser.ClrBackground = System.Drawing.Color.SeaGreen;
+            this.btnEditUser.ClrClick = System.Drawing.Color.Black;
+            this.btnEditUser.ClrMouseHover = System.Drawing.Color.Black;
+            this.btnEditUser.ClrShow = System.Drawing.Color.Blue;
+            this.btnEditUser.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnEditUser.FlatAppearance.BorderSize = 0;
+            this.btnEditUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditUser.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditUser.ForeColor = System.Drawing.Color.White;
+            this.btnEditUser.IsClick = false;
+            this.btnEditUser.Location = new System.Drawing.Point(0, 0);
+            this.btnEditUser.Name = "btnEditUser";
+            this.btnEditUser.NImage = global::Phần_mềm_Quản_lý_Quán_Trà_Sữa.Properties.Resources.icon_setting;
+            this.btnEditUser.NImageX = 100;
+            this.btnEditUser.NImageY = 12;
+            this.btnEditUser.NText = "Sửa tài khoản";
+            this.btnEditUser.NTextX = 11;
+            this.btnEditUser.NTextY = 12;
+            this.btnEditUser.Size = new System.Drawing.Size(124, 42);
+            this.btnEditUser.TabIndex = 0;
+            this.btnEditUser.UseVisualStyleBackColor = true;
+            this.btnEditUser.Click += new System.EventHandler(this.btnEditUser_Click);
             // 
             // btnSchedule
             // 
@@ -491,12 +579,24 @@
             this.btnTable.UseVisualStyleBackColor = true;
             this.btnTable.Click += new System.EventHandler(this.btnTable_Click);
             // 
+            // ptUser
+            // 
+            this.ptUser.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ptUser.BackgroundImage")));
+            this.ptUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.ptUser.Location = new System.Drawing.Point(2, 2);
+            this.ptUser.Name = "ptUser";
+            this.ptUser.Size = new System.Drawing.Size(30, 30);
+            this.ptUser.TabIndex = 0;
+            this.ptUser.TabStop = false;
+            this.ptUser.Click += new System.EventHandler(this.ptUser_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1000, 520);
+            this.Controls.Add(this.pnClose);
             this.Controls.Add(this.DirectlyNamePanel);
             this.Controls.Add(this.MenuBarPanel);
             this.Controls.Add(this.TitleBarPanel);
@@ -508,17 +608,22 @@
             this.IsMdiContainer = true;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "6666";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.TitleBarPanel.ResumeLayout(false);
             this.UserNamePanel.ResumeLayout(false);
             this.UserNamePanel.PerformLayout();
             this.pnUser.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.ptUser)).EndInit();
             this.NameShopPanel.ResumeLayout(false);
             this.NameShopPanel.PerformLayout();
             this.MenuBarPanel.ResumeLayout(false);
             this.MenuBarPanel.PerformLayout();
             this.DirectlyNamePanel.ResumeLayout(false);
             this.DirectlyNamePanel.PerformLayout();
+            this.pnClose.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ptUser)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -557,5 +662,11 @@
         private nButton btnDrink;
         private nButton btnDashboard;
         private System.Windows.Forms.Label lbUserName;
+        private System.Windows.Forms.Panel pnClose;
+        private System.Windows.Forms.Panel panel3;
+        private nButton btnClose;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel1;
+        private nButton btnEditUser;
     }
 }

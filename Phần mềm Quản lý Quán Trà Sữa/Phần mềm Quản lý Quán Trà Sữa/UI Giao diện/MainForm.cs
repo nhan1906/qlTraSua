@@ -22,6 +22,7 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện
         private ScheduleForm scheduleF;
         private DashboardForm dashboardF;
         private AdminForm adminF;
+        private string userName = "";
 
         public BillForm fBill
         {
@@ -42,9 +43,10 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện
         public MainForm(string userName)
         {
             InitializeComponent();
+            this.userName = userName;
+            pnClose.Visible = false;
             btnTable.IsClick = true;
             btnTable.ClrBackground = Color.FromArgb(27, 25, 48);
-            lbUserName.Text = "Chào , " + AccountDDAO.Instance.GetDisplayNameByUserName(userName);
             LoadFormChild();
         }
         //
@@ -248,5 +250,27 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện
             lbCategories.Text = "DANH SÁCH TÀI KHOẢN";
         }
         #endregion
+
+        private void ptUser_Click(object sender, EventArgs e)
+        {
+            pnClose.Visible = true;
+        }
+        
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+            lbUserName.Text = "Chào , " + AccountDDAO.Instance.GetDisplayNameByUserName(userName);
+        }
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnEditUser_Click(object sender, EventArgs e)
+        {
+            EditAccountForm fEdit = new EditAccountForm(userName);
+            fEdit.ShowDialog();
+            
+        }
     }
 }
