@@ -80,5 +80,10 @@ namespace Quản_Lý_Quán_Trà_Sữa.DAO
             }
             return nmPeople;
         }
+
+        public int CleanTableByIdTable(int idTable)
+        {
+            return DataProvider.Instance.ExecuteNonQuery("USP_CleanTableByIdTable @idTable", new object[] { idTable });
+        }
     }
 }

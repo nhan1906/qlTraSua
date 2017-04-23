@@ -17,6 +17,7 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện
     public partial class BillForm : Form
     {
         private BindingSource bdDrink = new BindingSource();
+        private MainForm fMain = null;
         private int stt = 1;
         private int idTable = 0;
         private float discount = 0;
@@ -34,7 +35,7 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện
             }
         }
 
-        public BillForm(int idTable)
+        public BillForm(int idTable , MainForm f)
         {
             InitializeComponent();
             btnL.IsClick = true;
@@ -44,6 +45,7 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện
             Thread.CurrentThread.CurrentCulture = culture;
             lsvBillInfo.FullRowSelect = true;
             this.idTable = idTable;
+            fMain = f;
         }
         private void LoadView()
         {
@@ -174,6 +176,9 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện
                 BillInfoDAO.Instance.UpdateBillInfoByIdBill(countD, drink.Price * countD , idBillInfo);
                 ShowBill(idTable);
             }
+
+            //so luong va btn
+            txtnm.Text = "1";
             lsvBillInfo.Refresh();
             totalPrice();
             //Xoa the
@@ -181,20 +186,49 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện
 
         private void txtBinding_TextChanged(object sender, EventArgs e)
         {
+
+            btnL.IsClick = false;
+            btnNho.IsClick = false;
+            btnTb.IsClick = false;
+            btnL.ClrBackground = Color.FromArgb(215, 160, 61);
+            btnNho.ClrBackground = Color.FromArgb(215, 160, 61);
+            btnTb.ClrBackground = Color.FromArgb(215, 160, 61);
+
             int[] sizeDrink = new int[3];
             sizeDrink = DrinkDAO.Instance.GetSizeDrinkByName(txtBinding.Text);
             if (sizeDrink[0] == 0)
                 btnL.Enabled = false;
             else
+            {
                 btnL.Enabled = true;
+                btnL.IsClick = true;
+                btnL.ClrBackground = Color.Khaki;
+            }
+                
+            
             if (sizeDrink[1] == 0)
                 btnTb.Enabled = false;
             else
+            {
                 btnTb.Enabled = true;
+                if(btnL.Enabled != true)
+                {
+                    btnTb.IsClick = true;
+                    btnTb.ClrBackground = Color.Khaki;
+                }
+            }
+
             if (sizeDrink[2] == 0)
                 btnNho.Enabled = false;
             else
+            {
                 btnNho.Enabled = true;
+                if (btnL.Enabled != true && btnNho.Enabled != true)
+                {
+                    btnNho.IsClick = true;
+                    btnNho.ClrBackground = Color.Khaki;
+                }
+            }
         }
 
         private void btnUp_Click(object sender, EventArgs e)
@@ -283,9 +317,34 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện
         {
             ConfirmPassword f = new ConfirmPassword(1 , this);
             f.ShowDialog();
+            this.Show();
             txtDiscount.Text = "" + discount;
             float total = BillDAO.Instance.GetTotalPriceByIdBill(BillDAO.Instance.GetUncheckedBillIdByTableId(idTable));
             txtCashout.Text = (total * (1 - discount / 100)).ToString("c");
         }
+
+        private void btnCashout_Click(object sender, EventArgs e)
+        {
+            //Thanh toan
+            int idCurrentBill = BillDAO.Instance.GetUncheckedBillIdByTableId(idTable);
+            float sale = float.Parse(txtDiscount.Text);
+            float totalPrice = float.Parse(txtCashout.Text.Remove(txtCashout.Text.Length - 1));
+            DateTime now = DateTime.Now;
+            int result = BillDAO.Instance.CashoutBillByid(idCurrentBill, sale, totalPrice, now);
+            if (result == 1)
+            {
+                MessageBox.Show("Thành công");
+            }
+            else
+            {
+                MessageBox.Show("Thất bại");
+            }
+            if(idTable != 0)
+                TableDDAO.Instance.CleanTableByIdTable(idTable);
+            //tra lai ban
+            fMain.fTable.Show();
+            fMain.btnTable_Click(new object(), new EventArgs());
+        }
+        
     }
 }

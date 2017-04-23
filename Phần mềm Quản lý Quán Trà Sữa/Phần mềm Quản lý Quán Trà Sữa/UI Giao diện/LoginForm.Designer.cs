@@ -34,8 +34,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.panel12 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.ptUser = new System.Windows.Forms.PictureBox();
             this.panel11 = new System.Windows.Forms.Panel();
@@ -49,7 +47,6 @@
             this.pnBar = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnClose = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptUser)).BeginInit();
             this.pnBar.SuspendLayout();
@@ -67,15 +64,15 @@
             this.btnLogin.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.Color.White;
             this.btnLogin.IsClick = false;
-            this.btnLogin.Location = new System.Drawing.Point(32, 232);
+            this.btnLogin.Location = new System.Drawing.Point(55, 242);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.NImage = null;
             this.btnLogin.NImageX = 0;
             this.btnLogin.NImageY = 0;
             this.btnLogin.NText = "Đăng nhập";
-            this.btnLogin.NTextX = 55;
+            this.btnLogin.NTextX = 33;
             this.btnLogin.NTextY = 5;
-            this.btnLogin.Size = new System.Drawing.Size(202, 38);
+            this.btnLogin.Size = new System.Drawing.Size(160, 33);
             this.btnLogin.TabIndex = 3;
             this.btnLogin.Text = "nLogin";
             this.btnLogin.UseVisualStyleBackColor = true;
@@ -120,30 +117,10 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel1.Controls.Add(this.panel13);
-            this.panel1.Controls.Add(this.panel12);
-            this.panel1.Location = new System.Drawing.Point(0, 61);
+            this.panel1.Location = new System.Drawing.Point(12, 61);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(272, 156);
+            this.panel1.Size = new System.Drawing.Size(238, 156);
             this.panel1.TabIndex = 6;
-            // 
-            // panel13
-            // 
-            this.panel13.BackColor = System.Drawing.Color.Black;
-            this.panel13.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel13.Location = new System.Drawing.Point(0, 155);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(272, 1);
-            this.panel13.TabIndex = 1;
-            // 
-            // panel12
-            // 
-            this.panel12.BackColor = System.Drawing.Color.Black;
-            this.panel12.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel12.Location = new System.Drawing.Point(0, 0);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(272, 1);
-            this.panel12.TabIndex = 0;
             // 
             // panel2
             // 
@@ -243,7 +220,7 @@
             // 
             // pnBar
             // 
-            this.pnBar.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pnBar.BackColor = System.Drawing.Color.Gray;
             this.pnBar.Controls.Add(this.panel3);
             this.pnBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnBar.Location = new System.Drawing.Point(1, 1);
@@ -262,7 +239,7 @@
             // 
             // btnClose
             // 
-            this.btnClose.BackColor = System.Drawing.Color.Red;
+            this.btnClose.BackColor = System.Drawing.Color.Gray;
             this.btnClose.BackgroundImage = global::Phần_mềm_Quản_lý_Quán_Trà_Sữa.Properties.Resources.icon_close_white;
             this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
@@ -297,9 +274,9 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "LoginForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LoginForm_FormClosing);
-            this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ptUser)).EndInit();
             this.pnBar.ResumeLayout(false);
@@ -318,8 +295,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel13;
-        private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.PictureBox ptUser;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Panel panel10;

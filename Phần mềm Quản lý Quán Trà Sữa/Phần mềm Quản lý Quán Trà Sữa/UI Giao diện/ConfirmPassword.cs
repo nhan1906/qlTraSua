@@ -27,6 +27,7 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện
             if (txtPassword.Text == "19061995")
             {
                 this.Hide();
+                f.Show();
                 if(idDo == 2)
                     TableDDAO.Instance.AddTable();
                 if(idDo == 1)

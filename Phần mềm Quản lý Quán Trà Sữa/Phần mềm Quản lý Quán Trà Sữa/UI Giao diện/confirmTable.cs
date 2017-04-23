@@ -26,11 +26,12 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện
         {
             TableDDAO.Instance.SetStatusTableById(idTable);
             BillDAO.Instance.CreateNewBillForTable(idTable, int.Parse(txtNumber.Text));
-            f.fBill = new BillForm(idTable);
+            f.fBill = new BillForm(idTable , f);
             f.fBill.StartPosition = FormStartPosition.Manual;
             f.fBill.Name = "DrinkF";
             f.fBill.MdiParent = f;
             f.fBill.Show();
+            f.btnBill_Click(new object(), new EventArgs());
             this.Close();
         }
     }

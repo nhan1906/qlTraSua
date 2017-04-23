@@ -53,7 +53,8 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện
             this.pnControl = new System.Windows.Forms.Panel();
             this.lbTable = new System.Windows.Forms.Label();
             this.pnCashout = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btnCashout = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtCashout = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -64,7 +65,6 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện
             this.btnNho = new Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện.nButton();
             this.btnL = new Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện.nButton();
             this.nTextbox1 = new Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện.CustomControl.nTextbox();
-            this.label6 = new System.Windows.Forms.Label();
             this.pnDrink.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDrink)).BeginInit();
@@ -326,7 +326,7 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện
             // pnCashout
             // 
             this.pnCashout.Controls.Add(this.label6);
-            this.pnCashout.Controls.Add(this.button5);
+            this.pnCashout.Controls.Add(this.btnCashout);
             this.pnCashout.Controls.Add(this.label1);
             this.pnCashout.Controls.Add(this.txtCashout);
             this.pnCashout.Controls.Add(this.label5);
@@ -337,21 +337,32 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện
             this.pnCashout.Size = new System.Drawing.Size(174, 149);
             this.pnCashout.TabIndex = 33;
             // 
-            // button5
+            // label6
             // 
-            this.button5.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(8, 109);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(162, 31);
-            this.button5.TabIndex = 32;
-            this.button5.Text = "Thanh toán";
-            this.button5.UseVisualStyleBackColor = false;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(146, 28);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(20, 15);
+            this.label6.TabIndex = 33;
+            this.label6.Text = "%";
+            // 
+            // btnCashout
+            // 
+            this.btnCashout.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnCashout.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnCashout.FlatAppearance.BorderSize = 0;
+            this.btnCashout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCashout.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCashout.ForeColor = System.Drawing.Color.White;
+            this.btnCashout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCashout.Location = new System.Drawing.Point(8, 109);
+            this.btnCashout.Name = "btnCashout";
+            this.btnCashout.Size = new System.Drawing.Size(162, 31);
+            this.btnCashout.TabIndex = 32;
+            this.btnCashout.Text = "Thanh toán";
+            this.btnCashout.UseVisualStyleBackColor = false;
+            this.btnCashout.Click += new System.EventHandler(this.btnCashout_Click);
             // 
             // label1
             // 
@@ -515,16 +526,6 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện
             this.nTextbox1.Size = new System.Drawing.Size(295, 20);
             this.nTextbox1.TabIndex = 1;
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(146, 28);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(20, 15);
-            this.label6.TabIndex = 33;
-            this.label6.Text = "%";
-            // 
             // BillForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -572,7 +573,7 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.TextBox txtTotalPrice;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnCashout;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtCashout;
         private System.Windows.Forms.Label label5;

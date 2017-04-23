@@ -67,5 +67,19 @@ namespace Quản_Lý_Quán_Trà_Sữa.DAO
             }
             return time;
         }
+
+        public int CashoutBillByid(int idCurrentBill, float sale, float totalPrice, DateTime now)
+        {
+            return DataProvider.Instance.ExecuteNonQuery("USP_CheckOutBill @idBill , @sale , @totalPrice , @getOut", new object[] { idCurrentBill, sale, totalPrice, now });
+        }
+
+        public bool ExsitBillUncheckTakeAway()
+        {
+            bool isExist = false;
+            DataTable data = DataProvider.Instance.ExecuteQuery("Select * from bill where idTableD = " + 0 + " AND statusBill = 0");
+            if (data.Rows.Count > 0)
+                isExist = true;
+            return isExist;
+        }
     }
 }

@@ -106,8 +106,10 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện
             flpnTable.Controls.Add(btnAdd);
 
             //Load thông tin table
-            int totalTable = TableDDAO.Instance.GetTotalTable();
+            int totalTable = TableDDAO.Instance.GetTotalTable() - 1;
             int nmNooneTable = TableDDAO.Instance.GetNooneTable();
+            if (!BillDAO.Instance.ExsitBillUncheckTakeAway())
+                nmNooneTable--;
             lbStillTable.Text = nmNooneTable + " bàn trống";
             lbsumTable.Text = totalTable + " bàn";
             int percent = nmNooneTable*100 / totalTable;
@@ -125,13 +127,17 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện
 
         private void btnTakeaway_Click(object sender, EventArgs e)
         {
-            BillDAO.Instance.CreateNewBillForTable(0 , 0);
-            f.fBill = new BillForm(0);
-            f.fBill.StartPosition = FormStartPosition.Manual;
-            f.fBill.Name = "DrinkF";
-            f.fBill.MdiParent = f;
-            f.fBill.Show();
-            this.Close();
+            if (!BillDAO.Instance.ExsitBillUncheckTakeAway())
+            {
+                BillDAO.Instance.CreateNewBillForTable(0, 0);
+                f.fBill = new BillForm(0, f);
+                f.fBill.Name = "BillF";
+                f.fBill.MdiParent = f;
+                f.fBill.Show();
+                f.btnBill_Click(new object(), new EventArgs());
+            }
+            else
+                MessageBox.Show("Có bill Take away chưa thanh toán");
         }
 
         private void btnTable_Click(object sender, EventArgs e)
@@ -193,11 +199,11 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện
         #region Events
         private void SeeBill(object sender, EventArgs e)
         {
-            f.fBill = new BillForm((int)pnInfoTable.Tag);
-            f.fBill.StartPosition = FormStartPosition.Manual;
-            f.fBill.Name = "DrinkF";
+            f.fBill = new BillForm((int)pnInfoTable.Tag , f);
+            f.fBill.Name = "BillF";
             f.fBill.MdiParent = f;
             f.fBill.Show();
+            f.btnBill_Click(new object() , new EventArgs());
         }
         private void CreateBill(object sender, EventArgs e)
         {

@@ -33,9 +33,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -68,6 +71,11 @@
     <Compile Include="DTO\SizeDrink.cs" />
     <Compile Include="DTO\TableD.cs" />
     <Compile Include="DTO\TypeAccount.cs" />
+    <Compile Include="dtQLTraSuaDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dtQLTraSuaDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="UI Giao diện\AddNhanVienForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -233,6 +241,7 @@
     <EmbeddedResource Include="UI Giao diện\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI Giao diện\reportDS.rdlc" />
     <EmbeddedResource Include="UI Giao diện\ScheduleForm.resx">
       <DependentUpon>ScheduleForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -242,6 +251,17 @@
     <EmbeddedResource Include="UI Giao diện\TestForm.resx">
       <DependentUpon>TestForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="dtQLTraSuaDataSet.xsc">
+      <DependentUpon>dtQLTraSuaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="dtQLTraSuaDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dtQLTraSuaDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dtQLTraSuaDataSet.xss">
+      <DependentUpon>dtQLTraSuaDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

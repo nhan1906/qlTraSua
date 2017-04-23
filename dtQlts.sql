@@ -53,8 +53,7 @@ CREATE TABLE Drink
 	price float NOT NULL,
 	idSizeDrink INT NOT NULL,
 	picture IMAGE,
-	idCategoriesD INT NOT NULL
-
+	idCategoriesD INT NOT NULL, 
 	FOREIGN KEY (idCategoriesD) REFERENCES CategoriesD(idCategoriesD) ,
 	FOREIGN KEY (idSizeDrink) REFERENCES SizeDrink(idSizeDrink) 
 )
@@ -782,11 +781,60 @@ BEGIN
 	WHERE userName = @userName
 END
 GO
+
+CREATE PROC USP_InsertNhanvien 
+@tenNhanVien NVARCHAR(100), 
+@idCateNV INT
+AS
+BEGIN
+	INSERT NhanVien
+	(
+		tenNhanVien  , idCateNV , maNhanVien
+	)
+	VALUES
+	(
+		@tenNhanVien , @idCateNV , N'default'
+	)
+END
+GO
+
+CREATE PROC USP_CheckOutBill
+@idBill INT, 
+@sale FLOAT, 
+@totalPrice FLOAT, 
+@getOut DATETIME
+AS
+BEGIN
+	UPDATE Bill
+	SET getOut = @getOut , statusBill = 1 , sale = @sale , totalPrice = @totalPrice
+	WHERE idBill = @idBill
+END
+GO
+
+CREATE PROC USP_CleanTableByIdTable
+@idTableD INT
+AS
+BEGIN
+	UPDATE TableD
+	SET status = 0
+	WHERE idTableD = @idTableD
+END
+GO
+
+CREATE VIEW BC_DoanhSo
+AS
+SELECT Count(idBill) as soBill , cast(getIn as date) as dates  , SUM(totalPrice*100 /(100 - sale)) as tongtien , SUM(totalPrice*100 /(100 - sale) - totalPrice) as sale, SUM(totalPrice) as totalPrice
+FROM Bill 
+WHERE statusBill = 1
+GROUP BY cast(getIn as date)
+GO
+
+
 --Select
 
+SELECT * FROM BC_DoanhSo
+select * from accountd
 
-select * from AccountD
 
 SELECT * FROM Bill
 SELECT * FROM BillInfo
-

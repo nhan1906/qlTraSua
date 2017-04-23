@@ -37,6 +37,19 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện
             }
         }
 
+        public TableForm fTable
+        {
+            get
+            {
+                return tableF;
+            }
+
+            set
+            {
+                tableF = value;
+            }
+        }
+
         //
         //Khởi tạo Form
         //
@@ -105,7 +118,7 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện
 
             if (!CheckExistForm("BillF"))
             {
-                fBill = new BillForm(1);
+                fBill = new BillForm(0 , this);
                 fBill.Name = "BillF";
                 fBill.MdiParent = this;
                 fBill.Show();
@@ -115,10 +128,10 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện
 
             if (!CheckExistForm("TableF"))
             {
-                tableF = new TableForm(this);
-                tableF.Name = "TableF";
-                tableF.MdiParent = this;
-                tableF.Show();
+                fTable = new TableForm(this);
+                fTable.Name = "TableF";
+                fTable.MdiParent = this;
+                fTable.Show();
             }
             else
                 ActivateChildForm("TableF");
@@ -149,9 +162,12 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện
             }
         }
 
-        private void btnTable_Click(object sender, EventArgs e)
+        public void btnTable_Click(object sender, EventArgs e)
         {
             // Set default click and background
+
+            btnTable.IsClick = true;
+            btnTable.ClrBackground = Color.FromArgb(27, 25, 48);
             btnSchedule.IsClick = false;
             btnBill.IsClick = false;
             btnAdmin.IsClick = false;
@@ -162,14 +178,16 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện
             btnDrink.ClrBackground = Color.FromArgb(42, 49, 68);
             btnSchedule.ClrBackground = Color.FromArgb(42, 49, 68);
             btnAdmin.ClrBackground = Color.FromArgb(42, 49, 68);
-            tableF.Activate();
+            fTable.Activate();
             lbCategories.Text = "DANH SÁCH BÀN";
-            
+
         }
 
-        private void btnBill_Click(object sender, EventArgs e)
+        public void btnBill_Click(object sender, EventArgs e)
         {
             // Set default click and background
+            btnBill.IsClick = true;
+            btnBill.ClrBackground = Color.FromArgb(27, 25, 48);
             btnTable.IsClick = false;
             btnSchedule.IsClick = false;
             btnAdmin.IsClick = false;
@@ -268,7 +286,6 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện
         
         private void MainForm_Load(object sender, EventArgs e)
         {
-
             lbUserName.Text = "Chào , " + AccountDDAO.Instance.GetDisplayNameByUserName(userName);
         }
         private void btnClose_Click(object sender, EventArgs e)
