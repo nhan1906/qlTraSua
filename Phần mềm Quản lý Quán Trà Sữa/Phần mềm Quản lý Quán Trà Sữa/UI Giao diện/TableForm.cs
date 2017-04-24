@@ -204,12 +204,14 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện
             f.fBill.MdiParent = f;
             f.fBill.Show();
             f.btnBill_Click(new object() , new EventArgs());
+            f.BtnBill.Enabled = true;
         }
         private void CreateBill(object sender, EventArgs e)
         {
             int idTableD = (int)pnInfoTable.Tag;
             confirmTable confirm = new confirmTable(idTableD, f);
             confirm.ShowDialog();
+            f.BtnBill.Enabled = true;
         }
         #endregion
 

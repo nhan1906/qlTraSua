@@ -48,5 +48,15 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.DAO
             }
             return -1;
         }
+
+        public float GetLuongUncheck(int idNhanvien)
+        {
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM NhanVien WHERE idNhanVien = " + idNhanvien);
+            foreach(DataRow row in data.Rows)
+            {
+                return float.Parse(row["luongUncheck"].ToString());
+            }
+            return 0;
+        }
     }
 }

@@ -67,6 +67,7 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện
             pnClose.Visible = false;
             btnTable.IsClick = true;
             btnTable.ClrBackground = Color.FromArgb(27, 25, 48);
+            btnBill.Enabled = false;
             LoadFormChild();
         }
         //
@@ -169,11 +170,11 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện
             btnTable.IsClick = true;
             btnTable.ClrBackground = Color.FromArgb(27, 25, 48);
             btnSchedule.IsClick = false;
-            btnBill.IsClick = false;
+            BtnBill.IsClick = false;
             btnAdmin.IsClick = false;
             btnDrink.IsClick = false;
             btnDashboard.IsClick = false;
-            btnBill.ClrBackground = Color.FromArgb(42, 49, 68);
+            BtnBill.ClrBackground = Color.FromArgb(42, 49, 68);
             btnDashboard.ClrBackground = Color.FromArgb(42, 49, 68);
             btnDrink.ClrBackground = Color.FromArgb(42, 49, 68);
             btnSchedule.ClrBackground = Color.FromArgb(42, 49, 68);
@@ -186,8 +187,8 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện
         public void btnBill_Click(object sender, EventArgs e)
         {
             // Set default click and background
-            btnBill.IsClick = true;
-            btnBill.ClrBackground = Color.FromArgb(27, 25, 48);
+            BtnBill.IsClick = true;
+            BtnBill.ClrBackground = Color.FromArgb(27, 25, 48);
             btnTable.IsClick = false;
             btnSchedule.IsClick = false;
             btnAdmin.IsClick = false;
@@ -207,12 +208,12 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện
         {
             // Set default click and background
             btnTable.IsClick = false;
-            btnBill.IsClick = false;
+            BtnBill.IsClick = false;
             btnAdmin.IsClick = false;
             btnSchedule.IsClick = false;
             btnDashboard.IsClick = false;
             btnTable.ClrBackground = Color.FromArgb(42, 49, 68);
-            btnBill.ClrBackground = Color.FromArgb(42, 49, 68);
+            BtnBill.ClrBackground = Color.FromArgb(42, 49, 68);
             btnDashboard.ClrBackground = Color.FromArgb(42, 49, 68);
             btnSchedule.ClrBackground = Color.FromArgb(42, 49, 68);
             btnAdmin.ClrBackground = Color.FromArgb(42, 49, 68);
@@ -225,12 +226,12 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện
         {
             // Set default click and background
             btnTable.IsClick = false;
-            btnBill.IsClick = false;
+            BtnBill.IsClick = false;
             btnAdmin.IsClick = false;
             btnDrink.IsClick = false;
             btnDashboard.IsClick = false;
             btnTable.ClrBackground = Color.FromArgb(42, 49, 68);
-            btnBill.ClrBackground = Color.FromArgb(42, 49, 68);
+            BtnBill.ClrBackground = Color.FromArgb(42, 49, 68);
             btnDashboard.ClrBackground = Color.FromArgb(42, 49, 68);
             btnDrink.ClrBackground = Color.FromArgb(42, 49, 68);
             btnAdmin.ClrBackground = Color.FromArgb(42, 49, 68);
@@ -243,12 +244,12 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện
         {
             // Set default click and background
             btnTable.IsClick = false;
-            btnBill.IsClick = false;
+            BtnBill.IsClick = false;
             btnAdmin.IsClick = false;
             btnDrink.IsClick = false;
             btnSchedule.IsClick = false;
             btnTable.ClrBackground = Color.FromArgb(42, 49, 68);
-            btnBill.ClrBackground = Color.FromArgb(42, 49, 68);
+            BtnBill.ClrBackground = Color.FromArgb(42, 49, 68);
             btnAdmin.ClrBackground = Color.FromArgb(42, 49, 68);
             btnDrink.ClrBackground = Color.FromArgb(42, 49, 68);
             btnSchedule.ClrBackground = Color.FromArgb(42, 49, 68);
@@ -261,12 +262,12 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện
         {
             // Set default click and background
             btnTable.IsClick = false;
-            btnBill.IsClick = false;
+            BtnBill.IsClick = false;
             btnDashboard.IsClick = false;
             btnDrink.IsClick = false;
             btnSchedule.IsClick = false;
             btnTable.ClrBackground = Color.FromArgb(42, 49, 68);
-            btnBill.ClrBackground = Color.FromArgb(42, 49, 68);
+            BtnBill.ClrBackground = Color.FromArgb(42, 49, 68);
             btnDashboard.ClrBackground = Color.FromArgb(42, 49, 68);
             btnDrink.ClrBackground = Color.FromArgb(42, 49, 68);
             btnSchedule.ClrBackground = Color.FromArgb(42, 49, 68);

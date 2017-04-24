@@ -54,6 +54,24 @@ CREATE TABLE Drink
 	idSizeDrink INT NOT NULL,
 	picture IMAGE,
 	idCategoriesD INT NOT NULL, 
+
+	MaDrink AS CASE idCategoriesD
+			WHEN 1 THEN 
+			(IIF(idDrink < 10 , ISNULL(N'TS0000' + CAST(idDrink AS NVARCHAR(10)), 'X') , ISNULL(N'TS000' + CAST(idDrink AS NVARCHAR(10)), 'X')))
+			WHEN 2 THEN 
+			(IIF(idDrink < 10 , ISNULL(N'TD0000' + CAST(idDrink AS NVARCHAR(10)), 'X') , ISNULL(N'TD000' + CAST(idDrink AS NVARCHAR(10)), 'X')))
+			WHEN 3 THEN 
+			(IIF(idDrink < 10 , ISNULL(N'BA0000' + CAST(idDrink AS NVARCHAR(10)), 'X') , ISNULL(N'BA000' + CAST(idDrink AS NVARCHAR(10)), 'X')))
+			WHEN 4 THEN 
+			(IIF(idDrink < 10 , ISNULL(N'TAN0000' + CAST(idDrink AS NVARCHAR(10)), 'X') , ISNULL(N'TAN000' + CAST(idDrink AS NVARCHAR(10)), 'X')))
+			WHEN 5 THEN 
+			(IIF(idDrink < 10 , ISNULL(N'CA0000' + CAST(idDrink AS NVARCHAR(10)), 'X') , ISNULL(N'CA000' + CAST(idDrink AS NVARCHAR(10)), 'X')))
+			WHEN 6 THEN 
+			(IIF(idDrink < 10 , ISNULL(N'YO0000' + CAST(idDrink AS NVARCHAR(10)), 'X') , ISNULL(N'YO000' + CAST(idDrink AS NVARCHAR(10)), 'X')))
+			WHEN 7 THEN 
+			(IIF(idDrink < 10 , ISNULL(N'SA0000' + CAST(idDrink AS NVARCHAR(10)), 'X') , ISNULL(N'SA000' + CAST(idDrink AS NVARCHAR(10)), 'X')))
+			ELSE ISNULL(N'K000' + CAST(idDrink AS NVARCHAR(10)), 'X')
+	END,
 	FOREIGN KEY (idCategoriesD) REFERENCES CategoriesD(idCategoriesD) ,
 	FOREIGN KEY (idSizeDrink) REFERENCES SizeDrink(idSizeDrink) 
 )
@@ -65,25 +83,41 @@ CREATE TABLE cateNhanvien
 	cateNhanVien NVARCHAR(100) NOT NULL
 )
 GO
+
 CREATE TABLE NhanVien
 (
 	idNhanVien INT IDENTITY PRIMARY KEY,
 	maNhanVien NVARCHAR(10) NOT NULL,
 	tenNhanVien NVARCHAR(100) NOT NULL,
-	idCateNV INT NOT NULL DEFAULT 1 -- 1 là part - time, 2 là full - time
-	
+	idCateNV INT NOT NULL DEFAULT 1, -- 1 là part - time, 2 là full - time
+	luongUncheck FLOAT DEFAULT 0,
+	luongCashout FLOAT DEFAULT 0,
+	MaNV AS CASE idCateNV
+	WHEN 1 THEN 
+			ISNULL(N'PT0000' + CAST(idNhanVien AS NVARCHAR(10)), 'X')
+			ELSE ISNULL(N'FT000' + CAST(idNhanVien AS NVARCHAR(10)), 'X')
+			END,
 	FOREIGN KEY (idCateNV) REFERENCES cateNhanVien(idCateNV) 
 )
 GO
-
 CREATE TABLE NgayLuong
 (
 	idNgayLuong INT IDENTITY PRIMARY KEY,
 	idNhanVien INT NOT NULL,
 	ngay DATE NOT NULL DEFAULT GETDATE(),
 	luongNgay FLOAT DEFAULT 0,
-	cateL INT DEFAULT 0
+	cateL INT DEFAULT 0,
 	FOREIGN KEY (idNhanVien) REFERENCES NhanVien(idNhanVien)
+)
+GO
+
+CREATE TABLE ThanhToan
+(
+	idThanhToan INT IDENTITY PRIMARY KEY,
+	idNhanVien INT NOT NULL,
+	dateCheckout DATE DEFAULT GETDATE(),
+	luongCheckout FLOAT NOT NULL,
+	MaTT AS ISNULL(N'TT0000'  + CAST(idNhanVien AS NVARCHAR(10)) + CAST(DATEPART(day , dateCheckout) as NVARCHAR(10)) + CAST(idThanhToan as NVARCHAR(10)), 'X')
 )
 GO
 
@@ -96,7 +130,12 @@ CREATE TABLE Bill
 	getOut DATETIME , 
 	statusBill INT NOT NULL DEFAULT 0,
 	sale FLOAT NOT NULL DEFAULT 0,
-	totalPrice FLOAT NOT NULL DEFAULT 0 -- 0 trống 1 , có người
+	totalPrice FLOAT NOT NULL DEFAULT 0, -- 0 trống 1 , có người
+	MaBill AS CASE idTableD
+			WHEN 0 THEN 
+			(IIF(idBill < 10 , ISNULL(N'TK00' + CAST(idTableD AS NVARCHAR(10)) + CAST(idBill AS NVARCHAR(10)), 'X') , ISNULL(N'TK0'+ CAST(idTableD AS NVARCHAR(10)) + CAST(idBill AS NVARCHAR(10)), 'X')))
+			ELSE (IIF(idBill < 10 , ISNULL(N'TB00'+ CAST(idTableD AS NVARCHAR(10)) + CAST(idBill AS NVARCHAR(10)), 'X') , ISNULL(N'TB0'+ CAST(idTableD AS NVARCHAR(10)) + CAST(idBill AS NVARCHAR(10)), 'X')))
+	END,
 	FOREIGN KEY (idTableD) REFERENCES TableD (idTableD)
 )
 GO
@@ -107,7 +146,12 @@ CREATE TABLE BillInfo
 	idBill INT NOT NULL,
 	idDrink INT NOT NULL,
 	countD INT NOT NULL DEFAULT 1,
-	price FLOAT NOT NULL DEFAULT 0
+	price FLOAT NOT NULL DEFAULT 0,
+	MaBill AS CASE IIF(idBillInfo > 10 , 1 ,2)
+			WHEN 1 THEN 
+				ISNULL(N'MA00' + CAST(idDrink AS NVARCHAR(10)) + CAST(idBillInfo AS NVARCHAR(10)), 'X')
+			ELSE ISNULL(N'BT00'+ CAST(idDrink AS NVARCHAR(10)) + CAST(idBillInfo AS NVARCHAR(10)), 'X')
+	END,
 	FOREIGN KEY (idBill) REFERENCES Bill (idBill) ,
 	FOREIGN KEY (idDrink) REFERENCES Drink (idDrink)
 )
@@ -437,65 +481,6 @@ VALUES
 )
 GO
 
-INSERT NgayLuong
-(
-	idNhanVien
-)
-VALUES
-(
-	1
-)
-INSERT NgayLuong
-(
-	idNhanVien
-)
-VALUES
-(
-	2
-)
-INSERT NgayLuong
-(
-	idNhanVien
-)
-VALUES
-(
-	3
-)
-INSERT NgayLuong
-(
-	idNhanVien
-)
-VALUES
-(
-	4
-)
-
-INSERT NgayLuong
-(
-	idNhanVien , ngay , cateL
-)
-VALUES
-(
-	1 , '2017/04/19', 1
-)
-INSERT NgayLuong
-(
-	idNhanVien , ngay , cateL
-)
-VALUES
-(
-	1 , '2017/04/18', 2
-)
-INSERT NgayLuong
-(
-	idNhanVien , ngay , cateL
-)
-VALUES
-(
-	1 , '2017/04/17', 3
-)
-GO
-
 --Create proc
 CREATE PROC USP_CheckLogin
 @useName NVARCHAR(100),
@@ -672,7 +657,7 @@ CREATE PROC USP_UpdateLuongNgay
 AS
 BEGIN
 	UPDATE NgayLuong
-	SET idNhanVien = @idNhanVien , cateL = @cateL , luongNgay = @luongNgay
+	SET idNhanVien = @idNhanVien , cateL = @cateL , luongNgay = @luongNgay 
 	WHERE idNhanVien = @idNhanVien
 END
 GO
@@ -730,7 +715,7 @@ BEGIN
 	WHERE idTableD = @idTableD
 END
 GO
-
+SELECT * FROM Bill
 CREATE PROC USP_AddBillInfoByIdBill
 @idBill INT , 
 @idDrink INT ,
@@ -829,12 +814,158 @@ WHERE statusBill = 1
 GROUP BY cast(getIn as date)
 GO
 
+CREATE VIEW DrinkPerTime
+AS
+SELECT  MaDrink , nameDrink , soLuong , days
+FROM Drink INNER JOIN
+	(SELECT SUM(countD) as soLuong , idDrink as categories , cast(getIn as date) as days
+	FROM Bill INNER JOIN BillInfo
+		ON Bill.idBill = BillInfo.idBill
+	WHERE Bill.statusBill = 1
+	GROUP BY cast(getIn as date) , idDrink) as B
+	ON Drink.idDrink = B.categories
+GO
 
---Select
 
-SELECT * FROM BC_DoanhSo
-select * from accountd
+CREATE PROC NumberCategoriesOnAll
+@idCategoriesD INT, 
+@getIn DATE
+AS
+BEGIN
+	SELECT SUM(countD)
+	FROM Drink as d INNER JOIN BillInfo as i ON d.idDrink = i.idDrink INNER JOIN Bill as b ON i.idBill = b.idBill
+	WHERE b.statusBill = 1 AND d.idCategoriesD = @idCategoriesD AND cast(getIn as Date) = @getIn
+END
+GO 
+
+CREATE PROC DrinkPerWeek
+@days DATE
+AS
+BEGIN
+	SELECT MaDrink , nameDrink ,  Sum(soLuong) as soLuong
+	FROM DrinkPerTime 
+	WHERE days BETWEEN  DATEADD(DAY , -6,  @days)  AND @days
+	GROUP BY nameDrink , MaDrink
+	ORDER BY soLuong DESC
+END
+GO
 
 
+CREATE PROC AllProductsSale
+@getIn DATE
+AS
+SELECT SUM(countD)
+	FROM BillInfo as i INNER JOIN Bill as b ON i.idBill = b.idBill
+	WHERE b.statusBill = 1 AND cast(getIn as Date) = @getIn
+GO
+
+CREATE PROC BC_DoanhThuNgay
+@date DATE
+AS
+BEGIN
+	SELECT  MaBill , totalPrice*100 /(100 - sale) as tongtien , totalPrice*100 /(100 - sale) - totalPrice as sale, totalPrice , cast(getIn as date) as date
+	FROM Bill 
+	WHERE statusBill = 1 AND cast(getIn as date) = @date
+END
+GO
+
+CREATE PROC BC_DoanhThuTuan
+@days DATE
+AS
+BEGIN
+	SELECT * FROM BC_DoanhSo
+	WHERE dates BETWEEN  DATEADD(DAY , -6,  @days)  AND @days
+END
+GO
+
+
+CREATE PROC BC_DoanhThuThang
+@date DATE
+AS
+BEGIN
+	SELECT * FROM BC_DoanhSo
+	WHERE dates BETWEEN DATEADD(DAY,1,EOMONTH(@date,-1)) AND EOMONTH(@date)
+END
+GO
+
+CREATE PROC USP_TKTakeAway
+AS
+BEGIN
+	SELECT t.nmTK , b.nmBill , t.days
+	FROM (SELECT COUNT(idBill) as nmTK, CAST(getIn as date) as days
+	FROM Bill
+	WHERE idTableD = 0
+	GROUP BY CAST(getIn as date)) as t INNER JOIN (SELECT COUNT(idBill) as nmBill, CAST(getIn as date) as days
+	FROM Bill
+	GROUP BY CAST(getIn as date)) as b
+	ON t.days = b.days
+END
+GO
+
+CREATE PROC UpdateLuongNV
+@idNhanVien INT,
+@cateNew FLOAT,
+@cateOld FLOAT
+AS
+BEGIN
+	UPDATE NhanVien
+	SET luongUncheck = luongUncheck + (@cateNew - @cateOld)
+	WHERE idNhanVien = @idNhanVien
+END
+GO
+
+CREATE PROC AddLuongNV
+@idNhanVien INT,
+@cateNew FLOAT
+AS
+BEGIN
+	UPDATE NhanVien
+	SET luongUncheck = luongUncheck + @cateNew
+	WHERE idNhanVien = @idNhanVien
+END
+GO
+
+CREATE PROC USP_Cashout
+@idNhanVien INT,
+@luongCheckout FLOAT
+AS
+BEGIN
+	INSERT ThanhToan
+	(
+		idNhanVien , luongCheckout
+	)
+	VALUES
+	(
+		@idNhanVien , @luongCheckout
+	)
+END
+GO
+
+CREATE PROC UpdateNVCashout
+@idNhanVien INT
+AS
+BEGIN
+	UPDATE NhanVien
+	SET luongUncheck = 0 , luongCashout = luongCashout + luongUncheck
+	WHERE idNhanVien = @idNhanVien
+END
+GO
+
+CREATE PROC BC_LuongNV
+@date as DATE
+AS
+BEGIN
+	SELECT tenNhanVien , SUM(luongUncheck + luongCashout) as totalLuong,  SUM(luongUncheck) as uncheckLuong, SUM(luongCashout) as checkLuong 
+	FROM (NhanVien INNER JOIN ThanhToan ON NhanVien.idNhanVien = ThanhToan.idNhanVien)
+	WHERE dateCheckout BETWEEN DATEADD(DAY,1,EOMONTH(@date,-1)) AND EOMONTH(@date)
+	GROUP BY tenNhanVien
+END
+GO
+
+SELECT soLuong FROM DrinkPerTime 
+WHERE nameDrink = N'Trà sữa trà xanh'
 SELECT * FROM Bill
-SELECT * FROM BillInfo
+SELECT * FROM NgayLuong
+SELECT * FROM NhanVien
+SELECT * FROM ThanhToan
+

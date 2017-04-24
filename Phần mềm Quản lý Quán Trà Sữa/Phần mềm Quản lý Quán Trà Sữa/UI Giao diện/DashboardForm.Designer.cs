@@ -39,17 +39,26 @@
             this.pndata = new System.Windows.Forms.Panel();
             this.dtThongke = new System.Windows.Forms.DataGridView();
             this.pnCategories = new System.Windows.Forms.Panel();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dt = new System.Windows.Forms.DateTimePicker();
             this.cmbType = new System.Windows.Forms.ComboBox();
             this.pnTop = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnAcceptDrink = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lbPercentDrink = new System.Windows.Forms.Label();
+            this.lbCateName = new System.Windows.Forms.Label();
+            this.lbDrink = new System.Windows.Forms.Label();
+            this.lbpercentCate = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lbCate = new System.Windows.Forms.Label();
+            this.cmbDrink = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.cmbCategoriesD = new System.Windows.Forms.ComboBox();
-            this.circleDashboard2 = new Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện.CustomControl.CircleDashboard();
-            this.circleDashboard1 = new Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện.CustomControl.CircleDashboard();
+            this.lbTK = new System.Windows.Forms.Label();
+            this.lbTKDrink = new System.Windows.Forms.Label();
+            this.tkCategories = new Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện.CustomControl.CircleDashboard();
+            this.tkDrink = new Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện.CustomControl.CircleDashboard();
             ((System.ComponentModel.ISupportInitialize)(this.BC_DoanhSoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtQLTraSuaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bCDoanhSoBindingSource)).BeginInit();
@@ -106,9 +115,9 @@
             // 
             this.pndata.Controls.Add(this.dtThongke);
             this.pndata.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pndata.Location = new System.Drawing.Point(0, 89);
+            this.pndata.Location = new System.Drawing.Point(0, 124);
             this.pndata.Name = "pndata";
-            this.pndata.Size = new System.Drawing.Size(493, 366);
+            this.pndata.Size = new System.Drawing.Size(493, 331);
             this.pndata.TabIndex = 7;
             // 
             // dtThongke
@@ -116,25 +125,29 @@
             this.dtThongke.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtThongke.Location = new System.Drawing.Point(21, 6);
             this.dtThongke.Name = "dtThongke";
-            this.dtThongke.Size = new System.Drawing.Size(456, 357);
+            this.dtThongke.Size = new System.Drawing.Size(456, 313);
             this.dtThongke.TabIndex = 0;
             // 
             // pnCategories
             // 
-            this.pnCategories.Controls.Add(this.dateTimePicker1);
+            this.pnCategories.Controls.Add(this.lbTK);
+            this.pnCategories.Controls.Add(this.dt);
             this.pnCategories.Controls.Add(this.cmbType);
             this.pnCategories.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnCategories.Location = new System.Drawing.Point(0, 37);
             this.pnCategories.Name = "pnCategories";
-            this.pnCategories.Size = new System.Drawing.Size(493, 52);
+            this.pnCategories.Size = new System.Drawing.Size(493, 87);
             this.pnCategories.TabIndex = 6;
             // 
-            // dateTimePicker1
+            // dt
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(278, 18);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(199, 20);
-            this.dateTimePicker1.TabIndex = 25;
+            this.dt.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(240)))), ((int)(((byte)(201)))));
+            this.dt.CalendarTitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(240)))), ((int)(((byte)(201)))));
+            this.dt.Location = new System.Drawing.Point(278, 18);
+            this.dt.Name = "dt";
+            this.dt.Size = new System.Drawing.Size(199, 20);
+            this.dt.TabIndex = 25;
+            this.dt.ValueChanged += new System.EventHandler(this.dt_ValueChanged);
             // 
             // cmbType
             // 
@@ -144,10 +157,14 @@
             this.cmbType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(72)))), ((int)(((byte)(78)))));
             this.cmbType.FormattingEnabled = true;
             this.cmbType.Items.AddRange(new object[] {
-            "Thống kê doanh thu tuần",
-            "Thống kê doanh thu tháng",
-            "Thông kê thức uống theo tuần",
-            "Thống kê thức uống theo tháng"});
+            "Thống kê doanh thu theo ngày",
+            "Thống kê doanh thu theo tuần",
+            "Thống kê doanh thu theo tháng",
+            "Thống kê thức uống theo ngày",
+            "Thống kê thức uống theo tuần",
+            "Thống kê thức uống theo tháng",
+            "Thống kê mang đi tháng",
+            "Thống kê lương Nhân viên tháng"});
             this.cmbType.Location = new System.Drawing.Point(21, 15);
             this.cmbType.Name = "cmbType";
             this.cmbType.Size = new System.Drawing.Size(251, 23);
@@ -203,15 +220,101 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.lbTKDrink);
+            this.panel3.Controls.Add(this.lbPercentDrink);
+            this.panel3.Controls.Add(this.lbCateName);
+            this.panel3.Controls.Add(this.lbDrink);
+            this.panel3.Controls.Add(this.lbpercentCate);
+            this.panel3.Controls.Add(this.label3);
+            this.panel3.Controls.Add(this.lbCate);
+            this.panel3.Controls.Add(this.cmbDrink);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.cmbCategoriesD);
-            this.panel3.Controls.Add(this.circleDashboard2);
-            this.panel3.Controls.Add(this.circleDashboard1);
+            this.panel3.Controls.Add(this.tkCategories);
+            this.panel3.Controls.Add(this.tkDrink);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(493, 0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(340, 409);
             this.panel3.TabIndex = 33;
+            // 
+            // lbPercentDrink
+            // 
+            this.lbPercentDrink.AutoSize = true;
+            this.lbPercentDrink.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPercentDrink.Location = new System.Drawing.Point(157, 327);
+            this.lbPercentDrink.Name = "lbPercentDrink";
+            this.lbPercentDrink.Size = new System.Drawing.Size(29, 18);
+            this.lbPercentDrink.TabIndex = 33;
+            this.lbPercentDrink.Text = "10%";
+            // 
+            // lbCateName
+            // 
+            this.lbCateName.AutoSize = true;
+            this.lbCateName.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCateName.Location = new System.Drawing.Point(41, 374);
+            this.lbCateName.Name = "lbCateName";
+            this.lbCateName.Size = new System.Drawing.Size(54, 21);
+            this.lbCateName.TabIndex = 32;
+            this.lbCateName.Text = "Tất cả";
+            // 
+            // lbDrink
+            // 
+            this.lbDrink.AutoSize = true;
+            this.lbDrink.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDrink.Location = new System.Drawing.Point(208, 275);
+            this.lbDrink.Name = "lbDrink";
+            this.lbDrink.Size = new System.Drawing.Size(64, 21);
+            this.lbDrink.TabIndex = 31;
+            this.lbDrink.Text = "Trà sữa";
+            // 
+            // lbpercentCate
+            // 
+            this.lbpercentCate.AutoSize = true;
+            this.lbpercentCate.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbpercentCate.Location = new System.Drawing.Point(157, 172);
+            this.lbpercentCate.Name = "lbpercentCate";
+            this.lbpercentCate.Size = new System.Drawing.Size(29, 18);
+            this.lbpercentCate.TabIndex = 30;
+            this.lbpercentCate.Text = "10%";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(50, 207);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(54, 21);
+            this.label3.TabIndex = 29;
+            this.label3.Text = "Tất cả";
+            // 
+            // lbCate
+            // 
+            this.lbCate.AutoSize = true;
+            this.lbCate.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCate.Location = new System.Drawing.Point(228, 120);
+            this.lbCate.Name = "lbCate";
+            this.lbCate.Size = new System.Drawing.Size(64, 21);
+            this.lbCate.TabIndex = 28;
+            this.lbCate.Text = "Trà sữa";
+            // 
+            // cmbDrink
+            // 
+            this.cmbDrink.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(240)))), ((int)(((byte)(201)))));
+            this.cmbDrink.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbDrink.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbDrink.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(72)))), ((int)(((byte)(78)))));
+            this.cmbDrink.FormattingEnabled = true;
+            this.cmbDrink.Items.AddRange(new object[] {
+            "Thống kê doanh thu tuần",
+            "Thống kê doanh thu tháng",
+            "Thông kê thức uống theo tuần",
+            "Thống kê thức uống theo tháng"});
+            this.cmbDrink.Location = new System.Drawing.Point(54, 246);
+            this.cmbDrink.Name = "cmbDrink";
+            this.cmbDrink.Size = new System.Drawing.Size(251, 23);
+            this.cmbDrink.TabIndex = 27;
+            this.cmbDrink.SelectedIndexChanged += new System.EventHandler(this.cmbDrink_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -242,32 +345,59 @@
             this.cmbCategoriesD.Name = "cmbCategoriesD";
             this.cmbCategoriesD.Size = new System.Drawing.Size(251, 23);
             this.cmbCategoriesD.TabIndex = 25;
+            this.cmbCategoriesD.SelectedIndexChanged += new System.EventHandler(this.cmbCategoriesD_SelectedIndexChanged);
             // 
-            // circleDashboard2
+            // lbTK
             // 
-            this.circleDashboard2.ColorBackground = System.Drawing.Color.White;
-            this.circleDashboard2.ColorMain = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(220)))), ((int)(((byte)(224)))));
-            this.circleDashboard2.ColorProcess = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(227)))), ((int)(((byte)(178)))));
-            this.circleDashboard2.LengthLine = 2;
-            this.circleDashboard2.LineColor = System.Drawing.Color.Black;
-            this.circleDashboard2.Location = new System.Drawing.Point(115, 120);
-            this.circleDashboard2.Name = "circleDashboard2";
-            this.circleDashboard2.PercentItem = 0F;
-            this.circleDashboard2.Size = new System.Drawing.Size(120, 120);
-            this.circleDashboard2.TabIndex = 1;
+            this.lbTK.AutoSize = true;
+            this.lbTK.BackColor = System.Drawing.Color.White;
+            this.lbTK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbTK.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTK.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(72)))), ((int)(((byte)(78)))));
+            this.lbTK.Location = new System.Drawing.Point(17, 58);
+            this.lbTK.Name = "lbTK";
+            this.lbTK.Size = new System.Drawing.Size(116, 17);
+            this.lbTK.TabIndex = 26;
+            this.lbTK.Text = "Doanh thu ngày";
             // 
-            // circleDashboard1
+            // lbTKDrink
             // 
-            this.circleDashboard1.ColorBackground = System.Drawing.Color.White;
-            this.circleDashboard1.ColorMain = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(220)))), ((int)(((byte)(224)))));
-            this.circleDashboard1.ColorProcess = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(227)))), ((int)(((byte)(178)))));
-            this.circleDashboard1.LengthLine = 2;
-            this.circleDashboard1.LineColor = System.Drawing.Color.Black;
-            this.circleDashboard1.Location = new System.Drawing.Point(115, 262);
-            this.circleDashboard1.Name = "circleDashboard1";
-            this.circleDashboard1.PercentItem = 0F;
-            this.circleDashboard1.Size = new System.Drawing.Size(120, 120);
-            this.circleDashboard1.TabIndex = 0;
+            this.lbTKDrink.AutoSize = true;
+            this.lbTKDrink.BackColor = System.Drawing.Color.White;
+            this.lbTKDrink.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbTKDrink.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTKDrink.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(72)))), ((int)(((byte)(78)))));
+            this.lbTKDrink.Location = new System.Drawing.Point(51, 52);
+            this.lbTKDrink.Name = "lbTKDrink";
+            this.lbTKDrink.Size = new System.Drawing.Size(143, 17);
+            this.lbTKDrink.TabIndex = 34;
+            this.lbTKDrink.Text = "Thống kê theo ngày";
+            // 
+            // tkCategories
+            // 
+            this.tkCategories.ColorBackground = System.Drawing.Color.White;
+            this.tkCategories.ColorMain = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(220)))), ((int)(((byte)(224)))));
+            this.tkCategories.ColorProcess = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.tkCategories.LengthLine = 2;
+            this.tkCategories.LineColor = System.Drawing.Color.Black;
+            this.tkCategories.Location = new System.Drawing.Point(115, 120);
+            this.tkCategories.Name = "tkCategories";
+            this.tkCategories.PercentItem = 100F;
+            this.tkCategories.Size = new System.Drawing.Size(120, 120);
+            this.tkCategories.TabIndex = 1;
+            // 
+            // tkDrink
+            // 
+            this.tkDrink.ColorBackground = System.Drawing.Color.White;
+            this.tkDrink.ColorMain = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(220)))), ((int)(((byte)(224)))));
+            this.tkDrink.ColorProcess = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.tkDrink.LengthLine = 2;
+            this.tkDrink.LineColor = System.Drawing.Color.Black;
+            this.tkDrink.Location = new System.Drawing.Point(115, 275);
+            this.tkDrink.Name = "tkDrink";
+            this.tkDrink.PercentItem = 0F;
+            this.tkDrink.Size = new System.Drawing.Size(120, 120);
+            this.tkDrink.TabIndex = 0;
             // 
             // DashboardForm
             // 
@@ -291,6 +421,7 @@
             this.pndata.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtThongke)).EndInit();
             this.pnCategories.ResumeLayout(false);
+            this.pnCategories.PerformLayout();
             this.pnTop.ResumeLayout(false);
             this.pnTop.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -313,14 +444,23 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel pndata;
         private System.Windows.Forms.DataGridView dtThongke;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dt;
         private System.Windows.Forms.ComboBox cmbType;
         private System.Windows.Forms.Button btnAcceptDrink;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cmbCategoriesD;
-        private CustomControl.CircleDashboard circleDashboard2;
-        private CustomControl.CircleDashboard circleDashboard1;
+        private CustomControl.CircleDashboard tkCategories;
+        private CustomControl.CircleDashboard tkDrink;
+        private System.Windows.Forms.ComboBox cmbDrink;
+        private System.Windows.Forms.Label lbCate;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lbpercentCate;
+        private System.Windows.Forms.Label lbCateName;
+        private System.Windows.Forms.Label lbDrink;
+        private System.Windows.Forms.Label lbPercentDrink;
+        private System.Windows.Forms.Label lbTK;
+        private System.Windows.Forms.Label lbTKDrink;
     }
 }

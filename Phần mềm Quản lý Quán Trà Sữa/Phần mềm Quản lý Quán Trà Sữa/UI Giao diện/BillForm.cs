@@ -344,6 +344,7 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện
             //tra lai ban
             fMain.fTable.Show();
             fMain.btnTable_Click(new object(), new EventArgs());
+            fMain.BtnBill.Enabled = false;
         }
         
     }

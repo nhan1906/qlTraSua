@@ -668,5 +668,12 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
         private nButton btnEditUser;
+        public nButton BtnBill
+        {
+            get
+            {
+                return btnBill;
+            }
+        }
     }
 }

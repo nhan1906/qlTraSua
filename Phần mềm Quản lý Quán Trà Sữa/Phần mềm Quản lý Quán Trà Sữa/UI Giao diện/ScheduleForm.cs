@@ -162,11 +162,12 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện
                     cateL = 1;
                 }
 
-                bool isExits = NgayLuongDAO.Instance.IsExistNgayLuongByNameAndDay(idNhanVien, DateTime.Now);
-                if(isExits)
+                int isExits = NgayLuongDAO.Instance.IsExistNgayLuongByNameAndDay(idNhanVien, DateTime.Now);
+                if(isExits != -1)
                 {
                     //Update
                     int result = NgayLuongDAO.Instance.UpdateLuongNgay(idNhanVien , cateL , float.Parse(txtMoneyCa.Text) * cateL);
+                    NgayLuongDAO.Instance.UpdateLuongNV(idNhanVien, float.Parse(txtMoneyCa.Text) * cateL, float.Parse(txtMoneyCa.Text) * isExits);
                     if (result == 1)
                     {
                         MessageBox.Show("Thành công");
@@ -180,6 +181,7 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện
                 {
                     //insert
                     int result = NgayLuongDAO.Instance.InsertLuongNgay(idNhanVien, cateL, float.Parse(txtMoneyCa.Text) * cateL);
+                    NgayLuongDAO.Instance.InsertLuongNV(idNhanVien, float.Parse(txtMoneyCa.Text) * cateL);
                     if (result == 1)
                     {
                         MessageBox.Show("Thành công");
@@ -217,6 +219,32 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện
             AddNhanVienForm fAdd = new AddNhanVienForm();
             fAdd.ShowDialog();
             bdNV.DataSource = NhanVienDAO.Instance.GetListNhanVien(); ;
+        }
+
+        private void btnCashout_Click(object sender, EventArgs e)
+        {
+            string tenNhanVien = dtgvNV.SelectedCells[0].OwningRow.Cells["tenNhanVien"].Value.ToString();
+            int idNhanVien = NhanVienDAO.Instance.GetIdByName(tenNhanVien);
+            float luongUncheck = NhanVienDAO.Instance.GetLuongUncheck(idNhanVien);
+            int i = DataProvider.Instance.ExecuteNonQuery("USP_Cashout @idNhanVien , @luongCheckout", new object[] { idNhanVien, luongUncheck });
+            if (i == 1)
+            {
+                MessageBox.Show("Thành công");
+            }
+            else
+            {
+                MessageBox.Show("Thất bại");
+            }
+            DataProvider.Instance.ExecuteNonQuery("UpdateNVCashout @idNhanVien", new object[] { idNhanVien });
+        }
+
+        private void dtgvNV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string tenNhanVien = dtgvNV.SelectedCells[0].OwningRow.Cells["tenNhanVien"].Value.ToString();
+            int idNhanVien = NhanVienDAO.Instance.GetIdByName(tenNhanVien);
+            float luongUncheck = NhanVienDAO.Instance.GetLuongUncheck(idNhanVien);
+            lbNv.Text = tenNhanVien;
+            txtMoneyMonth.Text = luongUncheck.ToString();
         }
     }
 }

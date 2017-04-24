@@ -30,16 +30,16 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.DAO
         }
         #endregion
 
-        public bool IsExistNgayLuongByNameAndDay(int idNhanVien ,DateTime day)
+        public int IsExistNgayLuongByNameAndDay(int idNhanVien ,DateTime day)
         {
             string days = day.ToString("yyyy-MM-dd");
             string query = "Select * from NgayLuong where idNhanVien = " + idNhanVien + " AND ngay = '" + days + "'";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             foreach (DataRow row in data.Rows)
             {
-                return true;
+                return (int)row["cateL"];
             }
-            return false;
+            return -1;
         }
 
         public int GetIdNgayLuongByNhanVien(int idNhanVien , DateTime day)
@@ -63,7 +63,15 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.DAO
         {
             return DataProvider.Instance.ExecuteNonQuery("USP_InsertNgayLuong @idNhanVien , @cateL , @luongNgay", new object[] { idNhanVien, cateL, luongNgay });
         }
+        public int UpdateLuongNV(int idNhanVien , float cateNew , float cateOld)
+        {
+            return DataProvider.Instance.ExecuteNonQuery("UpdateLuongNV @idNhanVien , @cateNew , @cateOld", new object[] { idNhanVien , cateNew , cateOld});
+        }
 
+        public int InsertLuongNV(int idNhanVien, float cateNew)
+        {
+            return DataProvider.Instance.ExecuteNonQuery("AddLuongNV @idNhanVien , @cateNew", new object[] { idNhanVien, cateNew });
+        }
         public float LuongByNhanVien(int idNhanVien)
         {
             float luongThang = 0;
