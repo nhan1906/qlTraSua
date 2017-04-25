@@ -962,6 +962,13 @@ BEGIN
 END
 GO
 
+CREATE VIEW HD_HoaDon
+AS
+SELECT i.idBill , b.idTableD , b.getIn , b.getOut , d.nameDrink , d.idSizeDrink , i.countD , d.price , b.sale
+FROM Drink as d INNER JOIN BillInfo as i ON d.idDrink = i.idDrink INNER JOIN Bill as b ON i.idBill = b.idBill
+WHERE statusBill = 1
+GO
+
 SELECT soLuong FROM DrinkPerTime 
 WHERE nameDrink = N'Trà sữa trà xanh'
 SELECT * FROM Bill

@@ -341,10 +341,16 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện
             }
             if(idTable != 0)
                 TableDDAO.Instance.CleanTableByIdTable(idTable);
+            if( MessageBox.Show("Bạn có muốn in hóa đơn không ","In hóa đơn",  MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                PrintHoaDon fPrint = new PrintHoaDon(idCurrentBill);
+                fPrint.ShowDialog();
+            }
             //tra lai ban
             fMain.fTable.Show();
             fMain.btnTable_Click(new object(), new EventArgs());
             fMain.BtnBill.Enabled = false;
+           
         }
         
     }

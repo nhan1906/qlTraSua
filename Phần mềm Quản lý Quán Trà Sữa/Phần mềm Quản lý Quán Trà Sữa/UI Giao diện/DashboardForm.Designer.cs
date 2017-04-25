@@ -33,19 +33,19 @@
             this.dtQLTraSuaDataSet = new Phần_mềm_Quản_lý_Quán_Trà_Sữa.dtQLTraSuaDataSet();
             this.bCDoanhSoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.categoriesDBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.categoriesDTableAdapter = new Phần_mềm_Quản_lý_Quán_Trà_Sữa.dtQLTraSuaDataSetTableAdapters.CategoriesDTableAdapter();
-            this.bC_DoanhSoTableAdapter = new Phần_mềm_Quản_lý_Quán_Trà_Sữa.dtQLTraSuaDataSetTableAdapters.BC_DoanhSoTableAdapter();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pndata = new System.Windows.Forms.Panel();
             this.dtThongke = new System.Windows.Forms.DataGridView();
             this.pnCategories = new System.Windows.Forms.Panel();
+            this.lbTK = new System.Windows.Forms.Label();
             this.dt = new System.Windows.Forms.DateTimePicker();
             this.cmbType = new System.Windows.Forms.ComboBox();
             this.pnTop = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnAcceptDrink = new System.Windows.Forms.Button();
+            this.btnPrintHD = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lbTKDrink = new System.Windows.Forms.Label();
             this.lbPercentDrink = new System.Windows.Forms.Label();
             this.lbCateName = new System.Windows.Forms.Label();
             this.lbDrink = new System.Windows.Forms.Label();
@@ -55,8 +55,6 @@
             this.cmbDrink = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.cmbCategoriesD = new System.Windows.Forms.ComboBox();
-            this.lbTK = new System.Windows.Forms.Label();
-            this.lbTKDrink = new System.Windows.Forms.Label();
             this.tkCategories = new Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện.CustomControl.CircleDashboard();
             this.tkDrink = new Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện.CustomControl.CircleDashboard();
             ((System.ComponentModel.ISupportInitialize)(this.BC_DoanhSoBindingSource)).BeginInit();
@@ -91,14 +89,6 @@
             // 
             this.categoriesDBindingSource.DataMember = "CategoriesD";
             this.categoriesDBindingSource.DataSource = this.dtQLTraSuaDataSet;
-            // 
-            // categoriesDTableAdapter
-            // 
-            this.categoriesDTableAdapter.ClearBeforeFill = true;
-            // 
-            // bC_DoanhSoTableAdapter
-            // 
-            this.bC_DoanhSoTableAdapter.ClearBeforeFill = true;
             // 
             // panel1
             // 
@@ -138,6 +128,19 @@
             this.pnCategories.Name = "pnCategories";
             this.pnCategories.Size = new System.Drawing.Size(493, 87);
             this.pnCategories.TabIndex = 6;
+            // 
+            // lbTK
+            // 
+            this.lbTK.AutoSize = true;
+            this.lbTK.BackColor = System.Drawing.Color.White;
+            this.lbTK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbTK.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTK.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(72)))), ((int)(((byte)(78)))));
+            this.lbTK.Location = new System.Drawing.Point(17, 58);
+            this.lbTK.Name = "lbTK";
+            this.lbTK.Size = new System.Drawing.Size(116, 17);
+            this.lbTK.TabIndex = 26;
+            this.lbTK.Text = "Doanh thu ngày";
             // 
             // dt
             // 
@@ -193,25 +196,26 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Thống kê ";
             // 
-            // btnAcceptDrink
+            // btnPrintHD
             // 
-            this.btnAcceptDrink.BackColor = System.Drawing.Color.SeaGreen;
-            this.btnAcceptDrink.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnAcceptDrink.FlatAppearance.BorderSize = 0;
-            this.btnAcceptDrink.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAcceptDrink.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAcceptDrink.ForeColor = System.Drawing.Color.White;
-            this.btnAcceptDrink.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAcceptDrink.Location = new System.Drawing.Point(9, 7);
-            this.btnAcceptDrink.Name = "btnAcceptDrink";
-            this.btnAcceptDrink.Size = new System.Drawing.Size(322, 31);
-            this.btnAcceptDrink.TabIndex = 31;
-            this.btnAcceptDrink.Text = "In thống kê doanh thu";
-            this.btnAcceptDrink.UseVisualStyleBackColor = false;
+            this.btnPrintHD.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnPrintHD.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnPrintHD.FlatAppearance.BorderSize = 0;
+            this.btnPrintHD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrintHD.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrintHD.ForeColor = System.Drawing.Color.White;
+            this.btnPrintHD.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPrintHD.Location = new System.Drawing.Point(9, 7);
+            this.btnPrintHD.Name = "btnPrintHD";
+            this.btnPrintHD.Size = new System.Drawing.Size(322, 31);
+            this.btnPrintHD.TabIndex = 31;
+            this.btnPrintHD.Text = "In thống kê doanh thu";
+            this.btnPrintHD.UseVisualStyleBackColor = false;
+            this.btnPrintHD.Click += new System.EventHandler(this.btnPrintHD_Click);
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.btnAcceptDrink);
+            this.panel2.Controls.Add(this.btnPrintHD);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(493, 409);
             this.panel2.Name = "panel2";
@@ -237,6 +241,19 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(340, 409);
             this.panel3.TabIndex = 33;
+            // 
+            // lbTKDrink
+            // 
+            this.lbTKDrink.AutoSize = true;
+            this.lbTKDrink.BackColor = System.Drawing.Color.White;
+            this.lbTKDrink.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbTKDrink.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTKDrink.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(72)))), ((int)(((byte)(78)))));
+            this.lbTKDrink.Location = new System.Drawing.Point(51, 52);
+            this.lbTKDrink.Name = "lbTKDrink";
+            this.lbTKDrink.Size = new System.Drawing.Size(143, 17);
+            this.lbTKDrink.TabIndex = 34;
+            this.lbTKDrink.Text = "Thống kê theo ngày";
             // 
             // lbPercentDrink
             // 
@@ -347,32 +364,6 @@
             this.cmbCategoriesD.TabIndex = 25;
             this.cmbCategoriesD.SelectedIndexChanged += new System.EventHandler(this.cmbCategoriesD_SelectedIndexChanged);
             // 
-            // lbTK
-            // 
-            this.lbTK.AutoSize = true;
-            this.lbTK.BackColor = System.Drawing.Color.White;
-            this.lbTK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lbTK.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTK.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(72)))), ((int)(((byte)(78)))));
-            this.lbTK.Location = new System.Drawing.Point(17, 58);
-            this.lbTK.Name = "lbTK";
-            this.lbTK.Size = new System.Drawing.Size(116, 17);
-            this.lbTK.TabIndex = 26;
-            this.lbTK.Text = "Doanh thu ngày";
-            // 
-            // lbTKDrink
-            // 
-            this.lbTKDrink.AutoSize = true;
-            this.lbTKDrink.BackColor = System.Drawing.Color.White;
-            this.lbTKDrink.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lbTKDrink.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTKDrink.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(72)))), ((int)(((byte)(78)))));
-            this.lbTKDrink.Location = new System.Drawing.Point(51, 52);
-            this.lbTKDrink.Name = "lbTKDrink";
-            this.lbTKDrink.Size = new System.Drawing.Size(143, 17);
-            this.lbTKDrink.TabIndex = 34;
-            this.lbTKDrink.Text = "Thống kê theo ngày";
-            // 
             // tkCategories
             // 
             this.tkCategories.ColorBackground = System.Drawing.Color.White;
@@ -434,9 +425,7 @@
         #endregion
         private dtQLTraSuaDataSet dtQLTraSuaDataSet;
         private System.Windows.Forms.BindingSource categoriesDBindingSource;
-        private dtQLTraSuaDataSetTableAdapters.CategoriesDTableAdapter categoriesDTableAdapter;
         private System.Windows.Forms.BindingSource bCDoanhSoBindingSource;
-        private dtQLTraSuaDataSetTableAdapters.BC_DoanhSoTableAdapter bC_DoanhSoTableAdapter;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.BindingSource BC_DoanhSoBindingSource;
         private System.Windows.Forms.Panel pnCategories;
@@ -446,7 +435,7 @@
         private System.Windows.Forms.DataGridView dtThongke;
         private System.Windows.Forms.DateTimePicker dt;
         private System.Windows.Forms.ComboBox cmbType;
-        private System.Windows.Forms.Button btnAcceptDrink;
+        private System.Windows.Forms.Button btnPrintHD;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label2;

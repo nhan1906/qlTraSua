@@ -340,5 +340,12 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện
             tkDrink.PercentItem = 360 * nmDrink / nmCategory;
             tkDrink.Refresh();
         }
+        
+        private void btnPrintHD_Click(object sender, EventArgs e)
+        {
+            DateTime month = dt.Value.Date;
+            PrintTK fPrint = new PrintTK(month);
+            fPrint.ShowDialog();
+        }
     }
 }
