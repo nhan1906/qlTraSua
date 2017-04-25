@@ -392,7 +392,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!dates.Value</Value>
-                              <Style />
+                              <Style>
+                                <Format>MM/dd/yyyy</Format>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -746,24 +748,24 @@
         <DataSetName>DataSet1</DataSetName>
         <Filters>
           <Filter>
-            <FilterExpression>=DATEPART("MM" , Fields!dates.Value)</FilterExpression>
+            <FilterExpression>=Month(Fields!dates.Value)</FilterExpression>
             <Operator>Equal</Operator>
             <FilterValues>
-              <FilterValue>=DATEPART("MM" , Parameters!month.Value)</FilterValue>
+              <FilterValue>=Month(Parameters!month.Value)</FilterValue>
             </FilterValues>
           </Filter>
           <Filter>
-            <FilterExpression>= DATEPART("yyyy" , Fields!dates.Value)</FilterExpression>
+            <FilterExpression>=Year(Fields!dates.Value)</FilterExpression>
             <Operator>Equal</Operator>
             <FilterValues>
-              <FilterValue>= DATEPART("yyyy" , Parameters!month.Value)</FilterValue>
+              <FilterValue>=Year(Parameters!month.Value)</FilterValue>
             </FilterValues>
           </Filter>
         </Filters>
         <Top>2.20708in</Top>
         <Left>0.3125in</Left>
         <Height>0.75in</Height>
-        <Width>8.66542in</Width>
+        <Width>8.66541in</Width>
         <ZIndex>5</ZIndex>
         <Style>
           <Border>

@@ -29,10 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.BC_DoanhSoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dtQLTraSuaDataSet = new Phần_mềm_Quản_lý_Quán_Trà_Sữa.dtQLTraSuaDataSet();
             this.bCDoanhSoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.categoriesDBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.pndata = new System.Windows.Forms.Panel();
             this.dtThongke = new System.Windows.Forms.DataGridView();
@@ -57,10 +54,7 @@
             this.cmbCategoriesD = new System.Windows.Forms.ComboBox();
             this.tkCategories = new Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện.CustomControl.CircleDashboard();
             this.tkDrink = new Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện.CustomControl.CircleDashboard();
-            ((System.ComponentModel.ISupportInitialize)(this.BC_DoanhSoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtQLTraSuaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bCDoanhSoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categoriesDBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
             this.pndata.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtThongke)).BeginInit();
@@ -68,27 +62,10 @@
             this.pnTop.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.SuspendLayout();
-            // 
-            // BC_DoanhSoBindingSource
-            // 
-            this.BC_DoanhSoBindingSource.DataMember = "BC_DoanhSo";
-            this.BC_DoanhSoBindingSource.DataSource = this.dtQLTraSuaDataSet;
-            // 
-            // dtQLTraSuaDataSet
-            // 
-            this.dtQLTraSuaDataSet.DataSetName = "dtQLTraSuaDataSet";
-            this.dtQLTraSuaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
+            this.SuspendLayout();// 
             // bCDoanhSoBindingSource
             // 
             this.bCDoanhSoBindingSource.DataMember = "BC_DoanhSo";
-            this.bCDoanhSoBindingSource.DataSource = this.dtQLTraSuaDataSet;
-            // 
-            // categoriesDBindingSource
-            // 
-            this.categoriesDBindingSource.DataMember = "CategoriesD";
-            this.categoriesDBindingSource.DataSource = this.dtQLTraSuaDataSet;
             // 
             // panel1
             // 
@@ -404,10 +381,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "DashboardForm";
             this.Load += new System.EventHandler(this.DashboardForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.BC_DoanhSoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtQLTraSuaDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bCDoanhSoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categoriesDBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.pndata.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtThongke)).EndInit();
@@ -423,11 +397,8 @@
         }
 
         #endregion
-        private dtQLTraSuaDataSet dtQLTraSuaDataSet;
-        private System.Windows.Forms.BindingSource categoriesDBindingSource;
         private System.Windows.Forms.BindingSource bCDoanhSoBindingSource;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.BindingSource BC_DoanhSoBindingSource;
         private System.Windows.Forms.Panel pnCategories;
         private System.Windows.Forms.Panel pnTop;
         private System.Windows.Forms.Label label1;

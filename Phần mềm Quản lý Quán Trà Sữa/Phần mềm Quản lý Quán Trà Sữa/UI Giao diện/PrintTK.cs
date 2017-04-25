@@ -22,7 +22,7 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện
 
         private void SetParameter(DateTime date)
         {
-            ReportParameter rp = new ReportParameter();
+            ReportParameter rp = new ReportParameter("month");
             rp.Values.Add(date.ToString());
             reportViewer1.LocalReport.SetParameters(rp);
         }
