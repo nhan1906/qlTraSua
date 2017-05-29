@@ -22,6 +22,12 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            //Chưa nhập đầy đủ thông tin
+            if(txtUserName.Text.Equals("") || txtPassword.Text.Equals(""))
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
+                return;
+            }
             string userName = txtUserName.Text;
             string password = txtPassword.Text;
             if (Login(userName, password))
@@ -31,7 +37,15 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa
                 mainForm.ShowDialog();
                 this.Show();
             }
+            else
+            {
+                MessageBox.Show("Tên đăng nhập hoặc mật khẩu không đúng");
+            }
         }
+        
+        /*
+         * Hàm xử lý thông tin đăng nhập
+         */ 
         bool Login(string userName, string password)
         {
             return AccountDDAO.Instance.CheckLogin(userName, password);

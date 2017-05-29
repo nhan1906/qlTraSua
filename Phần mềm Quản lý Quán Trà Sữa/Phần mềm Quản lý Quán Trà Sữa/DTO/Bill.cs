@@ -17,6 +17,7 @@ namespace Quản_Lý_Quán_Trà_Sữa.DTO
         private float sale;
         private float totalPrice;
         private int statusBill;
+        private string maBill;
         #region Properties
         public int IdBill
         {
@@ -108,8 +109,21 @@ namespace Quản_Lý_Quán_Trà_Sữa.DTO
                 statusBill = value;
             }
         }
+
+        public string MaBill
+        {
+            get
+            {
+                return maBill;
+            }
+
+            set
+            {
+                maBill = value;
+            }
+        }
         #endregion
-        public Bill(int idBill, int idTableD, float sale , float totalPrice, int statusBill , DateTime? getIn, DateTime? getOut = null)
+        public Bill(int idBill, int idTableD, float sale , float totalPrice, int statusBill , DateTime? getIn, string maBill, DateTime? getOut = null)
         {
             this.IdBill = idBill;
             this.IdTableD = idTableD;
@@ -118,6 +132,7 @@ namespace Quản_Lý_Quán_Trà_Sữa.DTO
             this.Sale = sale;
             this.TotalPrice = totalPrice;
             this.StatusBill = statusBill;
+            this.MaBill = maBill;
         }
         public Bill(DataRow row)
         {
@@ -130,6 +145,7 @@ namespace Quản_Lý_Quán_Trà_Sữa.DTO
             this.Sale = float.Parse(row["sale"].ToString());
             this.TotalPrice = float.Parse(row["totalPrice"].ToString());
             this.StatusBill = (int) row["statusBill"];
+            this.MaBill = row["maBill"].ToString();
         }
         
     }

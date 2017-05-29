@@ -138,6 +138,7 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện
 
         private void btnChamCa_Click(object sender, EventArgs e)
         {
+            int result = -1;
             foreach(DataGridViewRow row in dtgvNV.Rows)
             {
                 int cateL = 0;
@@ -166,31 +167,25 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện
                 if(isExits != -1)
                 {
                     //Update
-                    int result = NgayLuongDAO.Instance.UpdateLuongNgay(idNhanVien , cateL , float.Parse(txtMoneyCa.Text) * cateL);
+                    result = NgayLuongDAO.Instance.UpdateLuongNgay(idNhanVien , cateL , float.Parse(txtMoneyCa.Text) * cateL);
                     NgayLuongDAO.Instance.UpdateLuongNV(idNhanVien, float.Parse(txtMoneyCa.Text) * cateL, float.Parse(txtMoneyCa.Text) * isExits);
-                    if (result == 1)
-                    {
-                        MessageBox.Show("Thành công");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Thất bại");
-                    }
+                    
                 }
                 else
                 {
                     //insert
-                    int result = NgayLuongDAO.Instance.InsertLuongNgay(idNhanVien, cateL, float.Parse(txtMoneyCa.Text) * cateL);
+                    result = NgayLuongDAO.Instance.InsertLuongNgay(idNhanVien, cateL, float.Parse(txtMoneyCa.Text) * cateL);
                     NgayLuongDAO.Instance.InsertLuongNV(idNhanVien, float.Parse(txtMoneyCa.Text) * cateL);
-                    if (result == 1)
-                    {
-                        MessageBox.Show("Thành công");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Thất bại");
-                    }
                 }
+            }
+
+            if (result == 1)
+            {
+                MessageBox.Show("Thành công");
+            }
+            else
+            {
+                MessageBox.Show("Thất bại");
             }
         }
 

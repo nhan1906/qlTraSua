@@ -130,11 +130,17 @@
   <data name="icon_bill" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_bill.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icon_close_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_close_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icon_employee" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_employee.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icon_drink" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_drink.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bg_nameshop" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bg_nameshop.JPG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icon_exit" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_exit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -145,7 +151,7 @@
   <data name="icon_user_15" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_user_15.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icon_close_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon_close_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="bg_icon_help" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bg_icon_help.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

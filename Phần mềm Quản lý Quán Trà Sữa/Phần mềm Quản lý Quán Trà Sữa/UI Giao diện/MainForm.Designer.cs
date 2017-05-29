@@ -39,6 +39,7 @@
             this.LBorderUserName = new System.Windows.Forms.Panel();
             this.DivideUserName = new System.Windows.Forms.Panel();
             this.pnUser = new System.Windows.Forms.Panel();
+            this.ptUser = new System.Windows.Forms.PictureBox();
             this.DivideNameMenu = new System.Windows.Forms.Panel();
             this.NameShopPanel = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -55,9 +56,9 @@
             this.lbCategories = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.pnClose = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.btnClose = new Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện.nButton();
             this.btnEditUser = new Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện.nButton();
             this.btnSchedule = new Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện.nButton();
@@ -66,17 +67,16 @@
             this.btnDashboard = new Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện.nButton();
             this.btnBill = new Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện.nButton();
             this.btnTable = new Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện.nButton();
-            this.ptUser = new System.Windows.Forms.PictureBox();
             this.TitleBarPanel.SuspendLayout();
             this.UserNamePanel.SuspendLayout();
             this.pnUser.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptUser)).BeginInit();
             this.NameShopPanel.SuspendLayout();
             this.MenuBarPanel.SuspendLayout();
             this.DirectlyNamePanel.SuspendLayout();
             this.pnClose.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ptUser)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // TopBorderMain
@@ -177,6 +177,17 @@
             this.pnUser.Name = "pnUser";
             this.pnUser.Size = new System.Drawing.Size(34, 33);
             this.pnUser.TabIndex = 9;
+            // 
+            // ptUser
+            // 
+            this.ptUser.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ptUser.BackgroundImage")));
+            this.ptUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.ptUser.Location = new System.Drawing.Point(2, 2);
+            this.ptUser.Name = "ptUser";
+            this.ptUser.Size = new System.Drawing.Size(30, 30);
+            this.ptUser.TabIndex = 0;
+            this.ptUser.TabStop = false;
+            this.ptUser.Click += new System.EventHandler(this.ptUser_Click);
             // 
             // DivideNameMenu
             // 
@@ -351,14 +362,14 @@
             this.pnClose.Size = new System.Drawing.Size(124, 86);
             this.pnClose.TabIndex = 8;
             // 
-            // panel1
+            // panel3
             // 
-            this.panel1.Controls.Add(this.btnEditUser);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(124, 42);
-            this.panel1.TabIndex = 0;
+            this.panel3.Controls.Add(this.btnClose);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(0, 43);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(124, 43);
+            this.panel3.TabIndex = 2;
             // 
             // panel2
             // 
@@ -369,21 +380,21 @@
             this.panel2.Size = new System.Drawing.Size(124, 1);
             this.panel2.TabIndex = 1;
             // 
-            // panel3
+            // panel1
             // 
-            this.panel3.Controls.Add(this.btnClose);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(0, 43);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(124, 43);
-            this.panel3.TabIndex = 2;
+            this.panel1.Controls.Add(this.btnEditUser);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(124, 42);
+            this.panel1.TabIndex = 0;
             // 
             // btnClose
             // 
             this.btnClose.ClrBackground = System.Drawing.Color.SeaGreen;
             this.btnClose.ClrClick = System.Drawing.Color.Black;
             this.btnClose.ClrMouseHover = System.Drawing.Color.Black;
-            this.btnClose.ClrShow = System.Drawing.Color.Blue;
+            this.btnClose.ClrShow = System.Drawing.Color.Black;
             this.btnClose.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -409,7 +420,7 @@
             this.btnEditUser.ClrBackground = System.Drawing.Color.SeaGreen;
             this.btnEditUser.ClrClick = System.Drawing.Color.Black;
             this.btnEditUser.ClrMouseHover = System.Drawing.Color.Black;
-            this.btnEditUser.ClrShow = System.Drawing.Color.Blue;
+            this.btnEditUser.ClrShow = System.Drawing.Color.Black;
             this.btnEditUser.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnEditUser.FlatAppearance.BorderSize = 0;
             this.btnEditUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -579,17 +590,6 @@
             this.btnTable.UseVisualStyleBackColor = true;
             this.btnTable.Click += new System.EventHandler(this.btnTable_Click);
             // 
-            // ptUser
-            // 
-            this.ptUser.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ptUser.BackgroundImage")));
-            this.ptUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ptUser.Location = new System.Drawing.Point(2, 2);
-            this.ptUser.Name = "ptUser";
-            this.ptUser.Size = new System.Drawing.Size(30, 30);
-            this.ptUser.TabIndex = 0;
-            this.ptUser.TabStop = false;
-            this.ptUser.Click += new System.EventHandler(this.ptUser_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -608,12 +608,13 @@
             this.IsMdiContainer = true;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "6666";
+            this.Text = "Quản lý trà sữa X-cute";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.TitleBarPanel.ResumeLayout(false);
             this.UserNamePanel.ResumeLayout(false);
             this.UserNamePanel.PerformLayout();
             this.pnUser.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ptUser)).EndInit();
             this.NameShopPanel.ResumeLayout(false);
             this.NameShopPanel.PerformLayout();
             this.MenuBarPanel.ResumeLayout(false);
@@ -621,9 +622,8 @@
             this.DirectlyNamePanel.ResumeLayout(false);
             this.DirectlyNamePanel.PerformLayout();
             this.pnClose.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.ptUser)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

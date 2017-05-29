@@ -9,11 +9,21 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>BÁO CÁO DOANH THU THÁNG</Value>
+                <Value>BÁO CÁO DOANH THU THÁNG </Value>
                 <Style>
                   <FontFamily>Cambria</FontFamily>
                   <FontSize>18pt</FontSize>
                   <FontWeight>Bold</FontWeight>
+                  <Color>DodgerBlue</Color>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=Month(Parameters!month.Value).ToString() + " / " + Year(Parameters!month.Value).ToString()</Value>
+                <Style>
+                  <FontFamily>Cambria</FontFamily>
+                  <FontSize>18pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <Color>DodgerBlue</Color>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -112,7 +122,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>1606 Lê Thị Riêng , Phường Linh Trung , Q. Thủ Đức</Value>
+                <Value>Đối diện trường Đại học TDTT Tp - HCM, Làng đại học, Thủ Đức</Value>
                 <Style>
                   <FontStyle>Italic</FontStyle>
                   <FontFamily>Cambria</FontFamily>
@@ -125,7 +135,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox12</rd:DefaultName>
-        <Top>0.41889in</Top>
+        <Top>0.43277in</Top>
+        <Left>0.14583in</Left>
         <Height>0.25in</Height>
         <Width>3.6875in</Width>
         <ZIndex>3</ZIndex>
@@ -773,8 +784,136 @@
           </Border>
         </Style>
       </Tablix>
+      <Textbox Name="Textbox4">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Người lập báo cáo</Value>
+                <Style>
+                  <FontSize>12pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox4</rd:DefaultName>
+        <Top>3.33208in</Top>
+        <Left>1.11458in</Left>
+        <Height>0.25in</Height>
+        <Width>1.52083in</Width>
+        <ZIndex>6</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox5">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Ký tên</Value>
+                <Style>
+                  <FontSize>12pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox5</rd:DefaultName>
+        <Top>3.65153in</Top>
+        <Left>1.56125in</Left>
+        <Height>0.25in</Height>
+        <Width>0.64708in</Width>
+        <ZIndex>7</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox7">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Chủ cửa hàng</Value>
+                <Style>
+                  <FontSize>12pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox7</rd:DefaultName>
+        <Top>3.33208in</Top>
+        <Left>6.60291in</Left>
+        <Height>0.25in</Height>
+        <Width>1.25001in</Width>
+        <ZIndex>8</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox9">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Ký tên</Value>
+                <Style>
+                  <FontSize>12pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox5</rd:DefaultName>
+        <Top>3.65153in</Top>
+        <Left>6.84126in</Left>
+        <Height>0.25in</Height>
+        <Width>0.64708in</Width>
+        <ZIndex>9</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
-    <Height>3.5625in</Height>
+    <Height>4.23958in</Height>
     <Style />
   </Body>
   <Width>9.52083in</Width>

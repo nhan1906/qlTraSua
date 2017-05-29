@@ -30,13 +30,23 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.dtQLTraSuaDataSet = new Phần_mềm_Quản_lý_Quán_Trà_Sữa.dtQLTraSuaDataSet();
             this.bCDoanhSoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dtQLTraSuaDataSet = new Phần_mềm_Quản_lý_Quán_Trà_Sữa.dtQLTraSuaDataSet();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.bC_DoanhSoTableAdapter = new Phần_mềm_Quản_lý_Quán_Trà_Sữa.dtQLTraSuaDataSetTableAdapters.BC_DoanhSoTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.dtQLTraSuaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bCDoanhSoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtQLTraSuaDataSet)).BeginInit();
             this.SuspendLayout();
+            // 
+            // bCDoanhSoBindingSource
+            // 
+            this.bCDoanhSoBindingSource.DataMember = "BC_DoanhSo";
+            this.bCDoanhSoBindingSource.DataSource = this.dtQLTraSuaDataSet;
+            // 
+            // dtQLTraSuaDataSet
+            // 
+            this.dtQLTraSuaDataSet.DataSetName = "dtQLTraSuaDataSet";
+            this.dtQLTraSuaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -52,16 +62,6 @@
             this.reportViewer1.Size = new System.Drawing.Size(676, 424);
             this.reportViewer1.TabIndex = 0;
             // 
-            // dtQLTraSuaDataSet
-            // 
-            this.dtQLTraSuaDataSet.DataSetName = "dtQLTraSuaDataSet";
-            this.dtQLTraSuaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // bCDoanhSoBindingSource
-            // 
-            this.bCDoanhSoBindingSource.DataMember = "BC_DoanhSo";
-            this.bCDoanhSoBindingSource.DataSource = this.dtQLTraSuaDataSet;
-            // 
             // bC_DoanhSoTableAdapter
             // 
             this.bC_DoanhSoTableAdapter.ClearBeforeFill = true;
@@ -73,12 +73,14 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(676, 424);
             this.Controls.Add(this.reportViewer1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "PrintTK";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "In Thống kê Tháng";
             this.Load += new System.EventHandler(this.PrintTK_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dtQLTraSuaDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bCDoanhSoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtQLTraSuaDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }

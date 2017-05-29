@@ -81,5 +81,16 @@ namespace Quản_Lý_Quán_Trà_Sữa.DAO
                 isExist = true;
             return isExist;
         }
+
+        public Bill GetBillByIdBill(int idBill)
+        {
+
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * From Bill where idBill = " + idBill);
+            foreach(DataRow row in data.Rows)
+            {
+                return new DTO.Bill(row);
+            }
+            return null;
+        }
     }
 }

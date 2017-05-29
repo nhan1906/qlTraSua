@@ -127,6 +127,7 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện
 
         private void btnTakeaway_Click(object sender, EventArgs e)
         {
+            Button button = sender as Button;
             if (!BillDAO.Instance.ExsitBillUncheckTakeAway())
             {
                 BillDAO.Instance.CreateNewBillForTable(0, 0);
@@ -137,7 +138,15 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện
                 f.btnBill_Click(new object(), new EventArgs());
             }
             else
-                MessageBox.Show("Có bill Take away chưa thanh toán");
+            {
+                f.fBill = new BillForm(0, f);
+                f.fBill.Name = "BillF";
+                f.fBill.MdiParent = f;
+                f.fBill.Show();
+                f.btnBill_Click(new object(), new EventArgs());
+                f.BtnBill.Enabled = true;
+            }
+                
         }
 
         private void btnTable_Click(object sender, EventArgs e)

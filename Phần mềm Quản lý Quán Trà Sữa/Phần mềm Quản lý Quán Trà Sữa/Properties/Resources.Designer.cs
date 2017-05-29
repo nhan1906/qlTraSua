@@ -63,6 +63,26 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bg_icon_help {
+            get {
+                object obj = ResourceManager.GetObject("bg_icon_help", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bg_nameshop {
+            get {
+                object obj = ResourceManager.GetObject("bg_nameshop", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_bill {
             get {
                 object obj = ResourceManager.GetObject("icon_bill", resourceCulture);

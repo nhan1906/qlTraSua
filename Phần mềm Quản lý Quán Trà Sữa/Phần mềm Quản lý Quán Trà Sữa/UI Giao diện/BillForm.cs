@@ -144,6 +144,8 @@ namespace Phần_mềm_Quản_lý_Quán_Trà_Sữa.UI_Giao_diện
             {
                 size = 2;
             }
+            if (txtBinding.Text.Equals(""))
+                return;
             Drink drink = DrinkDAO.Instance.GetDrinkByName(txtBinding.Text, size);
             
             int idBill = BillDAO.Instance.GetUncheckedBillIdByTableId(idTable);
